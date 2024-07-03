@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BootstrapHeader</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.css">
+    <style>
+        /* Custom styles for the header */
+        .navbar {
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            /* Optional: Add shadow */
+            height: 55px;
+        }
+
+        .navbar-brand {
+            color: #000000;
+            /* Text color */
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: #000000;
+            /* Text color */
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            color: #a5ddf3;
+            /* Hover color */
+        }
+
+        .navbar-nav.navbar-center {
+            position: absolute;
+            left: 50%;
+            transform: translatex(-50%);
+        }
+
+        .header {
+            height: 80px;
+            background-color: #a5ddf3;
+        }
+
+        .header .container-fluid {
+            margin-left: 142px;
+        }
+
+        .navbar-nav-item {
+            padding: 10px;
+        }
+
+        .dropdown-hover:hover>.dropdown-menu {
+            display: inline-block;
+            position: relative;
+        }
+
+        .dropdown-hover>.dropdown-toggle:active {
+            /*Without this, clicking will make it sticky*/
+            pointer-events: none;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+        }
+
+        .carousel-item {
+            height: 600px;
+
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+            display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(255, 254, 254, 0.8);
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 100%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #ffffff;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 0.5s;
+        }
+
+        .zoom {
+            padding: 5px;
+            transition: transform 1s;
+            width: 95%;
+        }
+
+        .zoom:hover {
+            -ms-transform: scale(1.1);
+            /* IE 9 */
+            -webkit-transform: scale(1.1);
+            /* Safari 3-8 */
+            transform: scale(1.1);
+        }
+
+        *,
+        :after,
+        :before {
+            box-sizing: border-box
+        }
+
+        .clearfix:after,
+        .clearfix:before {
+            content: '';
+            display: table
+        }
+
+        .clearfix:after {
+            clear: both;
+            display: block
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .login-wrap {
+            width: 100%;
+            margin: auto;
+            max-width: 525px;
+            min-height: 670px;
+            position: relative;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+        }
+
+        .login-html {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            padding: 90px 70px 50px 70px;
+            background: rgba(40, 57, 101, .9);
+        }
+
+        .login-html .sign-in-htm,
+        .login-html .sign-up-htm {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            transform: rotateY(180deg);
+            backface-visibility: hidden;
+            transition: all .4s linear;
+        }
+
+        .login-html .sign-in,
+        .login-html .sign-up,
+        .login-form .group .check {
+            display: none;
+        }
+
+        .login-html .tab,
+        .login-form .group .label,
+        .login-form .group .button {
+            text-transform: uppercase;
+        }
+
+        .login-html .tab {
+            font-size: 22px;
+            margin-right: 15px;
+            padding-bottom: 5px;
+            margin: 0 15px 10px 0;
+            display: inline-block;
+            border-bottom: 2px solid transparent;
+        }
+
+        .login-html .sign-in:checked+.tab,
+        .login-html .sign-up:checked+.tab {
+            color: #fff;
+            border-color: #1161ee;
+        }
+
+        .login-form {
+            min-height: 345px;
+            position: relative;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        .login-form .group {
+            margin-bottom: 15px;
+        }
+
+        .login-form .group .label,
+        .login-form .group .input,
+        .login-form .group .button {
+            width: 100%;
+            color: #fff;
+            display: block;
+        }
+
+        .login-form .group .input,
+        .login-form .group .button {
+            border: none;
+            padding: 15px 20px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, .1);
+        }
+
+        .login-form .group input[data-type="password"] {
+            text-security: circle;
+            -webkit-text-security: circle;
+        }
+
+        .login-form .group .label {
+            color: #aaa;
+            font-size: 12px;
+        }
+
+        .login-form .group .button {
+            background: #1161ee;
+        }
+
+        .login-form .group label .icon {
+            width: 15px;
+            height: 15px;
+            border-radius: 2px;
+            position: relative;
+            display: inline-block;
+            background: rgba(255, 255, 255, .1);
+        }
+
+        .login-form .group label .icon:before,
+        .login-form .group label .icon:after {
+            content: '';
+            width: 10px;
+            height: 2px;
+            background: rgba(40, 57, 101, .9);
+            position: absolute;
+            transition: all .2s ease-in-out 0s;
+        }
+
+        .login-form .group label .icon:before {
+            left: 3px;
+            width: 5px;
+            bottom: 6px;
+            transform: scale(0) rotate(0);
+        }
+
+        .login-form .group label .icon:after {
+            top: 6px;
+            right: 0;
+            transform: scale(0) rotate(0);
+        }
+
+        .login-form .group .check:checked+label {
+            color: #fff;
+        }
+
+        .login-form .group .check:checked+label .icon {
+            background: #1161ee;
+        }
+
+        .login-form .group .check:checked+label .icon:before {
+            transform: scale(1) rotate(45deg);
+        }
+
+        .login-form .group .check:checked+label .icon:after {
+            transform: scale(1) rotate(-45deg);
+        }
+
+        .login-html .sign-in:checked+.tab+.sign-up+.tab+.login-form .sign-in-htm {
+            transform: rotate(0);
+        }
+
+        .login-html .sign-up:checked+.tab+.login-form .sign-up-htm {
+            transform: rotate(0);
+        }
+
+        .hr {
+            height: 2px;
+            margin: 60px 0 50px 0;
+            background: rgba(255, 255, 255, .2);
+        }
+
+        .foot-lnk {
+            text-align: center;
+        }
+
+        .modal-body {
+            background: rgba(40, 57, 101, .9);
+        }
+
+        .modal-header {
+            background: rgba(40, 57, 101, .9);
+
+        }
+
+        /* Main Footer */
+        footer .main-footer {
+            padding: 20px 0;
+            background: #5f6971;
+            text-decoration-color: #000000;
+        }
+
+        footer ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        /* Copy Right Footer */
+        .footer-copyright {
+            padding: 5px 0;
+        }
+
+        .footer-copyright .logo {
+            display: inherit;
+        }
+
+        .footer-copyright nav {
+            float: right;
+            margin-top: 5px;
+        }
+
+        .footer-copyright nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-copyright nav ul li {
+            border-left: 1px solid #505050;
+            display: inline-block;
+            line-height: 12px;
+            margin: 0;
+            padding: 0 8px;
+        }
+
+        .footer-copyright nav ul li a {
+            color: #969696;
+        }
+
+        .footer-copyright nav ul li:first-child {
+            border: medium none;
+            padding-left: 0;
+        }
+
+        .footer-copyright p {
+            color: #969696;
+            margin: 2px 0 0;
+        }
+
+        /* Footer Top */
+        .footer-top {
+            background: #96d3f8;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #222;
+        }
+
+        .footer-bottom {
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #222;
+
+        }
+
+        /* Footer transparent */
+        footer.transparent .footer-top,
+        footer.transparent .main-footer {
+            background: transparent;
+        }
+
+        footer.transparent .footer-copyright {
+            background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer light */
+        footer.light .footer-top {
+            background: #f9f9f9;
+        }
+
+        footer.light .main-footer {
+            background: #f9f9f9;
+        }
+
+        footer.light .footer-copyright {
+            background: none repeat scroll 0 0 rgba(255, 255, 255, 0.3);
+        }
+
+        /* Footer 4 */
+        .footer- .logo {
+            display: inline-block;
+        }
+
+        /*==================== 
+  Widgets 
+====================== */
+        .widget {
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        .widget.widget-last {
+            margin-bottom: 0px;
+        }
+
+        .widget.no-box {
+            padding: 0;
+            background-color: transparent;
+            margin-bottom: 40px;
+            box-shadow: none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            -ms-box-shadow: none;
+            -o-box-shadow: none;
+        }
+
+        .widget.subscribe p {
+            margin-bottom: 18px;
+        }
+
+        .widget li a {
+            color: #fff;
+        }
+
+        .widget li a:hover {
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        .widget-title {
+            margin-bottom: 20px;
+        }
+
+        .widget-title span {
+            background: #839FAD none repeat scroll 0 0;
+            display: block;
+            height: 1px;
+            margin-top: 25px;
+            position: relative;
+            width: 20%;
+        }
+
+        .widget-title span::after {
+            background: inherit;
+            content: "";
+            height: inherit;
+            position: absolute;
+            top: -4px;
+            width: 50%;
+        }
+
+        .widget-title.text-center span,
+        .widget-title.text-center span::after {
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+        }
+
+        .widget .badge {
+            float: right;
+            background: #7f7f7f;
+        }
+
+        .typo-light h1,
+        .typo-light h2,
+        .typo-light h3,
+        .typo-light h4,
+        .typo-light h5,
+        .typo-light h6,
+        .typo-light p,
+        .typo-light div,
+        .typo-light span,
+        .typo-light small {
+            color: #fff;
+        }
+
+        ul.social-footer2 {
+            margin: 0;
+            padding: 0;
+            width: auto;
+        }
+
+        ul.social-footer2 li {
+            display: inline-block;
+            padding: 0;
+        }
+
+        ul.social-footer2 li a:hover {
+            background-color: #ff8d1e;
+        }
+
+        ul.social-footer2 li a {
+            display: block;
+            height: 30px;
+            width: 30px;
+            text-align: center;
+        }
+
+        .btn {
+            background-color: #ff8d1e;
+            color: #fff;
+        }
+
+        .btn:hover,
+        .btn:focus,
+        .btn.active {
+            background: #4b92dc;
+            color: #fff;
+            -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            -ms-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            -o-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            -webkit-transition: all 250ms ease-in-out 0s;
+            -moz-transition: all 250ms ease-in-out 0s;
+            -ms-transition: all 250ms ease-in-out 0s;
+            -o-transition: all 250ms ease-in-out 0s;
+            transition: all 250ms ease-in-out 0s;
+
+        }
+
+        .fa {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            background-color: #3e3e3e;
+            color: #fff;
+            padding: 9px;
+            border-radius: 5px;
+        }
+
+        #subscribe-box .emailfield {
+            margin: auto;
+        }
+
+        input[type="text"] {
+            background: rgba(255, 255, 255, 0.075);
+            padding: 10px 15px;
+            color: #aaa;
+            border: 3px solid rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            margin-bottom: 16px;
+            border-radius: 5px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transition-delay: 0.2s;
+            text-align: center;
+            width: 100%;
+        }
+
+        input.submitbutton.ripplelink {
+            background: #e67e22;
+            border: 3px solid rgba(0, 0, 0, 0.1);
+            color: #fff;
+            border-color: #e67e22;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+            transition-delay: 0s;
+            width: 100%;
+            font-size: 14px;
+            /* font-weight: 700; */
+            border: 0px solid;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 10px 15px;
+            margin-bottom: 16px;
+            border-radius: 5px;
+        }
+
+        .thumb-content ::before {
+            content: "\f190";
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: inherit;
+            margin-left: 5px;
+            color: #ffffff;
+        }
+
+        /*common styling*/
+        .main_title {
+            position: relative;
+            margin-bottom: 40px !important;
+            text-transform: uppercase;
+        }
+
+        .main_title:before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 120px;
+            height: 2px;
+            background: #ffecbb;
+            bottom: -8px;
+            left: calc(50% - 60px);
+        }
+
+        .main_title:after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 40px;
+            height: 4px;
+            background: #fcc101;
+            bottom: -9px;
+            left: calc(50% - 20px);
+        }
+
+        .main_title_left:before,
+        .main_title_left:after {
+            left: 0px;
+        }
+
+        /*common styling end*/
+        .member_card_style {
+            position: relative;
+            box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 5px;
+            background: #fff;
+            transition: 0.8s;
+            margin: 20px 0;
+        }
+
+        .member_card_style img {
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .member_card_style:hover {
+            transform: translateY(-10px);
+        }
+
+        .member-info {
+            padding-left: 30px;
+            display: inline-block;
+        }
+
+        .member-info h4 {
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 20px;
+            color: #fcc101;
+            text-transform: uppercase;
+        }
+
+        .member-info .social {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .member-info .social a {
+            transition: ease-in-out 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50px;
+            width: 32px;
+            height: 32px;
+            background: #fff3d5;
+            color: #ffb700;
+            text-decoration: none;
+        }
+
+        .member-info .social a i {
+            font-size: 16px;
+            margin: 0 2px;
+        }
+
+        .member-info .social a:hover {
+            background: #ffb700;
+            color: #fff;
+        }
+
+        .member-info .social a+a {
+            margin-left: 8px;
+        }
+
+        .member-info span {
+            display: block;
+            font-size: 15px;
+            padding-bottom: 10px;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .member-info span::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 50px;
+            height: 1px;
+            background: #bfe0fd;
+            bottom: 0;
+            left: 0;
+        }
+
+        /*custom tab style 1*/
+        .custom_tab_style1.nav-tabs {
+            border-bottom: 2px solid #ffb700;
+        }
+
+        .custom_tab_style1.nav-tabs .nav-link {
+            margin-bottom: -2px;
+            padding: 10px 25px;
+            border-width: 2px;
+        }
+
+        .custom_tab_style1 .nav-item.show .nav-link,
+        .custom_tab_style1 .nav-link.active {
+            color: #495057;
+            background-color: #f8f9fa;
+            border-width: 2px;
+            border-color: #ffb700 #ffb700 #f8f9fa;
+        }
+
+        .custom_tab_style1 .nav-link:focus,
+        .custom_tab_style1 .nav-link:hover {
+            border-width: 2px;
+            border-color: #ffb700 #ffb700 #f8f9fa;
+        }
+
+        /*custom tab style 2*/
+        .custom_tab_style2.nav-tabs {
+            border-bottom: 2px solid #ffb700;
+            display: flex;
+            justify-content: center;
+        }
+
+        .custom_tab_style2.nav-tabs .nav-link {
+            margin-bottom: -2px;
+            padding: 10px 25px;
+            border-width: 2px;
+        }
+
+        .custom_tab_style2 .nav-item.show .nav-link,
+        .custom_tab_style2 .nav-link.active {
+            color: #495057;
+            background-color: #f8f9fa;
+            border-width: 2px;
+            border-color: #ffb700 #ffb700 #f8f9fa;
+        }
+
+        .custom_tab_style2 .nav-link:focus,
+        .custom_tab_style2 .nav-link:hover {
+            border-width: 2px;
+            border-color: #ffb700 #ffb700 #f8f9fa;
+        }
+
+        /*custom tab style 3*/
+        .custom_tab_style3.nav-tabs {
+            border-bottom: 1px solid transparent;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .custom_tab_style3.nav-tabs .nav-link {
+            padding: 5px 20px;
+            margin: 0 10px;
+            border-radius: 0.25rem;
+        }
+
+        .custom_tab_style3 .nav-item.show .nav-link,
+        .custom_tab_style3 .nav-link.active {
+            color: #495057;
+            background-color: #ffb700;
+            border-color: transparent;
+        }
+
+        .custom_tab_style3 .nav-link:focus,
+        .custom_tab_style3 .nav-link:hover {
+            background-color: #ffb700;
+            border-color: transparent;
+            color: #fff;
+        }
+
+        .cards {
+            padding: 10px;
+        }
+
+        @media only screen and (max-width:991px) {
+            .navbar-nav.navbar-center {
+                display: none;
+            }
+
+        }
+
+        @media (min-width:991px) {
+            .heading {
+                margin-left: 200px !important;
+            }
+        }
+
+        @media (min-width:767px) {
+            .heading {
+                margin-left: 130px;
+            }
+
+        }
+
+        @media (min-width:552px) {
+            .heading {
+                margin-left: 100px;
+            }
+
+        }
+
+        @media (min-width:480px) {
+            .heading {
+                margin-left: 100px;
+            }
+
+        }
+
+        @media (min-width:380px) {
+            .heading {
+                margin-left: 80px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar py-2 border-bottom" style="width:auto;">
+        <div class="container d-flex ">
+            <ul class="nav me-auto ">
+                <li class="nav-item"><a class="nav-link link-dark px-2 ">Hotline:</a></li>
+                <li class="nav-item"><a href="#" class="nav-link link-dark px-2"> +16468801999</a></li>
+            </ul>
+            <div class="navbar-nav navbar-center mt-1">
+                <h6> 25% <small>OFF Multi-Use Print & Copy Paper with code</small> EDUMA2024 </h6>
+            </div>
+            <ul class="nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" class="nav-link link-dark  active" id="navbarDropdown"
+                        role="button" data-bs-toggle="dropdown" aria-labelledby="navbarDropdown1" aria-haspopup="false"
+                        aria-expanded="false">ENG</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">CN</a>
+                        <a class="dropdown-item" href="#">DE</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" class="nav-link link-dark px-2 active"
+                        id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-labelledby="navbarDropdown1"
+                        aria-haspopup="false" aria-expanded="false">USD</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">CDN</a>
+                        <a class="dropdown-item" href="#">YEN</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn " data-toggle="modal" data-target="#loginModal">
+                        Login
+                    </button>
+                </li>
+            </ul>
+            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header border-bottom-0">
+                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true ">x</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="login-wrap">
+                                <div class="login-html">
+                                    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
+                                        class="tab">Sign In</label>
+                                    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2"
+                                        class="tab">Sign Up</label>
+                                    <div class="login-form">
+                                        <div class="sign-in-htm">
+                                            <div class="group">
+                                                <h4 class="text-light">Login with your site account
+                                                    </h>
+                                                    <label for="user" class="label">Username</label>
+                                                    <input id="user" type="text" class="input">
+                                            </div>
+                                            <div class="group">
+                                                <label for="pass" class="label">Password</label>
+                                                <input id="pass" type="password" class="input" data-type="password">
+                                            </div>
+                                            <div class="group">
+                                                <input id="check" type="checkbox" class="check" checked>
+                                                <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                                            </div>
+                                            <div class="group">
+                                                <input type="submit" class="button" value="Sign In">
+                                            </div>
+                                            <div class="hr"></div>
+                                            <div class="foot-lnk">
+                                                <a href="#forgot">Forgot Password?</a>
+                                            </div>
+                                        </div>
+                                        <div class="sign-up-htm">
+                                            <div class="group">
+                                                <h3 class="text-light">Register a new account</h3>
+                                                <label for="user" class="label"> Username</label>
+                                                <input id="user" type="text" class="input">
+                                            </div>
+                                            <div class="group">
+                                                <label for="pass" class="label">Email Address</label>
+                                                <input id="pass" type="text" class="input">
+                                            </div>
+                                            <div class="group">
+                                                <label for="pass" class="label">Password</label>
+                                                <input id="pass" type="password" class="input" data-type="password">
+                                            </div>
+                                            <div class="group">
+                                                <label for="pass" class="label">Repeat Password</label>
+                                                <input id="pass" type="password" class="input" data-type="password">
+                                            </div>
+
+                                            <div class="group">
+                                                <input type="submit" class="button" value="Sign Up">
+                                            </div>
+                                            <div class="hr"></div>
+                                            <div class="foot-lnk">
+                                                <label for="tab-1">Already Member?</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="header">
+        <nav class="header navbar navbar-expand-lg navbar-light bg-light ">
+            <div class="container-fluid " style="margin-top: 7px; margin-right: 100px;">
+                <a href="#" class="navbar-brand">
+                    <img width="155" height="48"
+                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/Logo.svg"
+                        class="attachment-full size-full wp-image-21099" alt=""> </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarExampleOnHover">
+                    <!-- Left links -->
+                    <ul class="navbar-nav me-auto ">
+                        <li class="navbar-nav-item">
+                            <a class="nav-link" href=""></a>
+                        </li>
+                        <!-- Navbar dropdown -->
+                        <li class="nav-item dropdown dropdown-hover" style="position:relative; margin-left: 50px;">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle font-weight-bold" href="#"
+                                id="navbarDropdown" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">Products</a>
+                            <!-- Dropdown menu -->
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width:max-content;">
+                                <div class="container">
+                                    <div class="row ">
+                                        <div class="col-md-4 col-lg-4 ">
+                                            <div class="list-group list-group-flush font-weight-bold">
+                                                <a href=""
+                                                    class="list-group-item list-group-item-action text-primary">School
+                                                    solutions</a>
+                                                <a href="" class="list-group-item list-group-item-action">Dolor sit</a>
+                                                <a href="" class="list-group-item list-group-item-action">Amet
+                                                    consectetur</a>
+                                                <a href="" class="list-group-item list-group-item-action">Cras justo
+                                                    odio</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-lg-4  font-weight-bold">
+                                            <div class="list-group list-group-flush">
+                                                <a href=""
+                                                    class="list-group-item list-group-item-action text-primary">University
+                                                    solutions</a>
+                                                <a href="" class="list-group-item list-group-item-action">Cras justo
+                                                    odio</a>
+                                                <a href="" class="list-group-item list-group-item-action">Est iure</a>
+                                                <a href=""
+                                                    class="list-group-item list-group-item-action">Praesentium</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-lg-4 col-lg-3 font-weight-bold">
+                                            <div class="list-group list-group-flush">
+                                                <a href=""
+                                                    class="list-group-item list-group-item-action text-primary">Scool
+                                                    solutions</a>
+                                                <a href="" class="list-group-item list-group-item-action">Saepe</a>
+                                                <a href="" class="list-group-item list-group-item-action">Vel alias</a>
+                                                <a href="" class="list-group-item list-group-item-action">Sunt
+                                                    doloribus</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Left links -->
+                        <li class="nav-item font-weight-bold">
+                            <a class="nav-link" href="#">Best deals</a>
+                        </li>
+                        <li class="nav-item font-weight-bold">
+                            <a class="nav-link" href="#">Paper and Notebook</a>
+                        </li>
+                        <li class="nav-item font-weight-bold">
+                            <a class="nav-link" href="#">Office desks</a>
+                        </li>
+                        <li class="nav-item dropdown dropdown-hover" style="position:relative; margin-right: 50px;">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle font-weight-bold" href="#"
+                                id="navbarDropdown" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">Pages</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width:max-content;">
+                                <div class="container">
+                                    <div class="row ">
+                                        <div class="list">
+                                            <div class="list-group list-group-flush font-weight-bold">
+                                                <a href=""
+                                                    class="list-group-item list-group-item-action font-weight-bold">Filter
+                                                    Left Sidebar</a>
+                                                <a href="" class="list-group-item list-group-item-action">Simple
+                                                    Product Layout</a>
+                                                <a href="" class="list-group-item list-group-item-action">Variable
+                                                    Product Layout</a>
+                                                <a href="" class="list-group-item list-group-item-action">Blog
+                                                    Grid</a>
+                                                <a href="" class="list-group-item list-group-item-action">Courses</a>
+                                                <a href="" class="list-group-item list-group-item-action">Wishlist</a>
+                                                <a href="" class="list-group-item list-group-item-action">Compare</a>
+                                                <a href="" class="list-group-item list-group-item-action">About
+                                                    Us</a>
+                                                <a href="" class="list-group-item list-group-item-action">Contact</a>
+                                                <a href="" class="list-group-item list-group-item-action">Policy</a>
+                                                <a href="" class="list-group-item list-group-item-action">Terms of
+                                                    Service</a>
+                                                <a href="" class="list-group-item list-group-item-action">Shipping</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class=" col-lg-4 nav d-flex  ">
+                        <li class="navbar-right ms-auto">
+                            <button type="button" class="btn btn-md">
+                                <i class="bi bi-search"></i><svg href="#" xmlns="http://www.w3.org/2000/svg" width="30"
+                                    height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                </svg>
+                            </button>
+                        </li>
+                        <li class="navbar-right ms-auto ">
+                            <button type="button" class="btn btn-md ">
+                                <i class="bi bi-search"></i><svg href="# xmlns=" http://www.w3.org/2000/svg" width="30"
+                                    height="30" fill="currentColor" class="bi bi-suit-heart" viewBox="0 0 16 16">
+                                    <path
+                                        d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.6 7.6 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z" />
+                                </svg>
+                            </button>
+                        </li>
+                        <li class="navbar-right ms-auto ">
+                            <button type="button" class="btn btn-md ">
+                                <i class="bi bi-cart"></i><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                    fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class=" carousel-inner">
+            <div class="carousel-item active" style="background-color: #00776E">
+                <div class="heading d-block text-light mt-5">
+                    <p>Back to school SALE UP TO 50%</p>
+                    <h1>Everything For Office & School Supplies </h1>
+                    <button class="btn btn-lg btn-outline-light mt-5">SHOP NOW</button>
+                    <img class=" d-block float-right w-50"
+                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/banner-slider5-3.png"
+                        alt="First slide">
+                </div>
+            </div>
+            <div class="carousel-item" style="background-color: #26507F;">
+                <div class="heading d-block text-light mt-5">
+                    <p class="fw-bolder">Back to school SALE UP TO 50%</p>
+                    <h1 class="mt-5">Everything For Office & School Supplies </h1>
+                    <button class="btn btn-lg btn-outline-light mt-5">SHOP NOW</button>
+                    <img class="d-block float-right w-50"
+                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/bannerslider1-1.png"
+                        alt="Second slide">
+                </div>
+            </div>
+            <div class="carousel-item" style="background-color: #CEB096;">
+                <div class="heading d-block text-light mt-5">
+                    <p class="fw-bolder">Back to school SALE UP TO 50%</p>
+                    <h1 class="mt-5">Everything For Office & School Supplies </h1>
+                    <button class="btn btn-lg btn-outline-light mt-5">SHOP NOW</button>
+                    <img class="d-block float-right w-50"
+                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/bannerslider2-1.png"
+                        alt="Third slide">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- owl carousel
+
+    <section class="pt-5 pb-5">
+        <div class="container" >
+            <div class="row" >
+                <div class="col-6 ">
+                    <a class="btn btn-primary mb-3 mr-1" 
+                       href="#carouselExampleIndicators2"
+                       role="button"
+                        data-slide="prev">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                    <a class="btn btn-primary mb-3"
+                       href="#carouselExampleIndicators2"
+                       role="button"
+                       data-slide="next">
+                        <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-12">
+                    <div id="carouselExampleIndicators2" 
+                         class="carousel slide"
+                         data-ride="carousel">
+                         <div class="carousel-indicators">
+                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                         </div>
+                        <div class="carousel-inner"style="height:310px;">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-md-3 mb-3">
+                                        <div class="card">
+                                            <img class="ratio ratio-1x1 rounded-circle overflow-hidden" 
+                                                 alt="20x20"
+                                                src=
+"https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/paper-notebooks.png">                                           
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <div class="card">
+                                            <img class="ratio ratio-1x1 rounded-circle overflow-hidden" 
+                                                 alt="100%x280"
+                                                src=
+"https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Printer.png">                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <div class="card">
+                                            <img class="ratio ratio-1x1 rounded-circle overflow-hidden" 
+                                                 alt="100%x280"
+                                                src=
+"https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Pens-Writing.jpeg">                                           
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 mb-3">
+                                        <div class="card">
+                                            <img class="ratio ratio-1x1 rounded-circle overflow-hidden" 
+                                                 alt="100%x280"
+                                                src=
+"https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Desk-Accessories.png">                                           
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+
+                                    <div class="col-md-3 mb-3">
+                                        <div class="card">
+                                            <img class="ratio ratio-1x1 rounded-circle overflow-hidden" alt="100%x280"
+                                                src=
+"https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Files-Folders.png">                                           
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <div class="card">
+                                            <img class="ratio ratio-1x1 rounded-circle overflow-hidden" alt="100%x280"
+                                                src=
+"https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Office-Desk.png">                                           
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 mb-3">
+                                        <div class="card">
+                                            <img class="ratio ratio-1x1 rounded-circle overflow-hidden" 
+                                                 alt="100%x280"
+                                                src=
+"https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Weekly-Undated-Planner-Set-B6-2.jpg">                                          
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <div class="card">
+                                            <img class="ratio ratio-1x1 rounded-circle overflow-hidden" alt="100%x280"
+                                                src=
+"https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/2024-Wall-Calendar-Greetings-From-Around-The-World.jpg">                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <div class="card-group" style="margin-top: 50px; margin-bottom: 50px; margin-left: 150PX; ">
+        <div class="card-center">
+            <div class="zoom">
+                <div class="card " style="border-radius: 20%;">
+                    <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/Banner-1.png"
+                        class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">FIRST ORDER</h5>
+                        <p class="card-text"> ONLINE AND IN STORE</p>
+                        <h2>10% <small>off</small></h2>
+                        <p class="card-text"><small>USE CODE: EDUMA</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-center">
+            <div class="zoom">
+                <div class="card " style="border-radius: 20%;">
+                    <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/Banner-4.png"
+                        class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">FIRST ORDER</h5>
+                        <p class="card-text"> ONLINE AND IN STORE</p>
+                        <h2>10% <small>off</small></h2>
+                        <p class="card-text"><small>USE CODE: EDUMA</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-center">
+            <div class="zoom">
+                <div class="card " style="border-radius: 20%;">
+                    <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/Banner-5.png"
+                        class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">FIRST ORDER</h5>
+                        <p class="card-text"> ONLINE AND IN STORE</p>
+                        <h2>10% <small>off</small></h2>
+                        <p class="card-text"><small>USE CODE: EDUMA</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container py-5 custom_tab_style1_outer">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="nav nav-tabs custom_tab_style2" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#Profile2"
+                            type="button" role="tab" aria-controls="home" aria-selected="true"><h2>Popular</h2></button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#Gallery2"
+                            type="button" role="tab" aria-controls="profile" aria-selected="false"><h2>Best seller</h2></button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="top-tab" data-bs-toggle="tab" data-bs-target="#Profile3"
+                            type="button" role="tab" aria-controls="top" aria-selected="true"><h2>Top rated</h2></button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="Profile2" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="member">
+                            <div class="row p-3 ">
+                                <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                    <div class="card-deck flex-row flex-nowrap">
+
+                                        <div class="card">
+                                            <a href="#"><img
+                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Fountain-Pen-And-Journals-Gift-Set.jpg"
+                                                    class="card-img-top" alt="...">
+                                            </a>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Safari Fountain Pen Gift Set</h5>
+                                                <p class="card-text">$35.00</p>
+                                            </div>
+                                            </a>
+                                        </div><!-- END CARD -->
+
+                                    </div><!-- END CARD DECK -->
+                                </div><!-- END CONTAINER -->
+                                <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                    <div class="card-deck flex-row flex-nowrap">
+
+                                        <div class="card">
+                                            <a href="#"><img
+                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Colours-Pencils.jpg"
+                                                    class="card-img-top" alt="...">
+                                            </a>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Colours Pencils</h5>
+                                                <p class="card-text">$35.00</p>
+                                            </div>
+                                            </a>
+                                        </div><!-- END CARD -->
+
+                                    </div><!-- END CARD DECK -->
+                                </div><!-- END CONTAINER -->
+                                <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                    <div class="card-deck flex-row flex-nowrap">
+
+                                        <div class="card">
+                                            <a href="#"><img
+                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Van-Gogh-Collection-Cahier-Notebook-Set-Large.jpg"
+                                                    class="card-img-top" alt="...">
+                                            </a>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Van Gogh Notebook</h5>
+                                                <p class="card-text">$35.00</p>
+                                            </div>
+                                            </a>
+                                        </div><!-- END CARD -->
+                                    </div>
+                                </div><!-- END CARD DECK -->
+                                <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                    <div class="card-deck flex-row flex-nowrap">
+
+                                        <div class="card">
+                                            <a href="#"><img
+                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/2024-Wall-Calendar-Greetings-From-Around-The-World.jpg"
+                                                    class="card-img-top" alt="...">
+                                            </a>
+                                            <div class="card-body">
+                                                <h5 class="card-title">2024 Wall Calendar</h5>
+                                                <p class="card-text">$35.00</p>
+                                                </a>
+                                            </div><!-- END CARD -->
+                                        </div>
+                                    </div><!-- END CARD DECK -->
+                                </div><!-- END CONTAINER -->
+                                <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                    <div class="card-deck flex-row flex-nowrap">
+
+                                        <div class="card">
+                                            <a href="#"><img
+                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Weekly-Undated-Planner-Set-B6-2.jpg"
+                                                    class="card-img-top" alt="...">
+                                            </a>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Weekly Undated Planner Set B6</h5>
+                                                <p class="card-text">$35.00</p>
+                                                </a>
+                                            </div><!-- END CARD -->
+                                        </div>
+                                    </div><!-- END CARD DECK -->
+                                </div><!-- END CONTAINER -->
+                                <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                    <div class="card-deck flex-row flex-nowrap">
+
+                                        <div class="card">
+                                            <a href="#"><img
+                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Handmade-Mini-Stone-Crayon-Set-Coloured.jpg"
+                                                    class="card-img-top" alt="...">
+                                            </a>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Handmade Mini Stone</h5>
+                                                <p class="card-text">$35.00</p>
+                                                </a>
+                                            </div><!-- END CARD -->
+                                        </div>
+                                    </div><!-- END CARD DECK -->
+                                </div><!-- END CONTAINER -->
+                                <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                    <div class="card-deck flex-row flex-nowrap">
+
+                                        <div class="card">
+                                            <a href="#"><img
+                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Pens-Journal-and-Refill-Bundle-3.jpg"
+                                                    class="card-img-top" alt="...">
+                                            </a>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Pens Journal And Refill Bundle</h5>
+                                                <p class="card-text">$35.00</p>
+                                                </a>
+                                            </div><!-- END CARD -->
+                                        </div>
+                                    </div><!-- END CARD DECK -->
+                                </div><!-- END CONTAINER -->
+                                <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                    <div class="card-deck flex-row flex-nowrap">
+
+                                        <div class="card">
+                                            <a href="#"><img
+                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Desktop-Sharpener.jpg"
+                                                    class="card-img-top" alt="...">
+                                            </a>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Desktop Sharpener</h5>
+                                                <p class="card-text">$35.00</p>
+                                                </a>
+                                            </div><!-- END CARD -->
+                                        </div>
+                                    </div><!-- END CARD DECK -->
+                                </div><!-- END CONTAINER -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="Gallery2" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="member">
+                            <div class="row p-3 ">
+                                <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                    <div class="card-deck flex-row flex-nowrap">
+
+                                        <div class="card">
+                                            <a href="#"><img
+                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Book-Band-Pen-Case.png"
+                                                    class="card-img-top" alt="...">
+                                            </a>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Book Band Pen Case</h5>
+                                                <p class="card-text">$35.00</p>
+                                            </div>
+                                            </a>
+                                        </div><!-- END CARD -->
+
+                                    </div><!-- END CARD DECK -->
+                                </div><!-- END CONTAINER -->
+                                <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                    <div class="card-deck flex-row flex-nowrap">
+
+                                        <div class="card">
+                                            <a href="#"><img
+                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Costway-48-Computer-Desk-Study-Workstation-Laptop-Table-Home-Office-5.jpg"
+                                                    class="card-img-top" alt="...">
+                                            </a>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Computer Desk Study</h5>
+                                                <p class="card-text">$35.00</p>
+                                            </div>
+                                            </a>
+                                        </div><!-- END CARD -->
+
+                                    </div><!-- END CARD DECK -->
+                                </div><!-- END CONTAINER -->
+                                <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                    <div class="card-deck flex-row flex-nowrap">
+
+                                        <div class="card">
+                                            <a href="#"><img
+                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/U-Brands-12ct-File-Folders-Subtle-Textures-1.jpg"
+                                                    class="card-img-top" alt="...">
+                                            </a>
+                                            <div class="card-body">
+                                                <h5 class="card-title">U Brands 12ct File Folders</h5>
+                                                <p class="card-text">$35.00</p>
+                                            </div>
+                                            </a>
+                                        </div><!-- END CARD -->
+
+                                    </div><!-- END CARD DECK -->
+                                </div><!-- END CONTAINER -->
+                                <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                    <div class="card-deck flex-row flex-nowrap">
+
+                                        <div class="card">
+                                            <a href="#"><img
+                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/11/Bitcoin-for-The-Trenches.jpg"
+                                                    class="card-img-top" alt="...">
+                                            </a>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Bitcoin For The Trenches</h5>
+                                                <p class="card-text">$35.00</p>
+                                            </div>
+                                            </a>
+                                        </div><!-- END CARD -->
+
+                                    </div><!-- END CARD DECK -->
+                                </div><!-- END CONTAINER -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="Profile3" role="tabpanel" aria-labelledby="top-tab">
+                        <div class="member">
+                            <div class="row p-3 ">
+                                <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                    <div class="card-deck flex-row flex-nowrap">
+
+                                        <div class="card">
+                                            <a href="#"><img
+                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/11/The-Non-Designers-Design-Book.jpg"
+                                                    class="card-img-top" alt="...">
+                                            </a>
+                                            <div class="card-body">
+                                                <h5 class="card-title">
+                                                    The Non-Designer’s Design Book</h5>
+                                                <p class="card-text">$35.00</p>
+                                            </div>
+                                            </a>
+                                        </div><!-- END CARD -->
+
+                                    </div><!-- END CARD DECK -->
+                                </div><!-- END CONTAINER -->
+                                <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                    <div class="card-deck flex-row flex-nowrap">
+
+                                        <div class="card">
+                                            <a href="#"><img
+                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/11/It-Wont-Be-Easy.jpg"
+                                                    class="card-img-top" alt="...">
+                                            </a>
+                                            <div class="card-body">
+                                                <h5 class="card-title">
+                                                    It Won’t Be Easy</h5>
+                                                <p class="card-text">$35.00</p>
+                                            </div>
+                                            </a>
+                                        </div><!-- END CARD -->
+
+                                    </div><!-- END CARD DECK -->
+                                </div><!-- END CONTAINER --><div class="cards col-lg-3 col-md-3 col-sm-6">
+                                    <div class="card-deck flex-row flex-nowrap">
+
+                                        <div class="card">
+                                            <a href="#"><img
+                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/11/Bitcoin-for-The-Trenches.jpg"
+                                                    class="card-img-top" alt="...">
+                                            </a>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Bitcoin For The Trenches</h5>
+                                                <p class="card-text">$35.00</p>
+                                            </div>
+                                            </a>
+                                        </div><!-- END CARD -->
+
+                                    </div><!-- END CARD DECK -->
+                                </div><!-- END CONTAINER --><div class="cards col-lg-3 col-md-3 col-sm-6">
+                                    <div class="card-deck flex-row flex-nowrap">
+
+                                        <div class="card">
+                                            <a href="#"><img
+                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/U-Brands-12ct-File-Folders-Subtle-Textures-1.jpg"
+                                                    class="card-img-top" alt="...">
+                                            </a>
+                                            <div class="card-body">
+                                                <h5 class="card-title">U Brands 12ct File Folders</h5>
+                                                <p class="card-text">$35.00</p>
+                                            </div>
+                                            </a>
+                                        </div><!-- END CARD -->
+
+                                    </div><!-- END CARD DECK -->
+                                </div><!-- END CONTAINER -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<footer id="footer" class="footer-1">
+    <div class="main-footer widgets-dark typo-light">
+        <div class="container">
+            <div class="row footer-top" style="background-color: #5f6971;">
+                <img class="image col-lg-2 col-md-4 col-sm-6 "
+                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/Logo.svg">
+                <div class="text col-lg-6 mt-5 ms-auto ">
+                    <h5>Subscribe And Get 20% Off Your First Purchase.</h5>
+                </div>
+                <div class="emailfield col-lg-3 col-md-4 col-sm-6 ms-auto  ">
+                    <input type="text" name="email" value="Email">
+                    <input class="submitbutton ripplelink" type="submit" value="Subscribe">
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <h5>Need Help! </h5>
+                    <div class="widget subscribe no-box">
+                        <h5 class="widget-title">
+                            <span></span>
+                        </h5>
+                        <p></p>
+                        <p></p>
+                        <p>We Promise We’ll Get Back To You Promptly Your Gifting
+                            Needs Are Always On Our Minds!</p>
+                        <p> Hotline: +1 515 323 6290</p>
+                        <p> Monday – Friday: 9:00-20:00</p>
+                        <p>Saturday: 11:00 – 15:00</p>
+                        <p> Email: support@gmail.com</p>
+                    </div>
+                </div>
+
+
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="widget no-box">
+                        <h5 class="widget-title">Quick Links<span></span></h5>
+                        <ul class="thumbnail-widget">
+                            <li>
+                                <p>
+                                <div class="thumb-content"><a href="#.">&nbsp;About Us</a></div>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                <div class="thumb-content"><a href="#.">&nbsp;Store Reviews</a></div>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                <div class="thumb-content"><a href="#.">&nbsp;Operation Status</a></div>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                <div class="thumb-content"><a href="#.">&nbsp;FAQs</a></div>
+                                </p>
+                            </li>
+                            <li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="widget no-box">
+                        <h5 class="widget-title">Follow up<span></span></h5>
+                        <a href="#"> <i class="fa fa-facebook"> </i> </a>
+                        <a href="#"> <i class="fa fa-twitter"> </i> </a>
+                        <a href="#"> <i class="fa fa-youtube"> </i> </a>
+                        <ul class="thumbnail-widget">
+                            <li>
+                                <p>
+                                <div class="thumb-content"><a href="#.">&nbsp;Facebook</a></div>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                <div class="thumb-content"><a href="#.">&nbsp;Pinterest</a></div>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                <div class="thumb-content"><a href="#.">&nbsp;Instagram</a></div>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                <div class="thumb-content"><a href="#.">&nbsp;TikTok</a></div>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                <div class="thumb-content"><a href="#.">&nbsp;YouTube</a></div>
+                                </p>
+                            </li>
+                    </div>
+                </div>
+                <br>
+                <br>
+
+
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="widget no-box ">
+                        <h5 class="widget-title">Custom Services<span></span></h5>
+                        <p>Delivery</p>
+                        <p>Returns and complaints</p>
+                        <p> Cookie Policy</p>
+                        <p> Pixel disclaimer</p>
+                        <p> Competition Terms</p>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="row footer-bottom">
+
+            </div>
+            <div class="footer-copyright ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <p>Copyright Design Sherif Hamdy © 2019. All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/heroes/hero-1/assets/css/hero-1.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script> AOS.init(); </script>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-responsive.css">
+<!-- Bootstrap CSS -->
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
+<!-- Font Awesome CSS -->
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
+<link href='//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' />
+
+</html>
