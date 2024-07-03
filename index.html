@@ -167,7 +167,6 @@
             transform: scale(1.1);
         }
 
-        *,
         :after,
         :before {
             box-sizing: border-box
@@ -184,16 +183,10 @@
             display: block
         }
 
-        a {
-            color: inherit;
-            text-decoration: none
-        }
-
         .login-wrap {
             width: 100%;
-            margin: auto;
             max-width: 525px;
-            min-height: 670px;
+            min-height: 570px;
             position: relative;
             box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
         }
@@ -202,7 +195,7 @@
             width: 100%;
             height: 100%;
             position: absolute;
-            padding: 90px 70px 50px 70px;
+            padding: 10px 70px 50px 70px;
             background: rgba(40, 57, 101, .9);
         }
 
@@ -234,7 +227,7 @@
             font-size: 22px;
             margin-right: 15px;
             padding-bottom: 5px;
-            margin: 0 15px 10px 0;
+            margin: 20px 15px 10px 20px;
             display: inline-block;
             border-bottom: 2px solid transparent;
         }
@@ -242,7 +235,7 @@
         .login-html .sign-in:checked+.tab,
         .login-html .sign-up:checked+.tab {
             color: #fff;
-            border-color: #1161ee;
+            border-color: #000000;
         }
 
         .login-form {
@@ -250,10 +243,6 @@
             position: relative;
             perspective: 1000px;
             transform-style: preserve-3d;
-        }
-
-        .login-form .group {
-            margin-bottom: 15px;
         }
 
         .login-form .group .label,
@@ -278,12 +267,13 @@
         }
 
         .login-form .group .label {
-            color: #aaa;
+            color: #ffffff;
             font-size: 12px;
         }
 
         .login-form .group .button {
-            background: #1161ee;
+            background: #ffc898;
+            margin-top: 10px;
         }
 
         .login-form .group label .icon {
@@ -300,7 +290,7 @@
             content: '';
             width: 10px;
             height: 2px;
-            background: rgba(40, 57, 101, .9);
+            background: rgba(255, 255, 255, 0.9);
             position: absolute;
             transition: all .2s ease-in-out 0s;
         }
@@ -308,7 +298,6 @@
         .login-form .group label .icon:before {
             left: 3px;
             width: 5px;
-            bottom: 6px;
             transform: scale(0) rotate(0);
         }
 
@@ -323,7 +312,7 @@
         }
 
         .login-form .group .check:checked+label .icon {
-            background: #1161ee;
+            background: #ffffff;
         }
 
         .login-form .group .check:checked+label .icon:before {
@@ -342,14 +331,9 @@
             transform: rotate(0);
         }
 
-        .hr {
-            height: 2px;
-            margin: 60px 0 50px 0;
-            background: rgba(255, 255, 255, .2);
-        }
-
-        .foot-lnk {
+        .foot-text{
             text-align: center;
+            color: white ;
         }
 
         .modal-body {
@@ -885,6 +869,12 @@
             }
 
         }
+
+        .input::placeholder {
+            color: rgb(190, 237, 255);
+            /* or any color you prefer */
+        }
+      
     </style>
 </head>
 
@@ -932,63 +922,54 @@
                                 <span aria-hidden="true ">x</span>
                             </button>
                         </div>
-                        <div class="modal-body">
-                            <div class="login-wrap">
-                                <div class="login-html">
-                                    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
-                                        class="tab">Sign In</label>
-                                    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2"
-                                        class="tab">Sign Up</label>
-                                    <div class="login-form">
-                                        <div class="sign-in-htm">
-                                            <div class="group">
-                                                <h4 class="text-light">Login with your site account
-                                                    </h>
-                                                    <label for="user" class="label">Username</label>
-                                                    <input id="user" type="text" class="input">
-                                            </div>
-                                            <div class="group">
-                                                <label for="pass" class="label">Password</label>
-                                                <input id="pass" type="password" class="input" data-type="password">
-                                            </div>
-                                            <div class="group">
-                                                <input id="check" type="checkbox" class="check" checked>
-                                                <label for="check"><span class="icon"></span> Keep me Signed in</label>
-                                            </div>
-                                            <div class="group">
-                                                <input type="submit" class="button" value="Sign In">
-                                            </div>
-                                            <div class="hr"></div>
-                                            <div class="foot-lnk">
-                                                <a href="#forgot">Forgot Password?</a>
-                                            </div>
+                        <div class="login-wrap">
+                            <div class="login-html">
+                                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
+                                    class="tab" style="color: #ffc898;">Sign In</label>
+                                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"
+                                    style="color: #ffc898;">Sign Up</label>
+                                <div class="login-form">
+                                    <div class="sign-in-htm">
+                                        <div class="group" style="padding-bottom: 20px;">
+                                            <h4 class="text-light">Login with your site account
+                                                </h>
+                                                <input id="user" type="text" placeholder="Username" class="input"
+                                                    style="margin-top: 30px; color: #4b92dc;">
                                         </div>
-                                        <div class="sign-up-htm">
-                                            <div class="group">
-                                                <h3 class="text-light">Register a new account</h3>
-                                                <label for="user" class="label"> Username</label>
-                                                <input id="user" type="text" class="input">
-                                            </div>
-                                            <div class="group">
-                                                <label for="pass" class="label">Email Address</label>
-                                                <input id="pass" type="text" class="input">
-                                            </div>
-                                            <div class="group">
-                                                <label for="pass" class="label">Password</label>
-                                                <input id="pass" type="password" class="input" data-type="password">
-                                            </div>
-                                            <div class="group">
-                                                <label for="pass" class="label">Repeat Password</label>
-                                                <input id="pass" type="password" class="input" data-type="password">
-                                            </div>
+                                        <div class="group">
+                                            <input id="pass" type="text" placeholder="Password" class="input"
+                                                data-type="password">
+                                        </div>
+                                        <div class="group">
+                                            <input id="check" type="checkbox" class="check" checked>
+                                            <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                                        </div>
+                                        <div class="group">
+                                            <input type="submit" class="button text-dark" value="Sign In">
+                                        </div>
+                                        <div class="foot-text">
+                                            <a href="#forgot">Forgot your Password?</a>
+                                        </div>
+                                    </div>
+                                    <div class="sign-up-htm p-3">
+                                        <div class="group">
+                                            <h3 class="text-light">Register a new account</h3>
+                                            <input id="user" type="text" placeholder=" Username" class="input">
+                                        </div>
+                                        <div class="group">
+                                            <input id="pass" type="text" placeholder="Email Address" class="input">
+                                        </div>
+                                        <div class="group">
+                                            <input id="pass" type="text" placeholder="Password" class="input"
+                                                data-type="password">
+                                        </div>
+                                        <div class="group">
+                                            <input id="pass" type="text" placeholder="Repeat Password" class="input"
+                                                data-type="password">
+                                        </div>
 
-                                            <div class="group">
-                                                <input type="submit" class="button" value="Sign Up">
-                                            </div>
-                                            <div class="hr"></div>
-                                            <div class="foot-lnk">
-                                                <label for="tab-1">Already Member?</a>
-                                            </div>
+                                        <div class="group">
+                                            <input type="submit" class="button text-dark" value="Sign Up">
                                         </div>
                                     </div>
                                 </div>
@@ -997,7 +978,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </nav>
     <div class="header">
         <nav class="header navbar navbar-expand-lg navbar-light bg-light ">
@@ -1353,15 +1333,21 @@
                 <ul class="nav nav-tabs custom_tab_style2" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#Profile2"
-                            type="button" role="tab" aria-controls="home" aria-selected="true"><h2>Popular</h2></button>
+                            type="button" role="tab" aria-controls="home" aria-selected="true">
+                            <h2>Popular</h2>
+                        </button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#Gallery2"
-                            type="button" role="tab" aria-controls="profile" aria-selected="false"><h2>Best seller</h2></button>
+                            type="button" role="tab" aria-controls="profile" aria-selected="false">
+                            <h2>Best seller</h2>
+                        </button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="top-tab" data-bs-toggle="tab" data-bs-target="#Profile3"
-                            type="button" role="tab" aria-controls="top" aria-selected="true"><h2>Top rated</h2></button>
+                            type="button" role="tab" aria-controls="top" aria-selected="true">
+                            <h2>Top rated</h2>
+                        </button>
                     </li>
                 </ul>
 
@@ -1614,7 +1600,8 @@
                                         </div><!-- END CARD -->
 
                                     </div><!-- END CARD DECK -->
-                                </div><!-- END CONTAINER --><div class="cards col-lg-3 col-md-3 col-sm-6">
+                                </div><!-- END CONTAINER -->
+                                <div class="cards col-lg-3 col-md-3 col-sm-6">
                                     <div class="card-deck flex-row flex-nowrap">
 
                                         <div class="card">
@@ -1630,7 +1617,8 @@
                                         </div><!-- END CARD -->
 
                                     </div><!-- END CARD DECK -->
-                                </div><!-- END CONTAINER --><div class="cards col-lg-3 col-md-3 col-sm-6">
+                                </div><!-- END CONTAINER -->
+                                <div class="cards col-lg-3 col-md-3 col-sm-6">
                                     <div class="card-deck flex-row flex-nowrap">
 
                                         <div class="card">
@@ -1655,6 +1643,53 @@
         </div>
     </div>
 
+    <div class="container p-5 text-center" style="height: 600px;">
+        <div class="container-fluid rounded text-center p-5 " style="background-color:#003aaa;  height: 90%;">
+            <div class="row pb-5">
+                <div class="text col-lg-4">
+                    <h3> Deals of the week</h3>
+                    <h2> Back to school</h2>
+                    <large>SALE UPTO -------</large>
+                    <h1>
+                        <large> 30% <small>off</small></large>
+                    </h1>
+                    <P>
+                        <large>-------All products</large>
+                    </P>
+                    <button class="btn btn-lg btn-outline-light mt-5 text-dark" style="background-color: #ffc898 ;">VIEW
+                        ALL</button>
+                </div>
+                <div class="card-deck flex-row flex-nowrap col-lg-4">
+                    <div class="container-fluid">
+                        <a href="#"><div class="card" style="background-color: #ffc898; height: 95%;">
+                           <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Gold-4.jpg"
+                                alt="">
+                            <!-- THIS DIV IS NOT CLICKABLE BUT I WANT IT TO BE -->
+                            <div class="card-body">
+                                <h3 class="card-title">Notebook With Pen A6 Black/Gold</h3>
+                                <p class="card-text">$26.00</p>
+                            </div><!-- END CARD-BODY -->
+                        </div></a>
+                    </div><!-- END CARD -->
+                </div>
+                <div class="card-deck flex-row flex-nowrap col-lg-4">
+                    <div class="container-fluid">
+                        <div class="card" style="background-color: #ffc898; height: 95%;">
+                          <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Costway-48-Computer-Desk-Study-Workstation-Laptop-Table-Home-Office-5.jpg"
+                                alt=""></a>
+                            <!-- THIS DIV IS NOT CLICKABLE BUT I WANT IT TO BE -->
+                            <div class="card-body">
+                                <h3 class="card-sub align-middle">Computer Desk Study</h3>
+                                <p class="time-card">$299.00.
+                                </p>
+                            </div><!-- END CARD-BODY -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- END CARD -->
+    </div><!-- END CARD DECK -->
+    </div><!-- END CONTAINER -->
 
 </body>
 
