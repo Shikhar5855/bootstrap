@@ -331,9 +331,9 @@
             transform: rotate(0);
         }
 
-        .foot-text{
+        .foot-text {
             text-align: center;
-            color: white ;
+            color: white;
         }
 
         .modal-body {
@@ -829,6 +829,120 @@
             padding: 10px;
         }
 
+
+
+        .container {
+            height: 100%;
+            width: 50%;
+        }
+
+        .rating-wrapper {
+            align-self: center;
+            box-shadow: 7px 7px 25px rgba(31, 31, 34, 0.7),
+                -7px -7px 35px rgba(31, 31, 34, 0.7),
+                inset 0px 0px 4px rgba(255, 255, 255, .9),
+                inset 7px 7px 15px rgba(198, 206, 237, .8);
+            border-radius: 5rem;
+            display: inline-flex;
+            direction: rtl !important;
+            margin-left: auto;
+
+
+            .label {
+                color: #000000;
+                cursor: pointer;
+                display: inline-flex;
+                font-size: 3rem;
+                padding: 1rem .6rem;
+                transition: color 0.5s;
+            }
+
+            svg {
+                -webkit-text-fill-color: transparent;
+                -webkit-filter: drop-shadow (4px 1px 6px rgb(1, 1, 1));
+                filter: drop-shadow(5px 1px 3px rgba(198, 206, 237, 1));
+            }
+
+            input {
+                height: 80%;
+                width: 80%;
+            }
+
+            input {
+                display: none;
+            }
+
+            label:hover,
+            label:hover~label,
+            input:checked~label {
+                color: #cdea25;
+            }
+
+            label:hover,
+            label:hover~label,
+            input:checked~label {
+                color: #cdea25;
+            }
+        }
+
+        .container-fluid-card {
+            padding: 1.5em .5em .5em;
+            border-radius: 2em;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+        }
+
+        
+        .rating-wrappers {
+            align-self: center;
+            box-shadow: 7px 7px 25px rgba(31, 31, 34, 0.7),
+                -7px -7px 35px rgba(31, 31, 34, 0.7),
+                inset 0px 0px 4px rgba(255, 255, 255, .9),
+                inset 7px 7px 15px rgba(198, 206, 237, .8);
+            border-radius: 5rem;
+            display: inline-flex;
+            direction: rtl !important;
+            margin-left: auto;
+
+
+            .label {
+                color: #000000;
+                cursor: pointer;
+                display: inline-flex;
+                font-size: 3rem;
+                padding: 1rem .6rem;
+                transition: color 0.5s;
+            }
+
+            svg {
+                -webkit-text-fill-color: transparent;
+                -webkit-filter: drop-shadow (4px 1px 6px rgb(1, 1, 1));
+                filter: drop-shadow(5px 1px 3px rgba(198, 206, 237, 1));
+            }
+
+            input {
+                height: 80%;
+                width: 80%;
+            }
+
+            input {
+                display: none;
+            }
+
+            label:hover,
+            label:hover~label,
+            input:checked~label {
+                color: #cdea25;
+            }
+
+            label:hover,
+            label:hover~label,
+            input:checked~label {
+                color: #cdea25;
+            }
+        }
+
+
         @media only screen and (max-width:991px) {
             .navbar-nav.navbar-center {
                 display: none;
@@ -874,7 +988,136 @@
             color: rgb(190, 237, 255);
             /* or any color you prefer */
         }
-      
+
+        .carde {
+            padding: 50px;
+        }
+
+        .carde:hover {
+            background: #172059;
+            color: rgb(255, 255, 255);
+            transition: 1s;
+        }
+
+        #cards_landscape_wrap-2 {
+            text-align: center;
+            background: #F7F7F7;
+        }
+
+        #cards_landscape_wrap-2 .container {
+            padding-top: 5px;
+            padding-bottom: 10px;
+        }
+
+        #cards_landscape_wrap-2 a {
+            text-decoration: none;
+            outline: none;
+        }
+
+        #cards_landscape_wrap-2 .card-flyer {
+            border-radius: 5px;
+        }
+
+        #cards_landscape_wrap-2 .card-flyer .image-box {
+            background: #ffffff;
+            overflow: hidden;
+            box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
+            border-radius: 5px;
+        }
+
+        #cards_landscape_wrap-2 .card-flyer .image-box img {
+            -webkit-transition: all .9s ease;
+            -moz-transition: all .9s ease;
+            -o-transition: all .9s ease;
+            -ms-transition: all .9s ease;
+            width: 100%;
+            height: 200px;
+        }
+
+        #cards_landscape_wrap-2 .card-flyer:hover .image-box img {
+            opacity: 0.7;
+            -webkit-transform: scale(1.15);
+            -moz-transform: scale(1.15);
+            -ms-transform: scale(1.15);
+            -o-transform: scale(1.15);
+            transform: scale(1.15);
+        }
+
+        #cards_landscape_wrap-2 .card-flyer .text-box {
+            text-align: center;
+        }
+
+        #cards_landscape_wrap-2 .card-flyer .text-box .text-container {
+            padding: 30px 18px;
+        }
+
+        #cards_landscape_wrap-2 .card-flyer {
+            background: #FFFFFF;
+            margin-top: 50px;
+            -webkit-transition: all 1s ease-in;
+            -moz-transition: all 1s ease-in;
+            -ms-transition: all 1s ease-in;
+            -o-transition: all 1s ease-in;
+            transition: all 1s ease-in;
+            box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40);
+        }
+
+        #cards_landscape_wrap-2 .card-flyer:hover {
+            background: #fff;
+            box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+            -webkit-transition: all 1s ease-in;
+            -moz-transition: all 1s ease-in;
+            -ms-transition: all 1s ease-in;
+            -o-transition: all 1s ease-in;
+            transition: all 1s ease-in;
+            margin-top: 50px;
+        }
+
+        #cards_landscape_wrap-2 .card-flyer .text-box p {
+            margin-top: 10px;
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            color: #000000;
+        }
+
+        #cards_landscape_wrap-2 .card-flyer .text-box h6 {
+            margin-top: 0px;
+            margin-bottom: 4px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: 'Roboto Black', sans-serif;
+            letter-spacing: 1px;
+            color: #172059;
+        }
+
+        .button2 {
+            background-color: white;
+            color: black;
+            border: 2px solid #172059;
+        }
+
+        .button2:hover {
+            background-color: #172059;
+            color: white;
+        }
+
+        .ratings {
+            margin-right: 10px;
+
+        }
+
+        .ratings i {
+
+            color: #cecece;
+            font: size 18px;
+        }
+
+        .rating-color {
+            color: #fbc634 !important;
+        }
     </style>
 </head>
 
@@ -1133,36 +1376,46 @@
                 aria-label="Slide 3"></button>
         </div>
         <div class=" carousel-inner">
-            <div class="carousel-item active" style="background-color: #00776E">
-                <div class="heading d-block text-light mt-5">
-                    <p>Back to school SALE UP TO 50%</p>
+            <div class="row carousel-item active" style="background-color: #00776E">
+                <div class="heading d-block text-light mt-5 col-lg-4">
+                    <p>
+                    <h4>Back to school SALE UP TO 50% </h4>
+                    </p>
                     <h1>Everything For Office & School Supplies </h1>
-                    <button class="btn btn-lg btn-outline-light mt-5">SHOP NOW</button>
-                    <img class=" d-block float-right w-50"
-                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/banner-slider5-3.png"
-                        alt="First slide">
                 </div>
+                <button class="btn btn-lg btn-outline-light float-left col-lg-2"
+                    style="margin-top: 100px; margin-left: 220px;">SHOP NOW</button>
+                <img class=" d-block float-right w-50 col-lg-6 "
+                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/banner-slider5-3.png"
+                    alt="First slide">
             </div>
             <div class="carousel-item" style="background-color: #26507F;">
-                <div class="heading d-block text-light mt-5">
-                    <p class="fw-bolder">Back to school SALE UP TO 50%</p>
-                    <h1 class="mt-5">Everything For Office & School Supplies </h1>
-                    <button class="btn btn-lg btn-outline-light mt-5">SHOP NOW</button>
-                    <img class="d-block float-right w-50"
+                <div class="heading d-block text-light mt-5 col-lg-4">
+                    <p>
+                    <h4>Back to school SALE UP TO 50% </h4>
+                    </p>
+                    <h1>Everything For Office & School Supplies </h1>
+                </div>
+                <button class="btn btn-lg btn-outline-light float-left col-lg-2"
+                style="margin-top: 100px; margin-left: 220px;">SHOP NOW</button>
+                    <img class="d-block float-right w-50 col-lg-6"
                         src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/bannerslider1-1.png"
                         alt="Second slide">
-                </div>
             </div>
             <div class="carousel-item" style="background-color: #CEB096;">
-                <div class="heading d-block text-light mt-5">
-                    <p class="fw-bolder">Back to school SALE UP TO 50%</p>
-                    <h1 class="mt-5">Everything For Office & School Supplies </h1>
-                    <button class="btn btn-lg btn-outline-light mt-5">SHOP NOW</button>
-                    <img class="d-block float-right w-50"
+                <div class="heading d-block text-light mt-5 col-lg-4">
+                    <p>
+                    <h4>Back to school SALE UP TO 50% </h4>
+                    </p>
+                    <h1>Everything For Office & School Supplies </h1>
+                </div>
+                <button class="btn btn-lg btn-outline-light float-left col-lg-2"
+                style="margin-top: 100px; margin-left: 220px;">SHOP NOW</button>
+                    <img class="d-block float-right w-50 col-lg-6"
                         src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/bannerslider2-1.png"
                         alt="Third slide">
-                </div>
             </div>
+    </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -1173,7 +1426,6 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
-        </div>
     </div>
 
     <!-- owl carousel
@@ -1334,19 +1586,19 @@
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#Profile2"
                             type="button" role="tab" aria-controls="home" aria-selected="true">
-                            <h2>Popular</h2>
+                            <h3>Popular</h>
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#Gallery2"
                             type="button" role="tab" aria-controls="profile" aria-selected="false">
-                            <h2>Best seller</h2>
+                            <h3>Best seller</h3>
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="top-tab" data-bs-toggle="tab" data-bs-target="#Profile3"
                             type="button" role="tab" aria-controls="top" aria-selected="true">
-                            <h2>Top rated</h2>
+                            <h3>Top rated</h3>
                         </button>
                     </li>
                 </ul>
@@ -1373,7 +1625,7 @@
                                     </div><!-- END CARD DECK -->
                                 </div><!-- END CONTAINER -->
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap">
+                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
                                         <div class="card">
                                             <a href="#"><img
@@ -1390,7 +1642,7 @@
                                     </div><!-- END CARD DECK -->
                                 </div><!-- END CONTAINER -->
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap">
+                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
                                         <div class="card">
                                             <a href="#"><img
@@ -1406,7 +1658,7 @@
                                     </div>
                                 </div><!-- END CARD DECK -->
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap">
+                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
                                         <div class="card">
                                             <a href="#"><img
@@ -1422,7 +1674,7 @@
                                     </div><!-- END CARD DECK -->
                                 </div><!-- END CONTAINER -->
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap">
+                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
                                         <div class="card">
                                             <a href="#"><img
@@ -1438,7 +1690,7 @@
                                     </div><!-- END CARD DECK -->
                                 </div><!-- END CONTAINER -->
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap">
+                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
                                         <div class="card">
                                             <a href="#"><img
@@ -1454,7 +1706,7 @@
                                     </div><!-- END CARD DECK -->
                                 </div><!-- END CONTAINER -->
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap">
+                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
                                         <div class="card">
                                             <a href="#"><img
@@ -1470,7 +1722,7 @@
                                     </div><!-- END CARD DECK -->
                                 </div><!-- END CONTAINER -->
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap">
+                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
                                         <div class="card">
                                             <a href="#"><img
@@ -1492,7 +1744,7 @@
                         <div class="member">
                             <div class="row p-3 ">
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap">
+                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
                                         <div class="card">
                                             <a href="#"><img
@@ -1509,7 +1761,7 @@
                                     </div><!-- END CARD DECK -->
                                 </div><!-- END CONTAINER -->
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap">
+                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
                                         <div class="card">
                                             <a href="#"><img
@@ -1526,7 +1778,7 @@
                                     </div><!-- END CARD DECK -->
                                 </div><!-- END CONTAINER -->
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap">
+                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
                                         <div class="card">
                                             <a href="#"><img
@@ -1543,7 +1795,7 @@
                                     </div><!-- END CARD DECK -->
                                 </div><!-- END CONTAINER -->
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap">
+                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
                                         <div class="card">
                                             <a href="#"><img
@@ -1566,7 +1818,7 @@
                         <div class="member">
                             <div class="row p-3 ">
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap">
+                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
                                         <div class="card">
                                             <a href="#"><img
@@ -1584,7 +1836,7 @@
                                     </div><!-- END CARD DECK -->
                                 </div><!-- END CONTAINER -->
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap">
+                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
                                         <div class="card">
                                             <a href="#"><img
@@ -1602,7 +1854,7 @@
                                     </div><!-- END CARD DECK -->
                                 </div><!-- END CONTAINER -->
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap">
+                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
                                         <div class="card">
                                             <a href="#"><img
@@ -1619,7 +1871,7 @@
                                     </div><!-- END CARD DECK -->
                                 </div><!-- END CONTAINER -->
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap">
+                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
                                         <div class="card">
                                             <a href="#"><img
@@ -1642,57 +1894,321 @@
             </div>
         </div>
     </div>
-
-    <div class="container p-5 text-center" style="height: 600px;">
-        <div class="container-fluid rounded text-center p-5 " style="background-color:#003aaa;  height: 90%;">
-            <div class="row pb-5">
-                <div class="text col-lg-4">
-                    <h3> Deals of the week</h3>
+    <h2 class="text-center primary mt-4"> SALE! SALE! SALE!</h2>
+    <div class="container-fluid text-center" style="margin-bottom: 50px; padding: 110px;">
+        <div class="container-fluid-card text-center  " style="background-color:#003aaa;  height: 100%; width: 100%;">
+            <div class="row ">
+                <div class="text col-lg-4 " style="margin-top: 50px;">
+                    <h5> Deals of the week</h5>
                     <h2> Back to school</h2>
-                    <large>SALE UPTO -------</large>
+                    <p></p>
+
+                    <large class=" p-3">
+                        <h1>SALE UPTO ------- </h1>
+                    </large>
                     <h1>
-                        <large> 30% <small>off</small></large>
+                        <large style="color: rgb(255, 247, 0);">30%</large> <small>off</small></large>
                     </h1>
                     <P>
-                        <large>-------All products</large>
+                        <large class=" p-3">
+                            <h1>-------All products </h1>
+                        </large>
                     </P>
                     <button class="btn btn-lg btn-outline-light mt-5 text-dark" style="background-color: #ffc898 ;">VIEW
                         ALL</button>
                 </div>
-                <div class="card-deck flex-row flex-nowrap col-lg-4">
-                    <div class="container-fluid">
-                        <a href="#"><div class="card" style="background-color: #ffc898; height: 95%;">
-                           <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Gold-4.jpg"
-                                alt="">
-                            <!-- THIS DIV IS NOT CLICKABLE BUT I WANT IT TO BE -->
-                            <div class="card-body">
-                                <h3 class="card-title">Notebook With Pen A6 Black/Gold</h3>
+                <div class="card-deck flex-row flex-nowrap col-lg-4 col-md-6 ">
+                    <div class="container-fluid ">
+                        <a href="#">
+                            <div class="card"
+                                style="background-color: #ffc898; height: 100%; width: 100%; border-radius: 2em; ">
+                                <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Gold-4.jpg"
+                                    alt="" style="padding: 20px;  border-radius: 2em; "">
+                                <!-- THIS DIV IS NOT CLICKABLE BUT I WANT IT TO BE -->
+                                <div class=" card-body">
+                                <h3 class="card-title">Notebook With Pen</h3>
                                 <p class="card-text">$26.00</p>
+                                <p>hurry! only 400 left in stock</p>
+                                <div class="progress mb-3">
+                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="container-wrapper">
+                                    <div class="container d-flex align-items-center justify-content-center">
+                                        <div class="row justify-content-center">
+
+                                            <!-- star rating -->
+                                            <div class="rating-wrapper" style="background-color: #003AAA;">
+
+                                                <!-- star 5 -->
+                                                <input type="radio" id="5-star-rating" name="star-rating" value="5">
+                                                <label for="5-star-rating" class="star-rating">
+                                                    <i class="fas fa-star d-inline-block"></i>
+                                                </label>
+
+                                                <!-- star 4 -->
+                                                <input type="radio" id="4-star-rating" name="star-rating" value="4">
+                                                <label for="4-star-rating" class="star-rating star">
+                                                    <i class="fas fa-star d-inline-block"></i>
+                                                </label>
+
+                                                <!-- star 3 -->
+                                                <input type="radio" id="3-star-rating" name="star-rating" value="3">
+                                                <label for="3-star-rating" class="star-rating star">
+                                                    <i class="fas fa-star d-inline-block"></i>
+                                                </label>
+
+                                                <!-- star 2 -->
+                                                <input type="radio" id="2-star-rating" name="star-rating" value="2">
+                                                <label for="2-star-rating" class="star-rating star">
+                                                    <i class="fas fa-star d-inline-block"></i>
+                                                </label>
+
+                                                <!-- star 1 -->
+                                                <input type="radio" id="1-star-rating" name="star-rating" value="1">
+                                                <label for="1-star-rating" class="star-rating star">
+                                                    <i class="fas fa-star d-inline-block"></i>
+                                                </label>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div><!-- END CARD-BODY -->
-                        </div></a>
-                    </div><!-- END CARD -->
-                </div>
-                <div class="card-deck flex-row flex-nowrap col-lg-4">
-                    <div class="container-fluid">
-                        <div class="card" style="background-color: #ffc898; height: 95%;">
-                          <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Costway-48-Computer-Desk-Study-Workstation-Laptop-Table-Home-Office-5.jpg"
-                                alt=""></a>
+                    </div>
+                    </a>
+                </div><!-- END CARD -->
+            </div>
+            <div class="card-deck flex-row flex-nowrap col-lg-4 col-md-6">
+                <div class="container-fluid">
+                    <a href="#">
+                        <div class="card"
+                            style="background-color: #ffc898; height: 100%; width: 100%; border-radius: 2em;">
+                            <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Costway-48-Computer-Desk-Study-Workstation-Laptop-Table-Home-Office-5.jpg"
+                                alt="" style="padding: 20px; border-radius: 2em; ">
                             <!-- THIS DIV IS NOT CLICKABLE BUT I WANT IT TO BE -->
                             <div class="card-body">
                                 <h3 class="card-sub align-middle">Computer Desk Study</h3>
-                                <p class="time-card">$299.00.
+                                <p class="time-card " style="position: relative;">$299.00.
                                 </p>
+                                <p>hurry! only 250 left in stock</p>
+                                <div class="progress mb-3">
+                                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="container-wrappers">
+                                    <div class="containers d-flex align-items-center justify-content-center">
+                                        <div class="row justify-content-center">
+
+                                            <!-- star rating -->
+                                            <div class="rating-wrappers" style="background-color: #003AAA;">
+
+                                                <!-- star 5 -->
+                                                <input type="radio" id="5-star-ratings" name="star-ratings" value="5">
+                                                <label for="5-star-ratings" class="star-ratings">
+                                                    <i class="fas fa-star d-inline-block"></i>
+                                                </label>
+
+                                                <!-- star 4 -->
+                                                <input type="radio" id="4-star-ratings" name="star-ratings" value="4">
+                                                <label for="4-star-ratings" class="star-ratings star">
+                                                    <i class="fas fa-star d-inline-block"></i>
+                                                </label>
+
+                                                <!-- star 3 -->
+                                                <input type="radio" id="3-star-ratings" name="star-ratings" value="3">
+                                                <label for="3-star-ratings" class="star-ratings star">
+                                                    <i class="fas fa-star d-inline-block"></i>
+                                                </label>
+
+                                                <!-- star 2 -->
+                                                <input type="radio" id="2-star-ratings" name="star-ratings" value="2">
+                                                <label for="2-star-ratings" class="star-ratings star">
+                                                    <i class="fas fa-star d-inline-block"></i>
+                                                </label>
+
+                                                <!-- star 1 -->
+                                                <input type="radio" id="1-star-ratings" name="star-ratings" value="1">
+                                                <label for="1-star-ratings" class="star-ratings star">
+                                                    <i class="fas fa-star d-inline-block"></i>
+                                                </label>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div><!-- END CARD-BODY -->
                         </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div><!-- END CARD -->
+    </div><!-- END CARD DECK -->
+    </div><!-- END CONTAINER -->
+    <div class="row m-3 p-3 text-center ">
+        <h2 style="margin-bottom: 50px;">We provide the best solutions</h2>
+        <div class="carde col-lg-4 col-md-4 " style="border-radius: 2em;">
+            <i class="bi bi-pencil-fill"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pencil-fill"
+                viewBox="0 0 16 16">
+                <path
+                    d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" />
+            </svg>
+            <h5 class="card-title">
+                <h3>School solutions</h3>
+            </h5>
+            <p class="card-text m-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut feugiat mi.
+                Nunc tincidunt, ante rutrum varius molli</p>
+            <a class="link" href="#">Read more</a>
+        </div>
+        <div class="carde col-lg-4 col-md-4 " style="border-radius: 2em;">
+            <i class="bi bi-building"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-building"
+                viewBox="0 0 16 16">
+                <path
+                    d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
+                <path
+                    d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1zm11 0H3v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3z" />
+            </svg>
+            <h5 class="card-title">
+                <h3>Office solutions</h3>
+            </h5>
+            <p class="card-text m-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut feugiat mi.
+                Nunc tincidunt, ante rutrum varius molli</p>
+            <a href="#">Read more</a>
+        </div>
+        <div class="carde col-lg-4 col-md-4 " style="border-radius: 2em;">
+            <i class="bi bi-buildings"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-buildings"
+                viewBox="0 0 16 16">
+                <path
+                    d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022M6 8.694 1 10.36V15h5zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5z" />
+                <path
+                    d="M2 11h1v1H2zm2 0h1v1H4zm-2 2h1v1H2zm2 0h1v1H4zm4-4h1v1H8zm2 0h1v1h-1zm-2 2h1v1H8zm2 0h1v1h-1zm2-2h1v1h-1zm0 2h1v1h-1zM8 7h1v1H8zm2 0h1v1h-1zm2 0h1v1h-1zM8 5h1v1H8zm2 0h1v1h-1zm2 0h1v1h-1zm0-2h1v1h-1z" />
+            </svg>
+            <h5 class="card-title">
+                <h3>University solutions</h3>
+            </h5>
+            <p class="card-text m-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut feugiat mi.
+                Nunc tincidunt, ante rutrum varius molli</p>
+            <a href="#">Read more</a>
+        </div>
+
+        <h1 style="padding: 20px;">From our blogs</h1>
+        <!-- This script got from frontendfreecode.com -->
+        <div id="cards_landscape_wrap-2">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-6 col-md-3 col-lg-4">
+                        <a href="">
+                            <div class="card-flyer">
+                                <div class="text-box">
+                                    <div class="image-box">
+                                        <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Blog-7-1.png"
+                                            alt="" />
+                                    </div>
+                                    <div class="text-container">
+                                        <h6>JAN 18, 2020</h6>
+                                        <p>The Best School Supplies For Remote Learning</p>
+                                        <a href="#">Read more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-4 col-sm-6 col-md-3 col-lg-4">
+                        <a href="">
+                            <div class="card-flyer">
+                                <div class="text-box">
+                                    <div class="image-box">
+                                        <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Blog-17.png"
+                                            alt="" />
+                                    </div>
+                                    <div class="text-container">
+                                        <h6>JAN 19, 2020</h6>
+                                        <p>Necessary School Supplies For The New School Year</p>
+                                        <a href="#">Read more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-4 col-sm-6 col-md-3 col-lg-4">
+                        <a href="">
+                            <div class="card-flyer">
+                                <div class="text-box">
+                                    <div class="image-box">
+                                        <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Blog-7.png"
+                                            alt="" />
+                                    </div>
+
+                                    <div class="text-container">
+                                        <h6>JAN 20, 2020</h6>
+                                        <p>How To Organize Your School Supplies and more</p>
+                                        <a href="#">Read more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div><!-- END CARD -->
-    </div><!-- END CARD DECK -->
-    </div><!-- END CONTAINER -->
+        </div>
+    </div>
+    <div class=" container-button text-center m-5 pb-2">
+        <button class="button button2 text-center"
+            style="height:60px;width: 200px; border-radius:12px; transition: 0.5s;">SEE MORE ARTICLES</button>
+    </div>
 
+    <h1 class="text-center mt-5 pt-5">Our clients say</h1>
+
+    <div class="row p-5 m-5 text-center">
+        <div class="card col-lg-6 " style="border-radius: 2em; background-color: #FCEDEA; ">
+            <div class="card-body">
+                <div class="ratings m-5">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                </div>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip consequat.</p>
+                <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/08/team-3.png"
+                    style="height: 55px;">
+                <a>
+                    <h6>Jessica Alna</h6>
+                </a>
+                <p>Michigan Ave, Chicago</p>
+            </div>
+        </div>
+        <div class="card col-lg-6 " style="border-radius: 2em; background-color: #F3F7FF;">
+            <div class="card-body">
+                <div class="ratings m-5">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                </div>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip consequat.</p>
+                <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/08/team-12.png"
+                    style="height: 55px;">
+                <a>
+                    <h6>Jessica Alna</h6>
+                </a>
+                <p>Michigan Ave, Chicago</p>
+            </div>
+        </div>
+    </div>
 </body>
-
 <footer id="footer" class="footer-1">
     <div class="main-footer widgets-dark typo-light">
         <div class="container">
@@ -1822,7 +2338,6 @@
                 </div>
             </div>
 </footer>
-
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
