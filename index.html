@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="css/bootstrap-responsive.css">
     <style>
         /* Custom styles for the header */
+
+        text-decoration: none !important;
+
         .navbar {
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
             /* Optional: Add shadow */
@@ -111,7 +114,7 @@
             background-color: rgba(255, 254, 254, 0.8);
         }
 
-      
+
         /* The dots/bullets/indicators */
         .dot {
             cursor: pointer;
@@ -1451,8 +1454,8 @@
             <span class="name">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">   
-             <span class="name">Next</span>
+            data-bs-slide="next">
+            <span class="name">Next</span>
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
         </button>
     </div>
@@ -1936,7 +1939,8 @@
                         <h1>SALE UPTO ------- </h1>
                     </large>
                     <h1>
-                        <large style="color: rgb(255, 247, 0); font-size: larger; font-weight: 900;">30%</large> <small>off</small></large>
+                        <large style="color: rgb(255, 247, 0); font-size: larger; font-weight: 900;">30%</large>
+                        <small>off</small></large>
                     </h1>
                     <P>
                         <large class=" p-3">
@@ -1952,129 +1956,136 @@
                             <div class="card"
                                 style="background-color: #ffc898; height: 100%; width: 100%; border-radius: 2em; ">
                                 <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Gold-4.jpg"
-                                    alt="" style="padding: 20px;  border-radius: 2em; "">
+                                    alt="" style="padding: 20px;  border-radius: 2em; ">
                                 <!-- THIS DIV IS NOT CLICKABLE BUT I WANT IT TO BE -->
                                 <div class=" card-body">
-                                <h3 class="card-title">Notebook With Pen</h3>
-                                <p class="card-text">$26.00</p>
-                                <p>hurry! only 400 left in stock</p>
-                                <div class="progress mb-3">
-                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="container-wrapper">
-                                    <div class="container d-flex align-items-center justify-content-center">
-                                        <div class="row justify-content-center">
+                                    <h3 class="card-title">Notebook With Pen</h3>
+                                    <p class="card-text">$26.00</p>
+                                    <p>hurry! only 400 left in stock</p>
+                                    <div class="progress mb-3" style="border-radius: 50px;">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+                                            role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="container-wrapper">
+                                        <div class="container d-flex align-items-center justify-content-center">
+                                            <div class="row justify-content-center">
 
-                                            <!-- star rating -->
-                                            <div class="rating-wrapper" style="background-color:#003aaa ;">
+                                                <!-- star rating -->
+                                                <div class="rating-wrapper" style="background-color:#003aaa ;">
 
-                                                <!-- star 5 -->
-                                                <input type="radio" id="5-star-rating" name="star-rating" value="5">
-                                                <label for="5-star-rating" class="star-rating">
-                                                    <i class="fas fa-star d-inline-block"></i>
-                                                </label>
+                                                    <!-- star 5 -->
+                                                    <input type="radio" id="5-star-rating" name="star-rating" value="5">
+                                                    <label for="5-star-rating" class="star-rating">
+                                                        <i class="fas fa-star d-inline-block"></i>
+                                                    </label>
 
-                                                <!-- star 4 -->
-                                                <input type="radio" id="4-star-rating" name="star-rating" value="4">
-                                                <label for="4-star-rating" class="star-rating star">
-                                                    <i class="fas fa-star d-inline-block"></i>
-                                                </label>
+                                                    <!-- star 4 -->
+                                                    <input type="radio" id="4-star-rating" name="star-rating" value="4">
+                                                    <label for="4-star-rating" class="star-rating star">
+                                                        <i class="fas fa-star d-inline-block"></i>
+                                                    </label>
 
-                                                <!-- star 3 -->
-                                                <input type="radio" id="3-star-rating" name="star-rating" value="3">
-                                                <label for="3-star-rating" class="star-rating star">
-                                                    <i class="fas fa-star d-inline-block"></i>
-                                                </label>
+                                                    <!-- star 3 -->
+                                                    <input type="radio" id="3-star-rating" name="star-rating" value="3">
+                                                    <label for="3-star-rating" class="star-rating star">
+                                                        <i class="fas fa-star d-inline-block"></i>
+                                                    </label>
 
-                                                <!-- star 2 -->
-                                                <input type="radio" id="2-star-rating" name="star-rating" value="2">
-                                                <label for="2-star-rating" class="star-rating star">
-                                                    <i class="fas fa-star d-inline-block"></i>
-                                                </label>
+                                                    <!-- star 2 -->
+                                                    <input type="radio" id="2-star-rating" name="star-rating" value="2">
+                                                    <label for="2-star-rating" class="star-rating star">
+                                                        <i class="fas fa-star d-inline-block"></i>
+                                                    </label>
 
-                                                <!-- star 1 -->
-                                                <input type="radio" id="1-star-rating" name="star-rating" value="1">
-                                                <label for="1-star-rating" class="star-rating star">
-                                                    <i class="fas fa-star d-inline-block"></i>
-                                                </label>
+                                                    <!-- star 1 -->
+                                                    <input type="radio" id="1-star-rating" name="star-rating" value="1">
+                                                    <label for="1-star-rating" class="star-rating star">
+                                                        <i class="fas fa-star d-inline-block"></i>
+                                                    </label>
+
+                                                </div>
 
                                             </div>
-
                                         </div>
                                     </div>
-                                </div>
 
-                            </div><!-- END CARD-BODY -->
+                                </div><!-- END CARD-BODY -->
+                            </div>
+                        </a>
+                    </div><!-- END CARD -->
+                </div>
+                <div class="card-deck flex-row flex-nowrap col-lg-4 col-md-6">
+                    <div class="container-fluid">
+                        <a href="#">
+                            <div class="card"
+                                style="background-color: #ffc898; height: 100%; width: 100%; border-radius: 2em;">
+                                <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Costway-48-Computer-Desk-Study-Workstation-Laptop-Table-Home-Office-5.jpg"
+                                    alt="" style="padding: 20px; border-radius: 2em; ">
+                                <!-- THIS DIV IS NOT CLICKABLE BUT I WANT IT TO BE -->
+                                <div class="card-body">
+                                    <h3 class="card-title">Computer Desk Study</h3>
+                                    <p class="card-text">$299.00.</p>
+                                    <p>hurry! only 250 left in stock</p>
+                                    <div class="progress mb-3 " style="border-radius: 50px;">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+                                            role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                            aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="container-wrappers">
+                                        <div class="containers d-flex align-items-center justify-content-center">
+                                            <div class="row justify-content-center">
+
+                                                <!-- star rating -->
+                                                <div class="rating-wrappers" style="background-color: #003AAA;">
+
+                                                    <!-- star 5 -->
+                                                    <input type="radio" id="5-star-ratings" name="star-ratings"
+                                                        value="5">
+                                                    <label for="5-star-ratings" class="star-ratings">
+                                                        <i class="fas fa-star d-inline-block"></i>
+                                                    </label>
+
+                                                    <!-- star 4 -->
+                                                    <input type="radio" id="4-star-ratings" name="star-ratings"
+                                                        value="4">
+                                                    <label for="4-star-ratings" class="star-ratings star">
+                                                        <i class="fas fa-star d-inline-block"></i>
+                                                    </label>
+
+                                                    <!-- star 3 -->
+                                                    <input type="radio" id="3-star-ratings" name="star-ratings"
+                                                        value="3">
+                                                    <label for="3-star-ratings" class="star-ratings star">
+                                                        <i class="fas fa-star d-inline-block"></i>
+                                                    </label>
+
+                                                    <!-- star 2 -->
+                                                    <input type="radio" id="2-star-ratings" name="star-ratings"
+                                                        value="2">
+                                                    <label for="2-star-ratings" class="star-ratings star">
+                                                        <i class="fas fa-star d-inline-block"></i>
+                                                    </label>
+
+                                                    <!-- star 1 -->
+                                                    <input type="radio" id="1-star-ratings" name="star-ratings"
+                                                        value="1">
+                                                    <label for="1-star-ratings" class="star-ratings star">
+                                                        <i class="fas fa-star d-inline-block"></i>
+                                                    </label>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- END CARD-BODY -->
+                            </div>
+                        </a>
                     </div>
-                    </a>
-                </div><!-- END CARD -->
-            </div>
-            <div class="card-deck flex-row flex-nowrap col-lg-4 col-md-6">
-                <div class="container-fluid">
-                    <a href="#">
-                        <div class="card"
-                            style="background-color: #ffc898; height: 100%; width: 100%; border-radius: 2em;">
-                            <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Costway-48-Computer-Desk-Study-Workstation-Laptop-Table-Home-Office-5.jpg"
-                                alt="" style="padding: 20px; border-radius: 2em; ">
-                            <!-- THIS DIV IS NOT CLICKABLE BUT I WANT IT TO BE -->
-                            <div class="card-body">
-                                <h3 class="card-title">Computer Desk Study</h3>
-                                <p class="card-text">$299.00.</p>
-                                <p>hurry! only 250 left in stock</p>
-                                <div class="progress mb-3">
-                                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="container-wrappers">
-                                    <div class="containers d-flex align-items-center justify-content-center">
-                                        <div class="row justify-content-center">
-
-                                            <!-- star rating -->
-                                            <div class="rating-wrappers" style="background-color: #003AAA;">
-
-                                                <!-- star 5 -->
-                                                <input type="radio" id="5-star-ratings" name="star-ratings" value="5">
-                                                <label for="5-star-ratings" class="star-ratings">
-                                                    <i class="fas fa-star d-inline-block"></i>
-                                                </label>
-
-                                                <!-- star 4 -->
-                                                <input type="radio" id="4-star-ratings" name="star-ratings" value="4">
-                                                <label for="4-star-ratings" class="star-ratings star">
-                                                    <i class="fas fa-star d-inline-block"></i>
-                                                </label>
-
-                                                <!-- star 3 -->
-                                                <input type="radio" id="3-star-ratings" name="star-ratings" value="3">
-                                                <label for="3-star-ratings" class="star-ratings star">
-                                                    <i class="fas fa-star d-inline-block"></i>
-                                                </label>
-
-                                                <!-- star 2 -->
-                                                <input type="radio" id="2-star-ratings" name="star-ratings" value="2">
-                                                <label for="2-star-ratings" class="star-ratings star">
-                                                    <i class="fas fa-star d-inline-block"></i>
-                                                </label>
-
-                                                <!-- star 1 -->
-                                                <input type="radio" id="1-star-ratings" name="star-ratings" value="1">
-                                                <label for="1-star-ratings" class="star-ratings star">
-                                                    <i class="fas fa-star d-inline-block"></i>
-                                                </label>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- END CARD-BODY -->
-                        </div>
-                    </a>
                 </div>
             </div>
-        </div>
-    </div><!-- END CARD -->
+        </div><!-- END CARD -->
     </div><!-- END CARD DECK -->
     </div><!-- END CONTAINER -->
     <div class="row m-3 p-3 text-center ">
