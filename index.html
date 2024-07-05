@@ -71,6 +71,7 @@
             margin: auto;
         }
 
+
         .carousel-item {
             height: 600px;
 
@@ -892,7 +893,7 @@
             box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
         }
 
-        
+
         .rating-wrappers {
             align-self: center;
             box-shadow: 7px 7px 25px rgba(31, 31, 34, 0.7),
@@ -1001,7 +1002,7 @@
 
         #cards_landscape_wrap-2 {
             text-align: center;
-            background: #F7F7F7;
+            background: #ffffff;
         }
 
         #cards_landscape_wrap-2 .container {
@@ -1031,7 +1032,7 @@
             -o-transition: all .9s ease;
             -ms-transition: all .9s ease;
             width: 100%;
-            height: 200px;
+
         }
 
         #cards_landscape_wrap-2 .card-flyer:hover .image-box img {
@@ -1117,6 +1118,45 @@
 
         .rating-color {
             color: #fbc634 !important;
+        }
+
+        .tang {
+            background-color: white;
+            color: #5a5a5a;
+            font-weight: 800;
+            box-shadow: -3px 2px 6px -1px rgba(0, 0, 0, .14);
+            font-size: 14px;
+            text-align: center;
+            padding: 3px 0;
+            -webkit-transition: background-color 20ms ease-out;
+            -ms-transition: background-color 20ms ease-out;
+            transition: background-color 20ms ease-out;
+            fill: #5a5a5a;
+        }
+
+        .tang:hover {
+            background-color: #000000;
+            color: white;
+            fill: white;
+            transition: 1s;
+        }
+
+        .company {
+            background-color: white;
+            color: #000000;
+            font-weight: 400;
+            box-shadow: -3px 2px 6px -1px rgba(0, 0, 0, .14);
+            font-size: 12px;
+            text-align: center;
+            padding: 3px 0;
+            -webkit-transition: background-color 20ms ease-out;
+            -ms-transition: background-color 20ms ease-out;
+            transition: background-color 20ms ease-out;
+        }
+
+        .company:hover {
+            zoom: 5%;
+            transition: 1s;
         }
     </style>
 </head>
@@ -1376,15 +1416,18 @@
                 aria-label="Slide 3"></button>
         </div>
         <div class=" carousel-inner">
-            <div class="row carousel-item active" style="background-color: #00776E">
+            <div class="carousel-item active" style="background-color: #00776E">
                 <div class="heading d-block text-light mt-5 col-lg-4">
                     <p>
                     <h4>Back to school SALE UP TO 50% </h4>
                     </p>
                     <h1>Everything For Office & School Supplies </h1>
                 </div>
-                <button class="btn btn-lg btn-outline-light float-left col-lg-2 col-md-2 col-sm-2"
-                    style="margin-top: 100px; margin-left: 220px;">SHOP NOW</button>
+                <button class="btn btn-lg btn-outline-light float-left col-lg-2 col-md-3 col-sm-4 col-6"
+                    style="margin-top: 100px; margin-left: 220px; margin-right: auto; display: block; width: fit-content;">
+                    SHOP NOW
+                </button>
+
                 <img class=" d-block float-right w-50 col-lg-6 "
                     src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/banner-slider5-3.png"
                     alt="First slide">
@@ -1396,11 +1439,14 @@
                     </p>
                     <h1>Everything For Office & School Supplies </h1>
                 </div>
-                <button class="btn btn-lg btn-outline-light float-left col-lg-2 col-md-2 col-sm-2"
-                style="margin-top: 100px; margin-left: 220px;">SHOP NOW</button>
-                    <img class="d-block float-right w-50 col-lg-6"
-                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/bannerslider1-1.png"
-                        alt="Second slide">
+                <button class="btn btn-lg btn-outline-light float-left col-lg-2 col-md-3 col-sm-4 col-6"
+                    style="margin-top: 100px; margin-left: 220px; margin-right: auto; display: block; width: fit-content;">
+                    SHOP NOW
+                </button>
+
+                <img class="d-block float-right w-50 col-lg-6"
+                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/bannerslider1-1.png"
+                    alt="Second slide">
             </div>
             <div class="carousel-item" style="background-color: #CEB096;">
                 <div class="heading d-block text-light mt-5 col-lg-4">
@@ -1409,23 +1455,25 @@
                     </p>
                     <h1>Everything For Office & School Supplies </h1>
                 </div>
-                <button class="btn btn-lg btn-outline-light float-left col-lg-2 col-md-2 col-sm-2"
-                style="margin-top: 100px; margin-left: 220px;">SHOP NOW</button>
-                    <img class="d-block float-right w-50 col-lg-6"
-                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/bannerslider2-1.png"
-                        alt="Third slide">
+                <button class="btn btn-lg btn-outline-light float-left col-lg-2 col-md-3 col-sm-4 col-6"
+                    style="margin-top: 100px; margin-left: 220px; margin-right: auto; display: block; width: fit-content;">
+                    SHOP NOW
+                </button>
+                <img class="d-block float-right w-50 col-lg-6"
+                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/bannerslider2-1.png"
+                    alt="Third slide">
             </div>
-    </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 
     <!-- owl carousel
@@ -1938,7 +1986,7 @@
                                         <div class="row justify-content-center">
 
                                             <!-- star rating -->
-                                            <div class="rating-wrapper" style="background-color: #003AAA;">
+                                            <div class="rating-wrapper" style="background-color:#003aaa ;">
 
                                                 <!-- star 5 -->
                                                 <input type="radio" id="5-star-rating" name="star-rating" value="5">
@@ -1990,9 +2038,8 @@
                                 alt="" style="padding: 20px; border-radius: 2em; ">
                             <!-- THIS DIV IS NOT CLICKABLE BUT I WANT IT TO BE -->
                             <div class="card-body">
-                                <h3 class="card-sub align-middle">Computer Desk Study</h3>
-                                <p class="time-card " style="position: relative;">$299.00.
-                                </p>
+                                <h3 class="card-title">Computer Desk Study</h3>
+                                <p class="card-text">$299.00.</p>
                                 <p>hurry! only 250 left in stock</p>
                                 <div class="progress mb-3">
                                     <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50"
@@ -2097,117 +2144,231 @@
                 Nunc tincidunt, ante rutrum varius molli</p>
             <a href="#">Read more</a>
         </div>
+    </div>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 g-4 text-center"
+            style="padding-left: 80px; padding-right: 80px; padding-bottom: 100px;">
+            <div class="col">
+                <a href="">
+                    <div class=" company zoom" style="border-radius: 25px;">
+                        <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/logo4.png"
+                            class="card-img-top" alt="...">
+                </a>
+            </div>
+        </div>
+        <div class="col">
+            <a href="">
+                <div class="company zoom" style="border-radius: 25px;">
+                    <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/Logo2.png"
+                        class="card-img-top" alt="...">
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="">
+                <div class="company zoom" style="border-radius: 25px;">
+                    <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/logo5.png"
+                        class="card-img-top" alt="...">
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="">
+                <div class="company zoom" style="border-radius: 25px;">
+                    <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/Logo3.png"
+                        class="card-img-top" alt="...">
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="">
+                <div class="company zoom" style="border-radius: 25px;">
+                    <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/logo1.png"
+                        class="card-img-top" alt="...">
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a href="">
+                <div class="company zoom" style="border-radius: 25px;">
+                    <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/logo1.png"
+                        class="card-img-top" alt="...">
+                </div>
+            </a>
+        </div>
+    </div>
 
-        <h1 style="padding: 20px;">From our blogs</h1>
-        <!-- This script got from frontendfreecode.com -->
-        <div id="cards_landscape_wrap-2">
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-xs-4 col-sm-6 col-md-3 col-lg-4">
-                        <a href="">
-                            <div class="card-flyer">
-                                <div class="text-box">
-                                    <div class="image-box">
-                                        <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Blog-7-1.png"
-                                            alt="" />
-                                    </div>
-                                    <div class="text-container">
-                                        <h6>JAN 18, 2020</h6>
-                                        <p>The Best School Supplies For Remote Learning</p>
-                                        <a href="#">Read more</a>
-                                    </div>
+    <!-- This script got from frontendfreecode.com -->
+    <div id="cards_landscape_wrap-2">
+        <div class="container text-center">
+            <div class="row">
+                <h1 style="padding: 20px;">From our blogs</h1>
+                <div class="col-xs-4 col-sm-6 col-md-3 col-lg-4">
+                    <a href="">
+                        <div class="card-flyer" style="border-radius: 20px;">
+                            <div class="text-box">
+                                <div class="image-box" style="border-radius: 20px;">
+                                    <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Blog-7-1.png"
+                                        alt="" />
+                                </div>
+                                <div class="text-container">
+                                    <h6>JAN 18, 2020</h6>
+                                    <p>The Best School Supplies For Remote Learning</p>
+                                    <a href="#">Read more</a>
                                 </div>
                             </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-4 col-sm-6 col-md-3 col-lg-4">
-                        <a href="">
-                            <div class="card-flyer">
-                                <div class="text-box">
-                                    <div class="image-box">
-                                        <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Blog-17.png"
-                                            alt="" />
-                                    </div>
-                                    <div class="text-container">
-                                        <h6>JAN 19, 2020</h6>
-                                        <p>Necessary School Supplies For The New School Year</p>
-                                        <a href="#">Read more</a>
-                                    </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-4 col-sm-6 col-md-3 col-lg-4">
+                    <a href="">
+                        <div class="card-flyer" style="border-radius: 20px;">
+                            <div class="text-box">
+                                <div class="image-box" style="border-radius: 20px;">
+                                    <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Blog-17.png"
+                                        alt="" />
+                                </div>
+                                <div class="text-container">
+                                    <h6>JAN 19, 2020</h6>
+                                    <p>Necessary School Supplies For The New School Year</p>
+                                    <a href="#">Read more</a>
                                 </div>
                             </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-4 col-sm-6 col-md-3 col-lg-4">
-                        <a href="">
-                            <div class="card-flyer">
-                                <div class="text-box">
-                                    <div class="image-box">
-                                        <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Blog-7.png"
-                                            alt="" />
-                                    </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-4 col-sm-6 col-md-3 col-lg-4">
+                    <a href="">
+                        <div class="card-flyer" style="border-radius: 20px;">
+                            <div class="text-box">
+                                <div class="image-box" style="border-radius: 20px;">
+                                    <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Blog-7.png"
+                                        alt="" />
+                                </div>
 
-                                    <div class="text-container">
-                                        <h6>JAN 20, 2020</h6>
-                                        <p>How To Organize Your School Supplies and more</p>
-                                        <a href="#">Read more</a>
-                                    </div>
+                                <div class="text-container">
+                                    <h6>JAN 20, 2020</h6>
+                                    <p>How To Organize Your School Supplies and more</p>
+                                    <a href="#">Read more</a>
                                 </div>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <div class=" container-button text-center m-5 pb-2">
         <button class="button button2 text-center"
             style="height:60px;width: 200px; border-radius:12px; transition: 0.5s;">SEE MORE ARTICLES</button>
     </div>
 
-    <h1 class="text-center mt-5 pt-5">Our clients say</h1>
-
-    <div class="row p-5 m-5 text-center">
-        <div class="card col-lg-6 " style="border-radius: 2em; background-color: #FCEDEA; ">
-            <div class="card-body">
-                <div class="ratings m-5">
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
+    <h2 class="text-center mt-5 pt-5 mb-5 ">Our clients say</h2>
+    <div class="container-fluid pl-5 pr-5">
+        <div class="row text-center ml-5 mr-5">
+            <div class="col-lg-6">
+                <div class="card p-5" style="border-radius: 2em; background-color: #FCEDEA; ">
+                    <div class="card-body">
+                        <div class="ratings m-1">
+                            <i class="fa fa-star rating-color"></i>
+                            <i class="fa fa-star rating-color"></i>
+                            <i class="fa fa-star rating-color"></i>
+                            <i class="fa fa-star rating-color"></i>
+                            <i class="fa fa-star rating-color"></i>
+                        </div>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation
+                            ullamco laboris nisi ut aliquip consequat.</p>
+                        <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/08/team-3.png"
+                            style="height: 55px;">
+                        <a>
+                            <h6>Jessica Alna</h6>
+                        </a>
+                        <p>Michigan Ave, Chicago</p>
+                    </div>
                 </div>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip consequat.</p>
-                <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/08/team-3.png"
-                    style="height: 55px;">
-                <a>
-                    <h6>Jessica Alna</h6>
-                </a>
-                <p>Michigan Ave, Chicago</p>
             </div>
-        </div>
-        <div class="card col-lg-6 " style="border-radius: 2em; background-color: #F3F7FF;">
-            <div class="card-body">
-                <div class="ratings m-5">
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
-                    <i class="fa fa-star rating-color"></i>
+            <div class="col-lg-6">
+                <div class="card p-5 " style="border-radius: 2em; background-color: #F3F7FF;">
+                    <div class="card-body">
+                        <div class="ratings m-1">
+                            <i class="fa fa-star rating-color"></i>
+                            <i class="fa fa-star rating-color"></i>
+                            <i class="fa fa-star rating-color"></i>
+                            <i class="fa fa-star rating-color"></i>
+                            <i class="fa fa-star rating-color"></i>
+                        </div>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation
+                            ullamco laboris nisi ut aliquip consequat.</p>
+                        <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/08/team-12.png"
+                            style="height: 55px;">
+                        <a>
+                            <h6>Jessica Alna</h6>
+                        </a>
+                        <p>Michigan Ave, Chicago</p>
+                    </div>
                 </div>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip consequat.</p>
-                <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/08/team-12.png"
-                    style="height: 55px;">
-                <a>
-                    <h6>Jessica Alna</h6>
-                </a>
-                <p>Michigan Ave, Chicago</p>
             </div>
         </div>
     </div>
+    <div class="about text-center" style="font-size:larger; font-weight:800;">
+        <div class="container-fluid pb-5">
+            <div class="row p-5">
+                <div class="col-lg-3">
+                    <h1><i class="bi bi-truck"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue" class="bi bi-truck"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5zm1.294 7.456A2 2 0 0 1 4.732 11h5.536a2 2 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456M12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2" />
+                        </svg>
+                    </h1>
+                    Free Shipping
+                    <p class="pt-2"><small>Free shipping on all orders from $59</small></p>
+                </div>
+                <div class="col-lg-3">
+                    <h1><i class="bi bi-credit-card"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue"
+                            class="bi bi-credit-card" viewBox="0 0 16 16">
+                            <path
+                                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
+                            <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+                        </svg>
+                    </h1>
+                    Safe Payments
+                    <p class="pt-2"><small>100% secure payment</small></p>
+                </div>
+                <div class="col-lg-3">
+                    <h1><i class="bi bi-gift"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue" class="bi bi-gift"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 14.5V7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A3 3 0 0 1 3 2.506zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43zM9 3h2.932l.023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0zM1 4v2h6V4zm8 0v2h6V4zm5 3H9v8h4.5a.5.5 0 0 0 .5-.5zm-7 8V7H2v7.5a.5.5 0 0 0 .5.5z" />
+                        </svg>
+                    </h1>
+                    Discount Coupons
+                    <p class="pt-2"><small>Enjoy Huge Promotions</small></p>
+                </div>
+                <div class="col-lg-3">
+                    <h1><i class="bi bi-chat-left"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue"
+                            class="bi bi-chat-left" viewBox="0 0 16 16">
+                            <path
+                                d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                        </svg>
+                    </h1>
+                    Quality Support
+                    <p class="pt-2"><small>24/7 Support</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 <footer id="footer" class="footer-1">
     <div class="main-footer widgets-dark typo-light">
@@ -2271,9 +2432,6 @@
                         </ul>
                     </div>
                 </div>
-
-
-
                 <div class="col-xs-12 col-sm-6 col-md-3">
                     <div class="widget no-box">
                         <h5 class="widget-title">Follow up<span></span></h5>
@@ -2310,8 +2468,6 @@
                 </div>
                 <br>
                 <br>
-
-
                 <div class="col-xs-12 col-sm-6 col-md-3">
                     <div class="widget no-box ">
                         <h5 class="widget-title">Custom Services<span></span></h5>
@@ -2326,7 +2482,6 @@
                 </div>
             </div>
             <div class="row footer-bottom">
-
             </div>
             <div class="footer-copyright ">
                 <div class="container">
@@ -2337,7 +2492,33 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 </footer>
+<div class="side" style="width: 80px; position: fixed; top: 35%; right: 0;">
+    <a href="">
+        <div class="tang" style="margin-bottom: 20px;">
+            <i class="bi bi-stack"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-stack" height="22" viewBox="0 0 16 16">
+                <path
+                    d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.6.6 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.6.6 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.6.6 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535z" />
+                <path
+                    d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.6.6 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0z" />
+            </svg>
+            <p class="card-text pt-1">demos</p>
+        </div>
+    </a>
+    <a href="">
+        <div class="tang" style="margin-bottom: 20px;">
+            <i class="bi bi-cart"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" height="22" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                <path
+                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+            </svg>
+            <p class="card-text pt-1">buy now</p>
+        </div>
+    </a>
+</div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
