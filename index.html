@@ -11,8 +11,6 @@
     <style>
         /* Custom styles for the header */
         .navbar {
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-            /* Optional: Add shadow */
             height: 55px;
         }
 
@@ -38,8 +36,7 @@
         }
 
         .header {
-            height: 80px;
-            background-color: #a5ddf3;
+            height: 100px;
         }
 
         .header .container-fluid {
@@ -510,7 +507,7 @@
             -ms-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
             -o-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-           
+
             transition: all 0.5s ease-in-out 0.5s;
 
         }
@@ -690,9 +687,6 @@
         }
 
         /*custom tab style 1*/
-        .custom_tab_style1.nav-tabs {
-            border-bottom: 2px solid #ffb700;
-        }
 
         .custom_tab_style1.nav-tabs .nav-link {
             margin-bottom: -2px;
@@ -705,18 +699,15 @@
             color: #495057;
             background-color: #f8f9fa;
             border-width: 2px;
-            border-color: #ffb700 #ffb700 #f8f9fa;
         }
 
         .custom_tab_style1 .nav-link:focus,
         .custom_tab_style1 .nav-link:hover {
             border-width: 2px;
-            border-color: #ffb700 #ffb700 #f8f9fa;
         }
 
         /*custom tab style 2*/
         .custom_tab_style2.nav-tabs {
-            border-bottom: 2px solid #ffb700;
             display: flex;
             justify-content: center;
         }
@@ -732,13 +723,11 @@
             color: #495057;
             background-color: #f8f9fa;
             border-width: 2px;
-            border-color: #ffb700 #ffb700 #f8f9fa;
         }
 
         .custom_tab_style2 .nav-link:focus,
         .custom_tab_style2 .nav-link:hover {
             border-width: 2px;
-            border-color: #ffb700 #ffb700 #f8f9fa;
         }
 
         /*custom tab style 3*/
@@ -758,13 +747,11 @@
         .custom_tab_style3 .nav-item.show .nav-link,
         .custom_tab_style3 .nav-link.active {
             color: #495057;
-            background-color: #ffb700;
             border-color: transparent;
         }
 
         .custom_tab_style3 .nav-link:focus,
         .custom_tab_style3 .nav-link:hover {
-            background-color: #ffb700;
             border-color: transparent;
             color: #fff;
         }
@@ -772,8 +759,6 @@
         .cards {
             padding: 10px;
         }
-
-
 
         .container {
             height: 100%;
@@ -801,11 +786,6 @@
                 transition: color 0.5s;
             }
 
-            svg {
-                -webkit-text-fill-color: transparent;
-                -webkit-filter: drop-shadow (4px 1px 6px rgb(1, 1, 1));
-                filter: drop-shadow(5px 1px 3px rgba(198, 206, 237, 1));
-            }
 
             input {
                 height: 80%;
@@ -858,11 +838,6 @@
                 transition: color 0.5s;
             }
 
-            svg {
-                -webkit-text-fill-color: transparent;
-                -webkit-filter: drop-shadow (4px 1px 6px rgb(1, 1, 1));
-                filter: drop-shadow(5px 1px 3px rgba(198, 206, 237, 1));
-            }
 
             input {
                 height: 80%;
@@ -887,11 +862,30 @@
         }
 
 
+
         @media only screen and (max-width:991px) {
             .navbar-nav.navbar-center {
                 display: none;
             }
 
+        }
+
+        
+        @media only screen and (max-width:552px) {
+            .card-group {
+                display: none !important;
+            }
+        }
+        @media only screen and (max-width:552px) {
+            .sale{
+                display: none !important;
+            }
+        }
+
+        @media only screen and (max-width:552px) {
+            .clients{
+                display: none !important;
+            }
         }
 
         @media (min-width:991px) {
@@ -970,7 +964,7 @@
         }
 
         #cards_landscape_wrap-2 .card-flyer .image-box img {
-           transition: all 1s;
+            transition: all 1s;
             width: 100%;
 
         }
@@ -1110,11 +1104,17 @@
         .modal:target {
             display: flex;
         }
+
+        .popular:hover {
+            color: white;
+            background-color: #000000;
+        }
+
     </style>
 </head>
 
 <body>
-    <nav class="navbar py-2 border-bottom" style="width:auto;">
+    <nav class="navbar py-2 border-bottom" style="width:auto; background-color: #d3d3d3;">
         <div class="container d-flex ">
             <ul class="nav me-auto ">
                 <li class="nav-item"><a class="nav-link link-dark px-2 ">Hotline:</a></li>
@@ -1214,26 +1214,29 @@
                 </div>
             </div>
     </nav>
-    <div class="header">
-        <nav class="header navbar navbar-expand-lg navbar-light bg-light text-center ">
-            <div class="container-fluid  " style="margin-top: 7px; margin-right: 100px; margin-left: 180px;">
-                <a href="#" class="navbar-brand" style="padding-right: 50px;">
-                    <img width="155" height="48" 
-                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/Logo.svg"
-                        class="attachment-full size-full wp-image-21099" alt=""> </a>
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+    <div class="header text-center" style="height: 120px;">
+        <nav class="header navbar navbar-expand-lg navbar-light bg-white text-center">
+            <div class="container" style="margin-top: 7px; z-index: 1;">
+                <a href="#" class="header-image navbar-brand">
+                        <img width="155" height="48"
+                            src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/Logo.svg"
+                            class="attachment-full size-full wp-image-21099" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSdCt"
+                    aria-controls="navbarSdCt" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse " id="navbarExampleOnHover">
-                    <!-- Left links -->
-                    <ul class="navbar-nav me-auto p-3 ">
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="navbarSdCt" style="z-index: 0; background-color: white;">
+                    <ul class="navbar-nav me-auto p-3">
                         <!-- Navbar dropdown -->
                         <li class="nav-item dropdown dropdown-hover p-1" style="position:relative;">
                             <a data-mdb-dropdown-init class="nav-link dropdown-toggle font-weight-bold" href="#"
                                 id="navbarDropdown" role="button" data-mdb-toggle="dropdown"
                                 aria-expanded="false">Products</a>
                             <!-- Dropdown menu -->
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width:max-content;">
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                                style="width:max-content; margin-top: -10px;">
                                 <div class="container">
                                     <div class="row ">
                                         <div class="col-md-4 col-lg-4 ">
@@ -1289,13 +1292,13 @@
                             <a data-mdb-dropdown-init class="nav-link dropdown-toggle font-weight-bold" href="#"
                                 id="navbarDropdown" role="button" data-mdb-toggle="dropdown"
                                 aria-expanded="false">Pages</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width:max-content;">
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                                style="width:max-content; margin-top: -10px;">
                                 <div class="container">
                                     <div class="row ">
                                         <div class="list">
                                             <div class="list-group list-group-flush font-weight-bold">
-                                                <a href=""
-                                                    class="list-group-item list-group-item-action font-weight-bold">Filter
+                                                <a href="" class="list-group-item list-group-item-action">Filter
                                                     Left Sidebar</a>
                                                 <a href="" class="list-group-item list-group-item-action">Simple
                                                     Product Layout</a>
@@ -1306,8 +1309,7 @@
                                                 <a href="" class="list-group-item list-group-item-action">Courses</a>
                                                 <a href="" class="list-group-item list-group-item-action">Wishlist</a>
                                                 <a href="" class="list-group-item list-group-item-action">Compare</a>
-                                                <a href="" class="list-group-item list-group-item-action">About
-                                                    Us</a>
+                                                <a href="" class="list-group-item list-group-item-action">About Us</a>
                                                 <a href="" class="list-group-item list-group-item-action">Contact</a>
                                                 <a href="" class="list-group-item list-group-item-action">Policy</a>
                                                 <a href="" class="list-group-item list-group-item-action">Terms of
@@ -1319,40 +1321,44 @@
                                 </div>
                             </div>
                         </li>
-                    </ul>
-                    <ul class=" nav d-flex " style="padding-right: 100px;">
-                        <li class="navbar-right ms-auto">
-                            <button type="button" class="btn btn-md">
-                                <i class="bi bi-search"></i><svg href="#" xmlns="http://www.w3.org/2000/svg" width="30"
-                                    height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                                </svg>
-                            </button>
-                        </li>
-                        <li class="navbar-right ms-auto ">
-                            <button type="button" class="btn btn-md ">
-                                <i class="bi bi-search"></i><svg href="# xmlns=" http://www.w3.org/2000/svg" width="30"
-                                    height="30" fill="currentColor" class="bi bi-suit-heart" viewBox="0 0 16 16">
-                                    <path
-                                        d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.6 7.6 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z" />
-                                </svg>
-                            </button>
-                        </li>
-                        <li class="navbar-right ms-auto ">
-                            <button type="button" class="btn btn-md ">
-                                <i class="bi bi-cart"></i><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                                    fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                                </svg>
-                            </button>
-                        </li>
-                    </ul>
+                        <ul class=" nav-icom">
+                            <div class="row" style="list-style-type: none;">
+                                <li class=" col-4">
+                                    <button type="button" class="btn btn-md">
+                                        <i class="bi bi-search"></i>
+                                        <svg href="#" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path
+                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                        </svg>
+                                    </button>
+                                </li>
+                                <li class="col-4 ">
+                                    <button type="button" class="btn btn-md ">
+                                        <i class="bi bi-search"></i><svg href="#" xmlns=" http://www.w3.org/2000/svg"
+                                            width="20" height="20" fill="currentColor" class="bi bi-suit-heart"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.6 7.6 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z" />
+                                        </svg>
+                                    </button>
+                                </li>
+                                <li class="col-4 ">
+                                    <button type="button" class="btn btn-md ">
+                                        <i class="bi bi-cart"></i><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                            height="20" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                        </svg>
+                                    </button>
+                                </li>
+                            </div>
+                        </ul>
                     </ul>
                 </div>
             </div>
-        </nav>
+    </div>
+    </nav>
     </div>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel " style="z-index: 0;">
@@ -1367,580 +1373,584 @@
         <div class=" carousel-inner">
             <div class=" carousel-item active" style="background-color: #00776E">
                 <div class="row pt-3">
-                <div class=" heading d-block text-light mt-5 col-lg-3">
-                    <p>
-                    <h4>Back to school SALE UP TO 50% </h4>
-                    </p>
-                    <h1>Everything For Office & School Supplies </h1>
-                <button class="btn btn-lg btn-outline-light"
-                    style="margin-top: 100px;">SHOP NOW</button>
-            </div>
+                    <div class=" heading d-block text-light mt-5 col-lg-3 col-md-3 col-sm-3">
+                        <p>
+                        <h4>Back to school SALE UP TO 50% </h4>
+                        </p>
+                        <h1>Everything For Office & School Supplies </h1>
+                        <button class="btn btn-lg btn-outline-light" style="margin-top: 100px;">SHOP NOW</button>
+                    </div>
 
-                <img class="d-block float-right w-50 col-lg-6"
-                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/banner-slider5-3.png"
-                    alt="First slide">
-            </div>
+                    <img class="d-block float-right w-50 col-lg-6 col-md-6 col-sm-6"
+                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/banner-slider5-3.png"
+                        alt="First slide">
+                </div>
             </div>
             <div class="carousel-item" style="background-color: #26507F;">
                 <div class="row pt-3">
-                    <div class=" heading d-block text-light mt-5 col-lg-3">
-                    <p>
-                    <h4>Back to school SALE UP TO 50% </h4>
-                    </p>
-                    <h1>Everything For Office & School Supplies </h1>
-                <button class="btn btn-lg btn-outline-light"
-                style="margin-top: 100px;">SHOP NOW</button>
+                    <div class=" heading d-block text-light mt-5 col-lg-3 col-md-3 col-sm-3">
+                        <p>
+                        <h4>Back to school SALE UP TO 50% </h4>
+                        </p>
+                        <h1>Everything For Office & School Supplies </h1>
+                        <button class="btn btn-lg btn-outline-light" style="margin-top: 100px;">SHOP NOW</button>
 
-                </button>
-            </div>
+                        </button>
+                    </div>
 
-                <img class="d-block float-right w-50 col-lg-6"
-                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/bannerslider1-1.png"
-                    alt="Second slide">
-            </div>
+                    <img class="d-block float-right w-50 col-lg-6 col-md-6 col-sm-6" 
+                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/bannerslider1-1.png"
+                        alt="Second slide">
+                </div>
             </div>
             <div class="carousel-item" style="background-color: #CEB096;">
                 <div class="row pt-3">
-                    <div class=" heading d-block text-light mt-5 col-lg-3">
-                    <p>
-                    <h4>Back to school SALE UP TO 50% </h4>
-                    </p>
-                    <h1>Everything For Office & School Supplies </h1>
-                <button class="btn btn-lg btn-outline-light"
-                style="margin-top: 100px;">SHOP NOW</button>
+                    <div class=" heading d-block text-light mt-5 col-lg-3 col-md-3 col-sm-3">
+                        <p>
+                        <h4>Back to school SALE UP TO 50% </h4>
+                        </p>
+                        <h1>Everything For Office & School Supplies </h1>
+                        <button class="btn btn-lg btn-outline-light" style="margin-top: 100px;">SHOP NOW</button>
 
-                </button>               
-             </div>
+                        </button>
+                    </div>
 
-                <img class="d-block float-right w-50 col-lg-6"
-                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/bannerslider2-1.png"
-                    alt="Third slide">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="name">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-            <span class="name">Next</span>
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </button>
-    </div>
-    <div class="card-group" style="margin-top: 50px; margin-bottom: 50px; margin-left: 150PX; ">
-        <div class="card-center">
-            <div class="zoom">
-                <div class="card " style="border-radius: 20%;">
-                    <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/Banner-1.png"
-                        class="card-img" alt="...">
-                    <div class="card-img-overlay">
-                        <h5 class="card-title">FIRST ORDER</h5>
-                        <p class="card-text"> ONLINE AND IN STORE</p>
-                        <h2>10% <small>off</small></h2>
-                        <p class="card-text"><small>USE CODE: EDUMA</small></p>
-                    </div>
+                    <img class="d-block float-right w-50 col-lg-6 col-md-6 col-sm-6"
+                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/bannerslider2-1.png"
+                        alt="Third slide">
                 </div>
             </div>
-        </div>
-        <div class="card-center">
-            <div class="zoom">
-                <div class="card " style="border-radius: 20%;">
-                    <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/Banner-4.png"
-                        class="card-img" alt="...">
-                    <div class="card-img-overlay">
-                        <h5 class="card-title">FIRST ORDER</h5>
-                        <p class="card-text"> ONLINE AND IN STORE</p>
-                        <h2>10% <small>off</small></h2>
-                        <p class="card-text"><small>USE CODE: EDUMA</small></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card-center">
-            <div class="zoom">
-                <div class="card " style="border-radius: 20%;">
-                    <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/Banner-5.png"
-                        class="card-img" alt="...">
-                    <div class="card-img-overlay">
-                        <h5 class="card-title">FIRST ORDER</h5>
-                        <p class="card-text"> ONLINE AND IN STORE</p>
-                        <h2>10% <small>off</small></h2>
-                        <p class="card-text"><small>USE CODE: EDUMA</small></p>
-                    </div>
-                </div>
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="name">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="name">Next</span>
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
         </div>
     </div>
-
-
-    <div class="container py-5 custom_tab_style1_outer">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <ul class="nav nav-tabs custom_tab_style2" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#Profile2"
-                            type="button" role="tab" aria-controls="home" aria-selected="true">
-                            <h3>Popular</h>
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#Gallery2"
-                            type="button" role="tab" aria-controls="profile" aria-selected="false">
-                            <h3>Best seller</h3>
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="top-tab" data-bs-toggle="tab" data-bs-target="#Profile3"
-                            type="button" role="tab" aria-controls="top" aria-selected="true">
-                            <h3>Top rated</h3>
-                        </button>
-                    </li>
-                </ul>
-
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="Profile2" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="member">
-                            <div class="row p-3 ">
-                                <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap">
-
-                                        <div class="card">
-                                            <a href="#"><img
-                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Fountain-Pen-And-Journals-Gift-Set.jpg"
-                                                    class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Safari Fountain Pen Gift Set</h5>
-                                                <p class="card-text">$35.00</p>
-                                            </div>
-                                            </a>
-                                        </div><!-- END CARD -->
-
-                                    </div><!-- END CARD DECK -->
-                                </div><!-- END CONTAINER -->
-                                <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
-
-                                        <div class="card">
-                                            <a href="#"><img
-                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Colours-Pencils.jpg"
-                                                    class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Colours Pencils</h5>
-                                                <p class="card-text">$35.00</p>
-                                            </div>
-                                            </a>
-                                        </div><!-- END CARD -->
-
-                                    </div><!-- END CARD DECK -->
-                                </div><!-- END CONTAINER -->
-                                <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
-
-                                        <div class="card">
-                                            <a href="#"><img
-                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Van-Gogh-Collection-Cahier-Notebook-Set-Large.jpg"
-                                                    class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Van Gogh Notebook</h5>
-                                                <p class="card-text">$35.00</p>
-                                            </div>
-                                            </a>
-                                        </div><!-- END CARD -->
-                                    </div>
-                                </div><!-- END CARD DECK -->
-                                <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
-
-                                        <div class="card">
-                                            <a href="#"><img
-                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/2024-Wall-Calendar-Greetings-From-Around-The-World.jpg"
-                                                    class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <h5 class="card-title">2024 Wall Calendar</h5>
-                                                <p class="card-text">$35.00</p>
-                                                </a>
-                                            </div><!-- END CARD -->
-                                        </div>
-                                    </div><!-- END CARD DECK -->
-                                </div><!-- END CONTAINER -->
-                                <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
-
-                                        <div class="card">
-                                            <a href="#"><img
-                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Weekly-Undated-Planner-Set-B6-2.jpg"
-                                                    class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Weekly Undated Planner Set B6</h5>
-                                                <p class="card-text">$35.00</p>
-                                                </a>
-                                            </div><!-- END CARD -->
-                                        </div>
-                                    </div><!-- END CARD DECK -->
-                                </div><!-- END CONTAINER -->
-                                <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
-
-                                        <div class="card">
-                                            <a href="#"><img
-                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Handmade-Mini-Stone-Crayon-Set-Coloured.jpg"
-                                                    class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Handmade Mini Stone</h5>
-                                                <p class="card-text">$35.00</p>
-                                                </a>
-                                            </div><!-- END CARD -->
-                                        </div>
-                                    </div><!-- END CARD DECK -->
-                                </div><!-- END CONTAINER -->
-                                <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
-
-                                        <div class="card">
-                                            <a href="#"><img
-                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Pens-Journal-and-Refill-Bundle-3.jpg"
-                                                    class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Pens Journal And Refill Bundle</h5>
-                                                <p class="card-text">$35.00</p>
-                                                </a>
-                                            </div><!-- END CARD -->
-                                        </div>
-                                    </div><!-- END CARD DECK -->
-                                </div><!-- END CONTAINER -->
-                                <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
-
-                                        <div class="card">
-                                            <a href="#"><img
-                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Desktop-Sharpener.jpg"
-                                                    class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Desktop Sharpener</h5>
-                                                <p class="card-text">$35.00</p>
-                                                </a>
-                                            </div><!-- END CARD -->
-                                        </div>
-                                    </div><!-- END CARD DECK -->
-                                </div><!-- END CONTAINER -->
-                            </div>
+        <div class=" card-group" style="margin-top: 50px; margin-bottom: 50px; margin-left: 150PX; ">
+            <div class="card-center">
+                <div class="zoom">
+                    <div class="card " style="border-radius: 20%;">
+                        <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/Banner-1.png"
+                            class="card-img " alt="...">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">FIRST ORDER</h5>
+                            <p class="card-text"> ONLINE AND IN STORE</p>
+                            <h2>10% <small>off</small></h2>
+                            <p class="card-text"><small>USE CODE: EDUMA</small></p>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="Gallery2" role="tabpanel" aria-labelledby="profile-tab">
-                        <div class="member">
-                            <div class="row p-3 ">
-                                <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
-
-                                        <div class="card">
-                                            <a href="#"><img
-                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Book-Band-Pen-Case.png"
-                                                    class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Book Band Pen Case</h5>
-                                                <p class="card-text">$35.00</p>
-                                            </div>
-                                            </a>
-                                        </div><!-- END CARD -->
-
-                                    </div><!-- END CARD DECK -->
-                                </div><!-- END CONTAINER -->
-                                <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
-
-                                        <div class="card">
-                                            <a href="#"><img
-                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Costway-48-Computer-Desk-Study-Workstation-Laptop-Table-Home-Office-5.jpg"
-                                                    class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Computer Desk Study</h5>
-                                                <p class="card-text">$35.00</p>
-                                            </div>
-                                            </a>
-                                        </div><!-- END CARD -->
-
-                                    </div><!-- END CARD DECK -->
-                                </div><!-- END CONTAINER -->
-                                <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
-
-                                        <div class="card">
-                                            <a href="#"><img
-                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/U-Brands-12ct-File-Folders-Subtle-Textures-1.jpg"
-                                                    class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <h5 class="card-title">U Brands 12ct File Folders</h5>
-                                                <p class="card-text">$35.00</p>
-                                            </div>
-                                            </a>
-                                        </div><!-- END CARD -->
-
-                                    </div><!-- END CARD DECK -->
-                                </div><!-- END CONTAINER -->
-                                <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
-
-                                        <div class="card">
-                                            <a href="#"><img
-                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/11/Bitcoin-for-The-Trenches.jpg"
-                                                    class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Bitcoin For The Trenches</h5>
-                                                <p class="card-text">$35.00</p>
-                                            </div>
-                                            </a>
-                                        </div><!-- END CARD -->
-
-                                    </div><!-- END CARD DECK -->
-                                </div><!-- END CONTAINER -->
-                            </div>
+                </div>
+            </div>
+            <div class="card-center">
+                <div class="zoom">
+                    <div class="card " style="border-radius: 20%;">
+                        <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/Banner-4.png"
+                            class="card-img" alt="...">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">FIRST ORDER</h5>
+                            <p class="card-text"> ONLINE AND IN STORE</p>
+                            <h2>10% <small>off</small></h2>
+                            <p class="card-text"><small>USE CODE: EDUMA</small></p>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="Profile3" role="tabpanel" aria-labelledby="top-tab">
-                        <div class="member">
-                            <div class="row p-3 ">
-                                <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
-
-                                        <div class="card">
-                                            <a href="#"><img
-                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/11/The-Non-Designers-Design-Book.jpg"
-                                                    class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <h5 class="card-title">
-                                                    The Non-Designer’s Design Book</h5>
-                                                <p class="card-text">$35.00</p>
-                                            </div>
-                                            </a>
-                                        </div><!-- END CARD -->
-
-                                    </div><!-- END CARD DECK -->
-                                </div><!-- END CONTAINER -->
-                                <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
-
-                                        <div class="card">
-                                            <a href="#"><img
-                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/11/It-Wont-Be-Easy.jpg"
-                                                    class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <h5 class="card-title">
-                                                    It Won’t Be Easy</h5>
-                                                <p class="card-text">$35.00</p>
-                                            </div>
-                                            </a>
-                                        </div><!-- END CARD -->
-
-                                    </div><!-- END CARD DECK -->
-                                </div><!-- END CONTAINER -->
-                                <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
-
-                                        <div class="card">
-                                            <a href="#"><img
-                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/11/Bitcoin-for-The-Trenches.jpg"
-                                                    class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Bitcoin For The Trenches</h5>
-                                                <p class="card-text">$35.00</p>
-                                            </div>
-                                            </a>
-                                        </div><!-- END CARD -->
-
-                                    </div><!-- END CARD DECK -->
-                                </div><!-- END CONTAINER -->
-                                <div class="cards col-lg-3 col-md-3 col-sm-6">
-                                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
-
-                                        <div class="card">
-                                            <a href="#"><img
-                                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/U-Brands-12ct-File-Folders-Subtle-Textures-1.jpg"
-                                                    class="card-img-top" alt="...">
-                                            </a>
-                                            <div class="card-body">
-                                                <h5 class="card-title">U Brands 12ct File Folders</h5>
-                                                <p class="card-text">$35.00</p>
-                                            </div>
-                                            </a>
-                                        </div><!-- END CARD -->
-
-                                    </div><!-- END CARD DECK -->
-                                </div><!-- END CONTAINER -->
-                            </div>
+                </div>
+            </div>
+            <div class="card-center">
+                <div class="zoom">
+                    <div class="card " style="border-radius: 20%;">
+                        <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/Banner-5.png"
+                            class="card-img" alt="...">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">FIRST ORDER</h5>
+                            <p class="card-text"> ONLINE AND IN STORE</p>
+                            <h2>10% <small>off</small></h2>
+                            <p class="card-text"><small>USE CODE: EDUMA</small></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <h2 class="text-center primary mt-4"> SALE! SALE! SALE!</h2>
-    <div class="container-fluid text-center text-light" style="margin-bottom: 50px; padding: 110px;">
-        <div class="container-fluid-card text-center  " style="background-color:#003aaa;  height: 100%; width: 100%;">
-            <div class="row ">
-                <div class="text col-lg-4 " style="margin-top: 50px;">
-                    <h5> Deals of the week</h5>
-                    <h2> Back to school</h2>
-                    <p></p>
+        <div class="container py-5 custom_tab_style1_outer">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <ul class=" nav nav-tabs custom_tab_style2" id="myTab" role="tablist">
+                        <li class="popular nav-item" role="presentation">
+                            <button class="nav-link " id="home-tab" data-bs-toggle="tab" data-bs-target="#Profile2"
+                                type="button" role="tab" aria-controls="home" aria-selected="true">
+                                <h4>Popular</h4>
+                            </button>
+                        </li>
+                        <li class="popular nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#Gallery2"
+                                type="button" role="tab" aria-controls="profile" aria-selected="false">
+                                <h4>Best seller</h4>
+                            </button>
+                        </li>
+                        <li class="popular nav-item" role="presentation">
+                            <button class="nav-link" id="top-tab" data-bs-toggle="tab" data-bs-target="#Profile3"
+                                type="button" role="tab" aria-controls="top" aria-selected="true">
+                                <h4>Top rated</h4>
+                            </button>
+                        </li>
+                    </ul>
 
-                    <large class=" p-3">
-                        <h1>SALE UPTO ------- </h1>
-                    </large>
-                    <h1>
-                        <large style="color: rgb(255, 247, 0); font-size: larger; font-weight: 900;">30%</large>
-                        <small>off</small></large>
-                    </h1>
-                    <P>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="Profile2" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="member">
+                                <div class="row p-3 ">
+                                    <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                        <div class="card-deck flex-row flex-nowrap">
+
+                                            <div class="card">
+                                                <a href="#"><img
+                                                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Fountain-Pen-And-Journals-Gift-Set.jpg"
+                                                        class="card-img-top" alt="...">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Safari Fountain Pen Gift Set</h5>
+                                                    <p class="card-text">$35.00</p>
+                                                </div>
+                                                </a>
+                                            </div><!-- END CARD -->
+
+                                        </div><!-- END CARD DECK -->
+                                    </div><!-- END CONTAINER -->
+                                    <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                        <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                            <div class="card">
+                                                <a href="#"><img
+                                                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Colours-Pencils.jpg"
+                                                        class="card-img-top" alt="...">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Colours Pencils</h5>
+                                                    <p class="card-text">$35.00</p>
+                                                </div>
+                                                </a>
+                                            </div><!-- END CARD -->
+
+                                        </div><!-- END CARD DECK -->
+                                    </div><!-- END CONTAINER -->
+                                    <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                        <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                            <div class="card">
+                                                <a href="#"><img
+                                                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Van-Gogh-Collection-Cahier-Notebook-Set-Large.jpg"
+                                                        class="card-img-top" alt="...">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Van Gogh Notebook</h5>
+                                                    <p class="card-text">$35.00</p>
+                                                </div>
+                                                </a>
+                                            </div><!-- END CARD -->
+                                        </div>
+                                    </div><!-- END CARD DECK -->
+                                    <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                        <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                            <div class="card">
+                                                <a href="#"><img
+                                                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/2024-Wall-Calendar-Greetings-From-Around-The-World.jpg"
+                                                        class="card-img-top" alt="...">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">2024 Wall Calendar</h5>
+                                                    <p class="card-text">$35.00</p>
+                                                    </a>
+                                                </div><!-- END CARD -->
+                                            </div>
+                                        </div><!-- END CARD DECK -->
+                                    </div><!-- END CONTAINER -->
+                                    <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                        <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                            <div class="card">
+                                                <a href="#"><img
+                                                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Weekly-Undated-Planner-Set-B6-2.jpg"
+                                                        class="card-img-top" alt="...">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Weekly Undated Planner Set B6</h5>
+                                                    <p class="card-text">$35.00</p>
+                                                    </a>
+                                                </div><!-- END CARD -->
+                                            </div>
+                                        </div><!-- END CARD DECK -->
+                                    </div><!-- END CONTAINER -->
+                                    <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                        <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                            <div class="card">
+                                                <a href="#"><img
+                                                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Handmade-Mini-Stone-Crayon-Set-Coloured.jpg"
+                                                        class="card-img-top" alt="...">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Handmade Mini Stone</h5>
+                                                    <p class="card-text">$35.00</p>
+                                                    </a>
+                                                </div><!-- END CARD -->
+                                            </div>
+                                        </div><!-- END CARD DECK -->
+                                    </div><!-- END CONTAINER -->
+                                    <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                        <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                            <div class="card">
+                                                <a href="#"><img
+                                                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Pens-Journal-and-Refill-Bundle-3.jpg"
+                                                        class="card-img-top" alt="...">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Pens Journal And Refill Bundle</h5>
+                                                    <p class="card-text">$35.00</p>
+                                                    </a>
+                                                </div><!-- END CARD -->
+                                            </div>
+                                        </div><!-- END CARD DECK -->
+                                    </div><!-- END CONTAINER -->
+                                    <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                        <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                            <div class="card">
+                                                <a href="#"><img
+                                                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Desktop-Sharpener.jpg"
+                                                        class="card-img-top" alt="...">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Desktop Sharpener</h5>
+                                                    <p class="card-text">$35.00</p>
+                                                    </a>
+                                                </div><!-- END CARD -->
+                                            </div>
+                                        </div><!-- END CARD DECK -->
+                                    </div><!-- END CONTAINER -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="Gallery2" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="member">
+                                <div class="row p-3 ">
+                                    <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                        <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                            <div class="card">
+                                                <a href="#"><img
+                                                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Book-Band-Pen-Case.png"
+                                                        class="card-img-top" alt="...">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Book Band Pen Case</h5>
+                                                    <p class="card-text">$35.00</p>
+                                                </div>
+                                                </a>
+                                            </div><!-- END CARD -->
+
+                                        </div><!-- END CARD DECK -->
+                                    </div><!-- END CONTAINER -->
+                                    <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                        <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                            <div class="card">
+                                                <a href="#"><img
+                                                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Costway-48-Computer-Desk-Study-Workstation-Laptop-Table-Home-Office-5.jpg"
+                                                        class="card-img-top" alt="...">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Computer Desk Study</h5>
+                                                    <p class="card-text">$35.00</p>
+                                                </div>
+                                                </a>
+                                            </div><!-- END CARD -->
+
+                                        </div><!-- END CARD DECK -->
+                                    </div><!-- END CONTAINER -->
+                                    <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                        <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                            <div class="card">
+                                                <a href="#"><img
+                                                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/U-Brands-12ct-File-Folders-Subtle-Textures-1.jpg"
+                                                        class="card-img-top" alt="...">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">U Brands 12ct File Folders</h5>
+                                                    <p class="card-text">$35.00</p>
+                                                </div>
+                                                </a>
+                                            </div><!-- END CARD -->
+
+                                        </div><!-- END CARD DECK -->
+                                    </div><!-- END CONTAINER -->
+                                    <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                        <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                            <div class="card">
+                                                <a href="#"><img
+                                                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/11/Bitcoin-for-The-Trenches.jpg"
+                                                        class="card-img-top" alt="...">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Bitcoin For The Trenches</h5>
+                                                    <p class="card-text">$35.00</p>
+                                                </div>
+                                                </a>
+                                            </div><!-- END CARD -->
+
+                                        </div><!-- END CARD DECK -->
+                                    </div><!-- END CONTAINER -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="Profile3" role="tabpanel" aria-labelledby="top-tab">
+                            <div class="member">
+                                <div class="row p-3 ">
+                                    <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                        <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                            <div class="card">
+                                                <a href="#"><img
+                                                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/11/The-Non-Designers-Design-Book.jpg"
+                                                        class="card-img-top" alt="...">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">
+                                                        The Non-Designer’s Design Book</h5>
+                                                    <p class="card-text">$35.00</p>
+                                                </div>
+                                                </a>
+                                            </div><!-- END CARD -->
+
+                                        </div><!-- END CARD DECK -->
+                                    </div><!-- END CONTAINER -->
+                                    <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                        <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                            <div class="card">
+                                                <a href="#"><img
+                                                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/11/It-Wont-Be-Easy.jpg"
+                                                        class="card-img-top" alt="...">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">
+                                                        It Won’t Be Easy</h5>
+                                                    <p class="card-text">$35.00</p>
+                                                </div>
+                                                </a>
+                                            </div><!-- END CARD -->
+
+                                        </div><!-- END CARD DECK -->
+                                    </div><!-- END CONTAINER -->
+                                    <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                        <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                            <div class="card">
+                                                <a href="#"><img
+                                                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/11/Bitcoin-for-The-Trenches.jpg"
+                                                        class="card-img-top" alt="...">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Bitcoin For The Trenches</h5>
+                                                    <p class="card-text">$35.00</p>
+                                                </div>
+                                                </a>
+                                            </div><!-- END CARD -->
+
+                                        </div><!-- END CARD DECK -->
+                                    </div><!-- END CONTAINER -->
+                                    <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                        <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                            <div class="card">
+                                                <a href="#"><img
+                                                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/U-Brands-12ct-File-Folders-Subtle-Textures-1.jpg"
+                                                        class="card-img-top" alt="...">
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">U Brands 12ct File Folders</h5>
+                                                    <p class="card-text">$35.00</p>
+                                                </div>
+                                                </a>
+                                            </div><!-- END CARD -->
+
+                                        </div><!-- END CARD DECK -->
+                                    </div><!-- END CONTAINER -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sale">
+        <h2 class="text-center primary mt-4"> SALE! SALE! SALE!</h2>
+        <div class="container-fluid text-center text-light" style="margin-bottom: 50px; padding: 110px;">
+            <div class="container-fluid-card text-center  "
+                style="background-color:#003aaa;  height: 100%; width: 100%;">
+                <div class="row ">
+                    <div class="text col-lg-4 col-md-4 col-xs-4" style="margin-top: 50px;">
+                        <h5> Deals of the week</h5>
+                        <h2> Back to school</h2>
+                        <p></p>
+
                         <large class=" p-3">
-                            <h1>-------All products </h1>
+                            <h1>SALE UPTO ------- </h1>
                         </large>
-                    </P>
-                    <button class="btn btn-lg btn-outline-light mt-5 text-dark" style="background-color: #ffc898 ;">VIEW
-                        ALL</button>
-                </div>
-                <div class="card-deck flex-row flex-nowrap col-lg-4 col-md-6 ">
-                    <div class="container-fluid ">
-                        <div class="card"
-                            style="background-color: #ffc898; height: 100%; width: 100%; border-radius: 2em; ">
-                            <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Gold-4.jpg"
-                                alt="" style="padding: 20px;  border-radius: 2em; ">
-                            <!-- THIS DIV IS NOT CLICKABLE BUT I WANT IT TO BE -->
-                            <div class=" card-body">
-                                <h3 class="card-title">Notebook With Pen</h3>
-                                <p class="card-text">$26.00</p>
-                                <p>hurry! only 400 left in stock</p>
-                                <div class="progress mb-3" style="border-radius: 50px;">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
-                                        role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                                <div class="container-wrapper">
-                                    <div class="container d-flex align-items-center justify-content-center">
-                                        <div class="row justify-content-center">
+                        <h1>
+                            <large style="color: rgb(255, 247, 0); font-size: larger; font-weight: 900;">30%</large>
+                            <small>off</small></large>
+                        </h1>
+                        <P>
+                            <large class=" p-3">
+                                <h1>-------All products </h1>
+                            </large>
+                        </P>
+                        <button class="btn btn-lg btn-outline-light mt-5 text-dark"
+                            style="background-color: #ffc898 ;">VIEW
+                            ALL</button>
+                    </div>
+                    <div class="card-deck flex-row flex-nowrap col-lg-4 col-md-4 col-xs-4 ">
+                        <div class="container-fluid ">
+                            <div class="card"
+                                style="background-color: #ffc898; height: 100%; width: 100%; border-radius: 2em; ">
+                                <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Gold-4.jpg"
+                                    alt="" style="padding: 20px;  border-radius: 2em; ">
+                                <!-- THIS DIV IS NOT CLICKABLE BUT I WANT IT TO BE -->
+                                <div class=" card-body">
+                                    <h3 class="card-title">Notebook With Pen</h3>
+                                    <p class="card-text">$26.00</p>
+                                    <p>hurry! only 400 left in stock</p>
+                                    <div class="progress mb-3" style="border-radius: 50px;">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+                                            role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="container-wrapper">
+                                        <div class="container d-flex align-items-center justify-content-center">
+                                            <div class="row justify-content-center">
 
-                                            <!-- star rating -->
-                                            <div class="rating-wrapper" style="background-color:#003aaa ;">
+                                                <!-- star rating -->
+                                                <div class="rating-wrapper" style="background-color:#003aaa ;">
 
-                                                <!-- star 5 -->
-                                                <input type="radio" id="5-star-rating" name="star-rating" value="5">
-                                                <label for="5-star-rating" class="star-rating">
-                                                    <i class="fas fa-star d-inline-block"></i>
-                                                </label>
+                                                    <!-- star 5 -->
+                                                    <input type="radio" id="5-star-rating" name="star-rating" value="5">
+                                                    <label for="5-star-rating" class="star-rating">
+                                                        <i class="fas fa-star d-inline-block"></i>
+                                                    </label>
 
-                                                <!-- star 4 -->
-                                                <input type="radio" id="4-star-rating" name="star-rating" value="4">
-                                                <label for="4-star-rating" class="star-rating star">
-                                                    <i class="fas fa-star d-inline-block"></i>
-                                                </label>
+                                                    <!-- star 4 -->
+                                                    <input type="radio" id="4-star-rating" name="star-rating" value="4">
+                                                    <label for="4-star-rating" class="star-rating star">
+                                                        <i class="fas fa-star d-inline-block"></i>
+                                                    </label>
 
-                                                <!-- star 3 -->
-                                                <input type="radio" id="3-star-rating" name="star-rating" value="3">
-                                                <label for="3-star-rating" class="star-rating star">
-                                                    <i class="fas fa-star d-inline-block"></i>
-                                                </label>
+                                                    <!-- star 3 -->
+                                                    <input type="radio" id="3-star-rating" name="star-rating" value="3">
+                                                    <label for="3-star-rating" class="star-rating star">
+                                                        <i class="fas fa-star d-inline-block"></i>
+                                                    </label>
 
-                                                <!-- star 2 -->
-                                                <input type="radio" id="2-star-rating" name="star-rating" value="2">
-                                                <label for="2-star-rating" class="star-rating star">
-                                                    <i class="fas fa-star d-inline-block"></i>
-                                                </label>
+                                                    <!-- star 2 -->
+                                                    <input type="radio" id="2-star-rating" name="star-rating" value="2">
+                                                    <label for="2-star-rating" class="star-rating star">
+                                                        <i class="fas fa-star d-inline-block"></i>
+                                                    </label>
 
-                                                <!-- star 1 -->
-                                                <input type="radio" id="1-star-rating" name="star-rating" value="1">
-                                                <label for="1-star-rating" class="star-rating star">
-                                                    <i class="fas fa-star d-inline-block"></i>
-                                                </label>
+                                                    <!-- star 1 -->
+                                                    <input type="radio" id="1-star-rating" name="star-rating" value="1">
+                                                    <label for="1-star-rating" class="star-rating star">
+                                                        <i class="fas fa-star d-inline-block"></i>
+                                                    </label>
+
+                                                </div>
 
                                             </div>
-
                                         </div>
                                     </div>
-                                </div>
 
-                            </div><!-- END CARD-BODY -->
-                        </div>
-                    </div><!-- END CARD -->
-                </div>
-                <div class="card-deck flex-row flex-nowrap col-lg-4 col-md-6">
-                    <div class="container-fluid">
-                        <div class="card"
-                            style="background-color: #ffc898; height: 100%; width: 100%; border-radius: 2em;">
-                            <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Costway-48-Computer-Desk-Study-Workstation-Laptop-Table-Home-Office-5.jpg"
-                                alt="" style="padding: 20px; border-radius: 2em; ">
-                            <!-- THIS DIV IS NOT CLICKABLE BUT I WANT IT TO BE -->
-                            <div class="card-body">
-                                <h3 class="card-title">Computer Desk Study</h3>
-                                <p class="card-text">$299.00.</p>
-                                <p>hurry! only 250 left in stock</p>
-                                <div class="progress mb-3 " style="border-radius: 50px;">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
-                                        role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                        aria-valuemax="100"></div>
-                                </div>
-                                <div class="container-wrappers">
-                                    <div class="containers d-flex align-items-center justify-content-center">
-                                        <div class="row justify-content-center">
+                                </div><!-- END CARD-BODY -->
+                            </div>
+                        </div><!-- END CARD -->
+                    </div>
+                    <div class="card-deck flex-row flex-nowrap col-lg-4 col-md-4 col-xs-4">
+                        <div class="container-fluid">
+                            <div class="card"
+                                style="background-color: #ffc898; height: 100%; width: 100%; border-radius: 2em;">
+                                <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Costway-48-Computer-Desk-Study-Workstation-Laptop-Table-Home-Office-5.jpg"
+                                    alt="" style="padding: 20px; border-radius: 2em; ">
+                                <!-- THIS DIV IS NOT CLICKABLE BUT I WANT IT TO BE -->
+                                <div class="card-body">
+                                    <h3 class="card-title">Computer Desk Study</h3>
+                                    <p class="card-text">$299.00.</p>
+                                    <p>hurry! only 250 left in stock</p>
+                                    <div class="progress mb-3 " style="border-radius: 50px;">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+                                            role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                            aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="container-wrappers">
+                                        <div class="containers d-flex align-items-center justify-content-center">
+                                            <div class="row justify-content-center">
 
-                                            <!-- star rating -->
-                                            <div class="rating-wrappers" style="background-color: #003AAA;">
+                                                <!-- star rating -->
+                                                <div class="rating-wrappers" style="background-color: #003AAA;">
 
-                                                <!-- star 5 -->
-                                                <input type="radio" id="5-star-ratings" name="star-ratings" value="5">
-                                                <label for="5-star-ratings" class="star-ratings">
-                                                    <i class="fas fa-star d-inline-block"></i>
-                                                </label>
+                                                    <!-- star 5 -->
+                                                    <input type="radio" id="5-star-ratings" name="star-ratings"
+                                                        value="5">
+                                                    <label for="5-star-ratings" class="star-ratings">
+                                                        <i class="fas fa-star d-inline-block"></i>
+                                                    </label>
 
-                                                <!-- star 4 -->
-                                                <input type="radio" id="4-star-ratings" name="star-ratings" value="4">
-                                                <label for="4-star-ratings" class="star-ratings star">
-                                                    <i class="fas fa-star d-inline-block"></i>
-                                                </label>
+                                                    <!-- star 4 -->
+                                                    <input type="radio" id="4-star-ratings" name="star-ratings"
+                                                        value="4">
+                                                    <label for="4-star-ratings" class="star-ratings star">
+                                                        <i class="fas fa-star d-inline-block"></i>
+                                                    </label>
 
-                                                <!-- star 3 -->
-                                                <input type="radio" id="3-star-ratings" name="star-ratings" value="3">
-                                                <label for="3-star-ratings" class="star-ratings star">
-                                                    <i class="fas fa-star d-inline-block"></i>
-                                                </label>
+                                                    <!-- star 3 -->
+                                                    <input type="radio" id="3-star-ratings" name="star-ratings"
+                                                        value="3">
+                                                    <label for="3-star-ratings" class="star-ratings star">
+                                                        <i class="fas fa-star d-inline-block"></i>
+                                                    </label>
 
-                                                <!-- star 2 -->
-                                                <input type="radio" id="2-star-ratings" name="star-ratings" value="2">
-                                                <label for="2-star-ratings" class="star-ratings star">
-                                                    <i class="fas fa-star d-inline-block"></i>
-                                                </label>
+                                                    <!-- star 2 -->
+                                                    <input type="radio" id="2-star-ratings" name="star-ratings"
+                                                        value="2">
+                                                    <label for="2-star-ratings" class="star-ratings star">
+                                                        <i class="fas fa-star d-inline-block"></i>
+                                                    </label>
 
-                                                <!-- star 1 -->
-                                                <input type="radio" id="1-star-ratings" name="star-ratings" value="1">
-                                                <label for="1-star-ratings" class="star-ratings star">
-                                                    <i class="fas fa-star d-inline-block"></i>
-                                                </label>
+                                                    <!-- star 1 -->
+                                                    <input type="radio" id="1-star-ratings" name="star-ratings"
+                                                        value="1">
+                                                    <label for="1-star-ratings" class="star-ratings star">
+                                                        <i class="fas fa-star d-inline-block"></i>
+                                                    </label>
+
+                                                </div>
 
                                             </div>
-
                                         </div>
                                     </div>
-                                </div>
-                            </div><!-- END CARD-BODY -->
+                                </div><!-- END CARD-BODY -->
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div><!-- END CARD -->
-    </div><!-- END CARD DECK -->
+            </div><!-- END CARD -->
+        </div><!-- END CARD DECK -->
     </div><!-- END CONTAINER -->
     <div class="row m-3 p-3 text-center ">
         <h2 style="margin-bottom: 50px;">We provide the best solutions</h2>
@@ -1994,7 +2004,7 @@
     <div class="container">
         <div class="row row-cols-1 row-cols-md-2 g-4 text-center"
             style="padding-left: 80px; padding-right: 80px; padding-bottom: 100px;">
-            <div class="col">
+            <div class="col-lg-2 col-md-2 col-sm-6">
                 <a href="">
                     <div class=" company zoom" style="border-radius: 25px;">
                         <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/logo4.png"
@@ -2002,7 +2012,7 @@
                 </a>
             </div>
         </div>
-        <div class="col">
+        <div class="col-lg-2 col-md-2 col-sm-6">
             <a href="">
                 <div class="company zoom" style="border-radius: 25px;">
                     <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/Logo2.png"
@@ -2010,7 +2020,7 @@
                 </div>
             </a>
         </div>
-        <div class="col">
+        <div class="col-lg-2 col-md-2 col-sm-6">
             <a href="">
                 <div class="company zoom" style="border-radius: 25px;">
                     <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/logo5.png"
@@ -2018,7 +2028,7 @@
                 </div>
             </a>
         </div>
-        <div class="col">
+        <div class="col-lg-2 col-md-2 col-sm-6">
             <a href="">
                 <div class="company zoom" style="border-radius: 25px;">
                     <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/Logo3.png"
@@ -2026,7 +2036,7 @@
                 </div>
             </a>
         </div>
-        <div class="col">
+        <div class="col-lg-2 col-md-2 col-sm-6">
             <a href="">
                 <div class="company zoom" style="border-radius: 25px;">
                     <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/logo1.png"
@@ -2034,7 +2044,7 @@
                 </div>
             </a>
         </div>
-        <div class="col">
+        <div class="col-lg-2 col-md-2 col-sm-6">
             <a href="">
                 <div class="company zoom" style="border-radius: 25px;">
                     <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/logo1.png"
@@ -2049,7 +2059,7 @@
         <div class="container text-center">
             <div class="row">
                 <h1 style="padding: 20px;">From our blogs</h1>
-                <div class="col-xs-4 col-sm-6 col-md-3 col-lg-4">
+                <div class="col-xs-3 col-sm-6 col-md-3 col-lg-4">
                     <a href="">
                         <div class="card-flyer" style="border-radius: 20px;">
                             <div class="text-box">
@@ -2066,7 +2076,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-xs-4 col-sm-6 col-md-3 col-lg-4">
+                <div class="col-xs-3 col-sm-6 col-md-3 col-lg-4">
                     <a href="">
                         <div class="card-flyer" style="border-radius: 20px;">
                             <div class="text-box">
@@ -2083,7 +2093,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-xs-4 col-sm-6 col-md-3 col-lg-4">
+                <div class="col-xs-3 col-sm-6 col-md-3 col-lg-4">
                     <a href="">
                         <div class="card-flyer" style="border-radius: 20px;">
                             <div class="text-box">
@@ -2109,7 +2119,7 @@
         <button class="button button2 text-center"
             style="height:60px;width: 200px; border-radius:12px; transition: 0.5s;">SEE MORE ARTICLES</button>
     </div>
-
+<div class="clients">
     <h2 class="text-center mt-5 pt-5 mb-5 ">Our clients say</h2>
     <div class="container-fluid pl-5 pr-5">
         <div class="row text-center ml-5 mr-5">
@@ -2163,6 +2173,7 @@
             </div>
         </div>
     </div>
+</div>
     <div class="about text-center" style="font-size:larger; font-weight:800;">
         <div class="container-fluid pb-5">
             <div class="row p-5">
@@ -2224,7 +2235,7 @@
                         <h5>Subscribe And Get 20% Off Your First Purchase.</h5>
                     </div>
                     <div class="emailfield col-lg-3 col-md-4 col-sm-6 ms-auto  ">
-                        <input type="text" name="email" value="Email">
+                        <input id="pass" type="text" placeholder="Email Address" class="input">
                         <input class="submitbutton ripplelink" type="submit" value="Subscribe">
                         </form>
                     </div>
@@ -2343,7 +2354,6 @@
         <div class="box">
             <a class="popup" href="#popup-box">
                 <div class="tang" style="margin-bottom: 20px;">
-                    <i class="bi bi-stack"></i>
                     <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-stack" height="22" viewBox="0 0 16 16">
                         <path
                             d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.6.6 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.6.6 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.6.6 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535z" />
