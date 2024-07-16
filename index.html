@@ -16,6 +16,9 @@
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        a {
+            text-decoration: none !important;
+        }
         /* Custom styles for the header */
         .navbar {
             height: 55px;
@@ -226,6 +229,10 @@
             border-color: #000000;
         }
 
+        .login-html .sign-in:checked+.icon {
+            display: none;
+        }
+
         .login-form {
             min-height: 345px;
             position: relative;
@@ -268,42 +275,25 @@
             background: rgba(255, 255, 255, .1);
         }
 
-        .login-form .group label .icon:before,
-        .login-form .group label .icon:after {
-            content: '';
-            width: 10px;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.9);
-            position: absolute;
-            transition: all 0.2s ease-in-out 0s;
-        }
-
-        .login-form .group label .icon:before {
-            left: 3px;
-            width: 5px;
-            transform: scale(0) rotate(0);
-        }
-
-        .login-form .group label .icon:after {
-            top: 6px;
-            right: 0;
-            transform: scale(0) rotate(0);
-        }
-
         .login-form .group .check:checked+label {
-            color: #fff;
+            color: #ffffff !important;
         }
 
-        .login-form .group .check:checked+label .icon {
-            background: #ffffff;
+        .login-form .group label .icon {
+            width: 16px;
+            height: 20px;
+            border-radius: 2px;
+            position: relative;
+            display: inline-block;
+            background: rgba(255, 255, 255, .1);
         }
 
-        .login-form .group .check:checked+label .icon:before {
-            transform: scale(1) rotate(45deg);
+        .login-form .group .check+label .icon {
+            display: none;
         }
 
-        .login-form .group .check:checked+label .icon:after {
-            transform: scale(1) rotate(-45deg);
+        .login-form .group .check:checked+label .icon{
+            display: inline-block;
         }
 
         .login-html .sign-in:checked+.tab+.sign-up+.tab+.login-form .sign-in-htm {
@@ -773,13 +763,13 @@
         label:hover,
         label:hover~label,
         input:checked~label {
-            color: #cdea25;
+            color: #FEB605 !important;
         }
 
         label:hover,
         label:hover~label,
         input:checked~label {
-            color: #cdea25;
+            color: #FEB605 !important;
         }
 
         .container-fluid-card {
@@ -823,13 +813,13 @@
         label:hover,
         label:hover~label,
         input:checked~label {
-            color: #cdea25;
+            color: #FEB605;
         }
 
         label:hover,
         label:hover~label,
         input:checked~label {
-            color: #cdea25;
+            color: #FEB605;
         }
 
         .input::placeholder {
@@ -959,7 +949,7 @@
         }
 
         .rating-color {
-            color: #fbc634 !important;
+            color: #FEB605 !important;
         }
 
         .tang {
@@ -1217,21 +1207,36 @@
                 font-size: medium !important;
             }
         }
-        .divider1::after {
-  flex: 1;
-  content: '';
-  height: 2px;
-  background-color: rgb(255, 255, 255);
-  margin: auto;
-}
-.divider2::before {
-  flex: 1;
-  content: '';
-  height: 2px;
-  background-color: rgb(255, 255, 255);
-  margin: auto;
-}
 
+        .divider1::after {
+            flex: 1;
+            content: '';
+            height: 2px;
+            background-color: rgb(255, 255, 255);
+            margin: auto;
+        }
+
+        .divider2::before {
+            flex: 1;
+            content: '';
+            height: 2px;
+            background-color: rgb(255, 255, 255);
+            margin: auto;
+        }
+
+        .subscribe:hover {
+            color: rgb(0, 0, 0) !important;
+            background-color: #ffb606 !important;
+        }
+
+        .widget a {
+            text-decoration: none !important;
+        }
+
+        .new:hover {
+            background-color: #ffb606 !important;
+            color: #000;
+        }
     </style>
 </head>
 
@@ -1250,7 +1255,7 @@
             </div>
             <div class="neww">
                 <ul class="nav" style="gap: 5px;">
-                    <li  class=" dropdown link-dark py-2 active " style="background: transparent;">
+                    <li class=" dropdown link-dark py-2 active " style="background: transparent;">
                         <select style="background: transparent; border-radius: 5px; padding: 3px;">
                             <option value="eng">Eng</option>
                             <option value="cn">CN</option>
@@ -1296,8 +1301,13 @@
                                                     data-type="password">
                                             </div>
                                             <div class="group">
-                                                <input id="check" type="checkbox" class="check" checked>
-                                                <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                                                <input id="check" type="checkbox" class="check">
+                                                <label class="text-light" for="check"><span class="icon"><i class="bi bi-check"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="white" class="bi bi-check" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                                        </svg></span>Keep me Signed in</label>
                                             </div>
                                             <div class="group">
                                                 <input type="submit" class="button text-dark" value="Sign In">
@@ -1383,8 +1393,7 @@
                                                 <a href=""
                                                     class="list-group-item list-group-item-action">Praesentium</a>
                                             </div>
-                                            <div
-                                                class="col-md-4 col-lg-4 col-lg-3 list-group list-group-flush font-weight-bold">
+                                            <div class="col-md-4 col-lg-4 list-group list-group-flush font-weight-bold">
                                                 <a href=""
                                                     class="list-group-item list-group-item-action text-primary">Scool
                                                     solutions</a>
@@ -1631,7 +1640,7 @@
         </div>
     </div>
     <div class="min">
-        <div class="container-fluid" style="margin: auto; padding-left: 50px;">
+        <div class="container-fluid" style="margin: auto; overflow: hidden;">
             <div class="card-group row mt-5">
                 <div class="card-center col-lg-4 col-md-4 col-sm-4">
                     <div class="zoom">
@@ -2731,10 +2740,10 @@
             </div>
         </div>
     </div>
-    <div class="sale">
-        <h1 class="text-center primary mt-2"> SALE! SALE! SALE!</h1>
-        <div class="container-fluid text-center text-light" style="margin-bottom: 50px; padding-left: 110px; padding-top: 110px; padding-right: 110px; padding-bottom: 50px;">
-            <div class="container-fluid-card text-center  "
+    <div class="sale" style="text-align: center;">
+        <h1> SALE! SALE! SALE!</h1>
+        <div class="container-fluid text-center text-light " style="padding: 110px; padding-top: 50px !important;">
+            <div class="container-fluid-card text-center "
                 style="background-color:#003aaa;  height: 100%; width: 100%;">
                 <div class="row ">
                     <div class="text col-lg-4 col-md-4 col-xs-4" style="margin-top: 50px;">
@@ -2745,17 +2754,20 @@
                             <h2>SALE UP TO </h2>
                         </div>
                         <h1>
-                            <large style="color: #FEB605; font-size: 100px; font-weight: 700;-webkit-text-stroke: 4px #ffffff;">30%</large>
+                            <large
+                                style="color: #FEB605; font-size: 100px; font-weight: 700;-webkit-text-stroke: 4px #ffffff;">
+                                30%</large>
                             <small>off</small></large>
                         </h1>
-                        <div class="divider2" style="display: flex; padding-top: 16px;">
-                       <h3>ALL PRODUCTS</h3>
+                        <div class="divider2" style="display: flex; padding-top: 16px; margin: 20px;">
+                            <h3>ALL PRODUCTS</h3>
                         </div>
                         <button class="btn btn-lg btn-outline-light mt-5 text-dark"
                             style="background-color: #ffffff ;">VIEW
                             ALL</button>
                     </div>
-                    <div class="card-deck flex-row flex-nowrap col-lg-4 col-md-4 col-xs-4 " style="margin-bottom: 10px;">
+                    <div class="card-deck flex-row flex-nowrap col-lg-4 col-md-4 col-xs-4 "
+                        style="margin-bottom: 10px;">
                         <div class="container-fluid ">
                             <div class="card"
                                 style="background-color: #ffffff; height: 100%; width: 100%; border-radius: 2em; ">
@@ -2889,57 +2901,62 @@
             </div><!-- END CARD -->
         </div><!-- END CARD DECK -->
     </div><!-- END CONTAINER -->
-    <div class="row m-3 p-3 text-center ">
-        <h2 style="margin-bottom: 50px;">WE PROVIDE THE BEST SOLUTIONS</h2>
-        <div class="carde col-lg-4 col-md-4 " style="border-radius: 2em;">
-            <div class="icon-crade" >
-                <i class="bi bi-pencil-fill"></i>
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="bi bi-pencil-fill"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" />
-                </svg>
+    <div class="head" style="text-align: center;">
+        <h2>WE PROVIDE THE BEST SOLUTIONS</h2>
+    </div>
+    <div class="cardes" style="margin-bottom: 50px;">
+        <div class="row m-3 p-3 text-center ">
+
+            <div class="carde col-lg-4 col-md-4 " style="border-radius: 2em;">
+                <div class="icon-crade">
+                    <i class="bi bi-pencil-fill"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" class="bi bi-pencil-fill"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" />
+                    </svg>
+                </div>
+                <h5 class="card-title">
+                    <h3 style="font-weight: 700;">SCHOOL SOLUTIONS</h3>
+                </h5>
+                <p class="card-text m-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut feugiat mi.
+                    Nunc tincidunt, ante rutrum varius molli</p>
+                <a class="link" href="#">Read more</a>
             </div>
-            <h5 class="card-title">
-                <h3 style="font-weight: 700;">SCHOOL SOLUTIONS</h3>
-            </h5>
-            <p class="card-text m-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut feugiat mi.
-                Nunc tincidunt, ante rutrum varius molli</p>
-            <a class="link" href="#">Read more</a>
-        </div>
-        <div class="carde col-lg-4 col-md-4 " style="border-radius: 2em;">
-            <div class="icon-crade"><i class="bi bi-building"></i>
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="bi bi-building"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
-                    <path
-                        d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1zm11 0H3v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3z" />
-                </svg>
+            <div class="carde col-lg-4 col-md-4 " style="border-radius: 2em;">
+                <div class="icon-crade"><i class="bi bi-building"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" class="bi bi-building"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
+                        <path
+                            d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1zm11 0H3v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3z" />
+                    </svg>
+                </div>
+                <h5 class="card-title">
+                    <h3 style="font-weight: 700;">OFFICE SOLUTIONS</h3>
+                </h5>
+                <p class="card-text m-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut feugiat mi.
+                    Nunc tincidunt, ante rutrum varius molli</p>
+                <a href="#">Read more</a>
             </div>
-            <h5 class="card-title">
-                <h3 style="font-weight: 700;">OFFICE SOLUTIONS</h3>
-            </h5>
-            <p class="card-text m-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut feugiat mi.
-                Nunc tincidunt, ante rutrum varius molli</p>
-            <a href="#">Read more</a>
-        </div>
-        <div class="carde col-lg-4 col-md-4 " style="border-radius: 2em;">
-            <div class="icon-crade"> <i class="bi bi-buildings"></i>
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="bi bi-buildings"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022M6 8.694 1 10.36V15h5zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5z" />
-                    <path
-                        d="M2 11h1v1H2zm2 0h1v1H4zm-2 2h1v1H2zm2 0h1v1H4zm4-4h1v1H8zm2 0h1v1h-1zm-2 2h1v1H8zm2 0h1v1h-1zm2-2h1v1h-1zm0 2h1v1h-1zM8 7h1v1H8zm2 0h1v1h-1zm2 0h1v1h-1zM8 5h1v1H8zm2 0h1v1h-1zm2 0h1v1h-1zm0-2h1v1h-1z" />
-                </svg>
+            <div class="carde col-lg-4 col-md-4 " style="border-radius: 2em;">
+                <div class="icon-crade"> <i class="bi bi-buildings"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" class="bi bi-buildings"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022M6 8.694 1 10.36V15h5zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5z" />
+                        <path
+                            d="M2 11h1v1H2zm2 0h1v1H4zm-2 2h1v1H2zm2 0h1v1H4zm4-4h1v1H8zm2 0h1v1h-1zm-2 2h1v1H8zm2 0h1v1h-1zm2-2h1v1h-1zm0 2h1v1h-1zM8 7h1v1H8zm2 0h1v1h-1zm2 0h1v1h-1zM8 5h1v1H8zm2 0h1v1h-1zm2 0h1v1h-1zm0-2h1v1h-1z" />
+                    </svg>
+                </div>
+                <h5 class="card-title">
+                    <h3 style="font-weight: 700;">UNIVERSITY SOLUTIONS</h3>
+                </h5>
+                <p class="card-text m-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut feugiat mi.
+                    Nunc tincidunt, ante rutrum varius molli</p>
+                <a href="#">Read more</a>
             </div>
-            <h5 class="card-title">
-                <h3 style="font-weight: 700;">UNIVERSITY SOLUTIONS</h3>
-            </h5>
-            <p class="card-text m-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut feugiat mi.
-                Nunc tincidunt, ante rutrum varius molli</p>
-            <a href="#">Read more</a>
         </div>
     </div>
     <div class="container">
@@ -2999,7 +3016,7 @@
     <div id="cards_landscape_wrap-2">
         <div class="container text-center">
             <div class="row">
-                <h1 style="padding: 20px;">From our blogs</h1>
+                <h2 style="padding: 20px;">FROM OUR BLOGS</h2>
                 <div class=" col-sm-4 col-md-4 col-lg-4">
                     <a href="">
                         <div class="card-flyer" style="border-radius: 20px;">
@@ -3056,23 +3073,40 @@
         </div>
     </div>
     </div>
-    <div class=" container-button text-center m-5 pb-2">
+    <div class=" container-button text-center m-5 pb-2 ">
         <button class="button button2 text-center"
             style="height:60px;width: 200px; border-radius:12px; transition: 0.5s;">SEE MORE ARTICLES</button>
     </div>
-    <div class="clients">
-        <h2 class="text-center mt-5 pt-5 mb-5 ">Our clients say</h2>
+    <div class="clients" style="text-align: center;">
+        <h2 style="margin-top: 100px; margin-bottom: 50px;">OUR CLIENTS SAY</h2>
         <div class="container-fluid pl-5 pr-5">
             <div class="row text-center ml-5 mr-5">
                 <div class="col-lg-6">
                     <div class="card p-5" style="border-radius: 2em; background-color: #FCEDEA; ">
                         <div class="card-body">
                             <div class="ratings m-1">
-                                <i class="fa fa-star rating-color"></i>
-                                <i class="fa fa-star rating-color"></i>
-                                <i class="fa fa-star rating-color"></i>
-                                <i class="fa fa-star rating-color"></i>
-                                <i class="fa fa-star rating-color"></i>
+                                <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg" width="25"
+                                    height="25" fill="#FEB605" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
+                                <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg" width="25"
+                                    height="25" fill="#FEB605" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg> <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg" width="25"
+                                    height="25" fill="#FEB605" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg> <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg" width="25"
+                                    height="25" fill="#FEB605" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg> <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg" width="25"
+                                    height="25" fill="#FEB605" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
                             </div>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                                 tempor
@@ -3092,11 +3126,27 @@
                     <div class="card p-5 " style="border-radius: 2em; background-color: #F3F7FF;">
                         <div class="card-body">
                             <div class="ratings m-1">
-                                <i class="fa fa-star rating-color"></i>
-                                <i class="fa fa-star rating-color"></i>
-                                <i class="fa fa-star rating-color"></i>
-                                <i class="fa fa-star rating-color"></i>
-                                <i class="fa fa-star rating-color"></i>
+                                <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg" width="25"
+                                    height="25" fill="#FEB605" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg> <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg" width="25"
+                                    height="25" fill="#FEB605" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg> <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg" width="25"
+                                    height="25" fill="#FEB605" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg> <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg" width="25"
+                                    height="25" fill="#FEB605" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg> <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg" width="25"
+                                    height="25" fill="#FEB605" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg>
                             </div>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                                 tempor
@@ -3116,7 +3166,7 @@
         </div>
     </div>
     <div class="about text-center" style="font-size:larger; font-weight:800;">
-        <div class="container-fluid pb-5">
+        <div class="container-fluid pb-5 pt-5">
             <div class="row p-5">
                 <div class="col-lg-3">
                     <h1><i class="bi bi-truck"></i>
@@ -3173,17 +3223,21 @@
                     <img class="image col-lg-2 col-md-4 col-sm-6 me-auto"
                         src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/Logo.svg">
                     <div class="text col-lg-8 mt-5" style="display: flex;">
-                       <h5 style="margin-right: 1px;">Subscribe And Get 20% Off Your First Purchase.</h5>
-                    <div class="form-group" style="margin: 0;">
-                    <input type="email" style="height: 100%; width: 100%; outline: #003AAA; outline-width: 2px; outline-style: solid;" class="form-control" placeholder="Enter your email">
+                        <h5 style="margin-right: 1px;">Subscribe And Get 20% Off Your First Purchase.</h5>
+                        <div class="form-group" style="margin: 5px;">
+                            <input type="email"
+                                style=" height: 100%; width: 100%; outline: #003AAA; outline-width: 2px; outline-style: solid;"
+                                class="form-control" placeholder="Enter your email">
+                        </div>
+                        <button class="btn subscribe"
+                            style="font-weight: 600; margin: 5px; height: auto; background-color: #003AAA; color: white;">Subscribe
+                        </button>
                     </div>
-                    <button class="btn" style="height: auto; background-color: #003AAA; color: white;">Subscribe </button>
-                </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-3">
                         <h5>Need Help! </h5>
-                        <div class="widget subscribe no-box">
+                        <div class="widget no-box">
                             <h5 class="widget-title">
                                 <span></span>
                             </h5>
@@ -3230,9 +3284,11 @@
                     <div class="col-xs-12 col-sm-6 col-md-3">
                         <div class="widget no-box">
                             <h5 class="widget-title">Follow up<span></span></h5>
-                            <a href="#"> <i class="fa fa-facebook"> </i> </a>
-                            <a href="#"> <i class="fa fa-twitter"> </i> </a>
-                            <a href="#"> <i class="fa fa-youtube"> </i> </a>
+                            <div class="iconss">
+                                <a href="#"> <i class="new fa fa-facebook"> </i> </a>
+                                <a href="#"> <i class="new fa fa-twitter"> </i> </a>
+                                <a href="#"> <i class="new fa fa-youtube"> </i> </a>
+                            </div>
                             <ul class="thumbnail-widget">
                                 <li>
                                     <p>
@@ -3473,4 +3529,5 @@
         });
     </script>
 </body>
+
 </html>
