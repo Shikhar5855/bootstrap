@@ -15,10 +15,21 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
     <style>
+        .roboto-slab {
+            font-family: "Roboto Slab", serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+        }
+
         a {
             text-decoration: none !important;
         }
+
         /* Custom styles for the header */
         .navbar {
             height: 55px;
@@ -145,7 +156,6 @@
         }
 
         .zoom {
-            padding: 5px;
             transition: transform 1s;
             width: 100%;
         }
@@ -292,14 +302,16 @@
             display: none;
         }
 
-        .login-form .group .check:checked+label .icon{
+        .login-form .group .check:checked+label .icon {
             display: inline-block;
 
         }
-        .login-form .group .check+label{
+
+        .login-form .group .check+label {
             margin-left: 30px;
         }
-        .login-form .group .check:checked+label{
+
+        .login-form .group .check:checked+label {
             margin-left: 0;
         }
 
@@ -1244,6 +1256,13 @@
             background-color: #ffb606 !important;
             color: #000;
         }
+
+        .font-small {
+            font-family: "Roboto Slab" !important;
+            font-weight: 700;
+            line-height: 1.6em;
+            font-size: 32px;
+        }
     </style>
 </head>
 
@@ -1309,7 +1328,9 @@
                                             </div>
                                             <div class="group">
                                                 <input id="check" type="checkbox" class="check">
-                                                <label class="text-light" for="check"><span class="icon" style="background: transparent; padding-right: 30px;"><i class="bi bi-check"></i><svg
+                                                <label class="text-light" for="check"><span class="icon"
+                                                        style="background: transparent; padding-right: 30px;"><i
+                                                            class="bi bi-check"></i><svg
                                                             xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                                             fill="white" class="bi bi-check" viewBox="0 0 16 16">
                                                             <path
@@ -1647,8 +1668,8 @@
         </div>
     </div>
     <div class="min">
-        <div class="container-fluid" style="margin: auto; overflow: hidden;">
-            <div class="card-group row mt-5">
+        <div class="container-fluid" style="margin: auto; overflow: hidden; padding-bottom: 50px;">
+            <div class="card-group row mt-5 ">
                 <div class="card-center col-lg-4 col-md-4 col-sm-4">
                     <div class="zoom">
                         <div class="card text-light" style="border-radius: 20%;">
@@ -1701,24 +1722,21 @@
                     <li class="popular nav-item" role="presentation">
                         <button class="nav-link active " id="home-tab" data-bs-toggle="tab" data-bs-target="#Profile2"
                             type="button" role="tab" aria-controls="home" aria-selected="true">
-                            <h2 class="font-small"
-                                style="font-family: 'Times New Roman', Times, serif; font-weight: 600;">Popular</h2>
+                            <span class="font-small">POPULAR</span>
                         </button>
                     </li>
                     <li class="popular nav-item" role="presentation">
                         <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#Gallery2"
                             type="button" role="tab" aria-controls="profile" aria-selected="false">
-                            <h2 class="font-small"
-                                style="font-family: 'Times New Roman', Times, serif; font-weight: 600;">Best seller
-                            </h2>
+                            <span class="font-small">BEST SELLER
+                            </span>
                         </button>
                     </li>
                     <li class="popular nav-item" role="presentation">
                         <button class="nav-link" id="top-tab" data-bs-toggle="tab" data-bs-target="#Profile3"
                             type="button" role="tab" aria-controls="top" aria-selected="true">
-                            <h2 class="font-small"
-                                style="font-family: 'Times New Roman', Times, serif; font-weight: 600;">Top rated
-                            </h2>
+                            <span class="font-small">TOP RATED
+                            </span>
                         </button>
                     </li>
                 </ul>
@@ -1728,7 +1746,7 @@
                             <div class="row p-3 ">
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
                                     <div class="card-deck flex-row flex-nowrap">
-                                        <div class="card " style="overflow: hidden;">
+                                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
 
                                             <a href="#"><img
                                                     src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Fountain-Pen-And-Journals-Gift-Set.jpg"
@@ -1790,7 +1808,7 @@
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
                                     <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
-                                        <div class="card " style="overflow: hidden;">
+                                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
                                             <a href="#"><img
                                                     src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Colours-Pencils.jpg"
                                                     class="card-img-top zoom" alt="...">
@@ -1852,7 +1870,7 @@
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
                                     <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
-                                        <div class="card " style="overflow: hidden;">
+                                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
                                             <a href="#"><img
                                                     src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Van-Gogh-Collection-Cahier-Notebook-Set-Large.jpg"
                                                     class="card-img-top zoom" alt="...">
@@ -1913,7 +1931,7 @@
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
                                     <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
-                                        <div class="card " style="overflow: hidden;">
+                                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
                                             <a href="#"><img
                                                     src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/2024-Wall-Calendar-Greetings-From-Around-The-World.jpg"
                                                     class="card-img-top zoom" alt="...">
@@ -1977,7 +1995,7 @@
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
                                     <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
-                                        <div class="card " style="overflow: hidden;">
+                                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
                                             <a href="#"><img
                                                     src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Weekly-Undated-Planner-Set-B6-2.jpg"
                                                     class="card-img-top zoom" alt="...">
@@ -2041,7 +2059,7 @@
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
                                     <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
-                                        <div class="card " style="overflow: hidden;">
+                                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
                                             <a href="#"><img
                                                     src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Handmade-Mini-Stone-Crayon-Set-Coloured.jpg"
                                                     class="card-img-top zoom" alt="...">
@@ -2105,7 +2123,7 @@
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
                                     <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
-                                        <div class="card " style="overflow: hidden;">
+                                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
                                             <a href="#"><img
                                                     src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Pens-Journal-and-Refill-Bundle-3.jpg"
                                                     class="card-img-top zoom" alt="...">
@@ -2169,7 +2187,7 @@
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
                                     <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
-                                        <div class="card " style="overflow: hidden;">
+                                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
                                             <a href="#"><img
                                                     src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Desktop-Sharpener.jpg"
                                                     class="card-img-top zoom" alt="...">
@@ -2239,7 +2257,7 @@
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
                                     <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
-                                        <div class="card " style="overflow: hidden;">
+                                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
                                             <a href="#"><img
                                                     src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Book-Band-Pen-Case.png"
                                                     class="card-img-top zoom" alt="...">
@@ -2301,7 +2319,7 @@
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
                                     <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
-                                        <div class="card " style="overflow: hidden;">
+                                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
                                             <a href="#"><img
                                                     src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Costway-48-Computer-Desk-Study-Workstation-Laptop-Table-Home-Office-5.jpg"
                                                     class="card-img-top zoom" alt="...">
@@ -2363,7 +2381,7 @@
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
                                     <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
-                                        <div class="card " style="overflow: hidden;">
+                                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
                                             <a href="#"><img
                                                     src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/U-Brands-12ct-File-Folders-Subtle-Textures-1.jpg"
                                                     class="card-img-top zoom" alt="...">
@@ -2425,7 +2443,7 @@
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
                                     <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
-                                        <div class="card " style="overflow: hidden;">
+                                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
                                             <a href="#"><img
                                                     src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/11/Bitcoin-for-The-Trenches.jpg"
                                                     class="card-img-top zoom" alt="...">
@@ -2493,7 +2511,7 @@
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
                                     <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
-                                        <div class="card " style="overflow: hidden;">
+                                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
                                             <a href="#"><img
                                                     src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/11/The-Non-Designers-Design-Book.jpg"
                                                     class="card-img-top zoom" alt="...">
@@ -2556,7 +2574,7 @@
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
                                     <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
-                                        <div class="card " style="overflow: hidden;">
+                                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
                                             <a href="#"><img
                                                     src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/11/It-Wont-Be-Easy.jpg"
                                                     class="card-img-top zoom" alt="...">
@@ -2619,7 +2637,7 @@
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
                                     <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
-                                        <div class="card " style="overflow: hidden;">
+                                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
                                             <a href="#"><img
                                                     src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/11/Bitcoin-for-The-Trenches.jpg"
                                                     class="card-img-top zoom" alt="...">
@@ -2681,7 +2699,7 @@
                                 <div class="cards col-lg-3 col-md-3 col-sm-6">
                                     <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
 
-                                        <div class="card " style="overflow: hidden;">
+                                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
                                             <a href="#"><img
                                                     src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/U-Brands-12ct-File-Folders-Subtle-Textures-1.jpg"
                                                     class="card-img-top zoom" alt="...">
