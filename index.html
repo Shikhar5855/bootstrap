@@ -294,8 +294,14 @@
 
         .login-form .group .check:checked+label .icon{
             display: inline-block;
-        }
 
+        }
+        .login-form .group .check+label{
+            margin-left: 30px;
+        }
+        .login-form .group .check:checked+label{
+            margin-left: 0;
+        }
 
         .login-html .sign-in:checked+.tab+.sign-up+.tab+.login-form .sign-in-htm {
             transform: rotate(0);
