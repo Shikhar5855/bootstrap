@@ -674,26 +674,6 @@
             left: 0;
         }
 
-        /*custom tab style 1*/
-
-        .custom_tab_style1.nav-tabs .nav-link {
-            margin-bottom: -2px;
-            padding: 10px 25px;
-            border-width: 2px;
-        }
-
-        .custom_tab_style1 .nav-item.show .nav-link,
-        .custom_tab_style1 .nav-link.active {
-            color: #000000;
-            background-color: #f8f9fa;
-            border-width: 2px;
-        }
-
-        .custom_tab_style1 .nav-link:focus,
-        .custom_tab_style1 .nav-link:hover {
-            border-width: 2px;
-        }
-
         /*custom tab style 2*/
         .custom_tab_style2.nav-tabs {
             display: flex;
@@ -703,47 +683,17 @@
         .custom_tab_style2.nav-tabs .nav-link {
             margin-bottom: -2px;
             padding: 10px 25px;
-            border-width: 2px;
+            border-width: 0 !important;
         }
 
         .custom_tab_style2 .nav-item.show .nav-link,
         .custom_tab_style2 .nav-link.active {
-            color: #000000;
-            background-color: #f8f9fa;
-            border-width: 2px;
+            text-decoration: #003AAA underline 2px;
         }
-
-        .custom_tab_style2 .nav-link:focus,
-        .custom_tab_style2 .nav-link:hover {
-            border-width: 2px;
+        .custom_tab_style2 .nav-item.show .nav-link,
+        .custom_tab_style2 .nav-link{
+            color:#003AAA ;
         }
-
-        /*custom tab style 3*/
-        .custom_tab_style3.nav-tabs {
-            border-bottom: 1px solid transparent;
-            display: flex;
-            justify-content: center;
-            margin-bottom: 50px;
-        }
-
-        .custom_tab_style3.nav-tabs .nav-link {
-            padding: 5px 20px;
-            margin: 0 10px;
-            border-radius: 0.25rem;
-        }
-
-        .custom_tab_style3 .nav-item.show .nav-link,
-        .custom_tab_style3 .nav-link.active {
-            color: #000000;
-            border-color: transparent;
-        }
-
-        .custom_tab_style3 .nav-link:focus,
-        .custom_tab_style3 .nav-link:hover {
-            border-color: transparent;
-            color: #fff;
-        }
-
         .cards {
             padding: 10px;
         }
@@ -1718,7 +1668,7 @@
     <div class="container py-5 custom_tab_style1_outer">
         <div class="row">
             <div class="col-md-12 text-center">
-                <ul class=" nav nav-tabs custom_tab_style2" id="myTab" role="tablist">
+                <ul class=" nav nav-tabs custom_tab_style2" id="myTab" role="tablist" style="margin-bottom: 50px;">
                     <li class="popular nav-item" role="presentation">
                         <button class="nav-link active " id="home-tab" data-bs-toggle="tab" data-bs-target="#Profile2"
                             type="button" role="tab" aria-controls="home" aria-selected="true">
