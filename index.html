@@ -678,6 +678,7 @@
         .custom_tab_style2.nav-tabs {
             display: flex;
             justify-content: center;
+            border-bottom: 0;
         }
 
         .custom_tab_style2.nav-tabs .nav-link {
@@ -687,8 +688,37 @@
         }
 
         .custom_tab_style2 .nav-item.show .nav-link,
+        .custom_tab_style2 .nav-link.active::after {
+
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: blue;
+            left: 0;
+            bottom: 0;
+
+        }
+
+        .custom_tab_style2 .nav-item.show .nav-link,
         .custom_tab_style2 .nav-link.active {
-            text-decoration: #003AAA underline 2px;
+            position: relative;
+        }
+
+        .sales{
+            position: relative;
+            width: fit-content;
+        }
+
+        .sales::after{
+            
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: rgb(0, 0, 0);
+            left: 0;
+            bottom: -5px;
         }
 
         .custom_tab_style2 .nav-item.show .nav-link,
@@ -1192,6 +1222,12 @@
             line-height: 1.6em;
             font-size: 32px;
         }
+
+        .modal-backdrop.show {
+            opacity: 0;
+            display: none;
+        }
+        
     </style>
 </head>
 
@@ -2697,9 +2733,9 @@
             </div>
         </div>
     </div>
-    <div class="sale" style="text-align: center;">
-        <h1> SALE! SALE! SALE!</h1>
-        <div class="container text-center text-light " style=" padding-top: 50px !important; padding-bottom: 100px ;">
+    <div class="sale container" style="width: 100%;">
+       <div class="saless" style="width: 100%; justify-content: center; display: flex;"><h1 class="sales"  > SALE! SALE! SALE!</h1></div>
+        <div class="text-center text-light " style=" padding-top: 50px !important; padding-bottom: 100px ;">
             <div class="container-fluid-card  text-center "
                 style="background-color:#003aaa;  height: 100%; width: 100%;">
                 <div class="row">
@@ -2858,7 +2894,7 @@
         </div><!-- END CARD DECK -->
     </div><!-- END CONTAINER -->
     <div class="head" style="text-align: center;">
-        <h2>WE PROVIDE THE BEST SOLUTIONS</h2>
+       <div class="solutions" style="width: 100%; justify-content: center; display: flex;"><h2 class="sales">WE PROVIDE THE BEST SOLUTIONS</h2></div>
     </div>
     <div class="cardes" style="margin-bottom: 50px;">
         <div class="row m-3 p-3 text-center ">
@@ -2972,7 +3008,8 @@
     <div id="cards_landscape_wrap-2">
         <div class="container text-center">
             <div class="row">
-                <h2 style="padding: 20px;">FROM OUR BLOGS</h2>
+                <div class="from"style="width: 100%; justify-content: center; display: flex;">
+                <h2 class="sales">FROM OUR BLOGS</h2></div>
                 <div class=" col-sm-4 col-md-4 col-lg-4">
                     <a href="">
                         <div class="card-flyer" style="border-radius: 20px;">
@@ -3034,7 +3071,8 @@
             style="height:60px;width: 200px; border-radius:12px; transition: 0.5s;">SEE MORE ARTICLES</button>
     </div>
     <div class="clients" style="text-align: center;">
-        <h2 style="margin-top: 100px; margin-bottom: 50px;">OUR CLIENTS SAY</h2>
+        <div class="our" style="width: 100%; justify-content: center; display: flex;">
+        <h2 class="sales" style=" margin-top: 50px; margin-bottom: 50px;">OUR CLIENTS SAY</h2></div>
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-6 mb-5">
@@ -3304,8 +3342,8 @@
     </footer>
     <div class="side" style="width: 80px; position: fixed; top: 35%; right: 0; z-index: 2;">
         <div class="box">
-            <a class="popup" href="#popup-box">
-                <div class="tang" data-bs-toggle="modal" style="margin-bottom: 20px;">
+            <a data-toggle="modal" data-target="#exampleModal" style="cursor:pointer;">
+                <div class="tang" style="margin-bottom: 20px;">
                     <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-stack" height="22" viewBox="0 0 16 16">
                         <path
                             d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.6.6 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.6.6 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.6.6 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535z" />
@@ -3315,202 +3353,587 @@
                     <p>demos</p>
                 </div>
             </a>
-            <div id="popup-box" class="modal" aria-hidden="true" tabindex="-1" style="cursor: auto;">
-                <div class="modal-dialog-scrollable "
-                    style="overflow-y: scroll; background-color: white; text-align: center; border-radius: 15px; width: 80%;">
-                    <div class="content p-3 text-center">
-                        <img
-                            src="https://eduma.thimpress.com/demo-main/wp-content/uploads/sites/95/2022/06/logo-edu_black.png" style="width: 40%;">
-                        <br>
-                        <button class="button btn text-center"
-                            style=" background-color: #5b7189; font-weight: 600; font-family: Georgia, 'Times New Roman', Times, serif; color: #f2f60a; border-radius: 15px;">BUY
-                            EDUMA NOW!</button>
-                        <div class="row " style="margin: 20px;">
-                            <div class="col">
-                                <div class="card" style="border-radius: 15px; overflow: hidden;">
-                                    <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Fountain-Pen-And-Journals-Gift-Set.jpg"
-                                        class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Item</h5>
-                                        <p class="card-text">Price:X</p>
-                                        <a href="#" class="btn btn-primary">buy now</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card" style="border-radius: 15px; overflow: hidden;">
-                                    <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Colours-Pencils.jpg"
-                                        class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Item</h5>
-                                        <p class="card-text">Price:X</p>
-                                        <a href="#" class="btn btn-primary">buy now</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card" style="border-radius: 15px; overflow: hidden;">
-                                    <img
-                                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Van-Gogh-Collection-Cahier-Notebook-Set-Large.jpg"
-                                        class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Item</h5>
-                                        <p class="card-text">Price:X</p>
-                                        <a href="#" class="btn btn-primary">buy now</a>
-                                    </div>
-                                </div>
-                            </div>
-                                <div class="col">
-                                    <div class="card" style="border-radius: 15px; overflow: hidden;">
-                                        <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/2024-Wall-Calendar-Greetings-From-Around-The-World.jpg"
-                                            class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Item</h5>
-                                            <p class="card-text">Price:X</p>
-                                            <a href="#" class="btn btn-primary">buy now</a>
-                                        </div>
-                                    </div>
-                                </div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true" style="padding: 0;">
+                <div class="modal-dialog text-center" role="document" style="max-width: fit-content;">
+                    <div class="modal-content container" style="border-radius: 50px;">
+                        <div class="container-fluid" style="padding:50px;">
+                            <img src="https://eduma.thimpress.com/demo-main/wp-content/uploads/sites/95/2022/06/logo-edu_black.png"
+                                style="width: 40%;">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <i class="bi bi-x-lg"></i><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                    fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                                </svg>
+                            </button>
                         </div>
-                        <div class="row " style="gap: 10px; margin: 20px; padding-bottom: 20px;">
-                                    <div class="col">
-                                        <div class="card" style="border-radius: 15px; overflow: hidden;">
-                                            <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Weekly-Undated-Planner-Set-B6-2.jpg"
-                                            class="card-img-top" alt="...">
+                        <button class="button btn container"
+                            style="background-color: #5b7189; font-family: Georgia, 'Times New Roman', Times, serif; color: #f2f60a; border-radius: 15px; width: 50%; justify-content: center;">BUY
+                            EDUMA NOW!
+                        </button>
+                        <div class="row p-3 ">
+                            <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                <div class="card-deck flex-row flex-nowrap">
+                                    <div class="card " style="overflow: hidden; border-radius: 1rem;">
+
+                                        <a href="#"><img
+                                                src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Fountain-Pen-And-Journals-Gift-Set.jpg"
+                                                class="card-img-top zoom" alt="...">
+                                        </a>
                                         <div class="card-body">
-                                            <h5 class="card-title">Item</h5>
-                                            <p class="card-text">Price:X</p>
-                                            <a href="#" class="btn btn-primary">buy now</a>
+                                            <h5 class="card-title">Safari Fountain Pen Gift Set</h5>
+                                            <p class="card-text">$35.00</p>
                                         </div>
-                                    </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="card" style="border-radius: 15px; overflow: hidden;">
-                                            <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Handmade-Mini-Stone-Crayon-Set-Coloured.jpg"
-                                            class="card-img-top" alt="...">
+                                        </a>
+                                        <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                                <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                                    </svg></button>
+                                            </span>
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="Compare">
+                                                <button class="btn" type="button"><i class="bi bi-arrow-repeat"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-arrow-repeat"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                                        <path fill-rule="evenodd"
+                                                            d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                                    </svg></button>
+                                            </span>
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                                <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                                    </svg></button>
+                                            </span>
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="read more">
+                                                <button class="btn" type="button"><i class="bi bi-three-dots"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-three-dots"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                                    </svg></button>
+                                            </span>
+                                        </div>
+                                    </div><!-- END CARD -->
+                                </div><!-- END CARD DECK -->
+                            </div><!-- END CONTAINER -->
+                            <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                    <div class="card " style="overflow: hidden; border-radius: 1rem;">
+                                        <a href="#"><img
+                                                src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Colours-Pencils.jpg"
+                                                class="card-img-top zoom" alt="...">
+                                        </a>
                                         <div class="card-body">
-                                            <h5 class="card-title">Item</h5>
-                                            <p class="card-text">Price:X</p>
-                                            <a href="#" class="btn btn-primary">buy now</a>
+                                            <h5 class="card-title">Colours Pencils</h5>
+                                            <p class="card-text">$35.00</p>
                                         </div>
-                                    </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="card" style="border-radius: 15px; overflow: hidden;">
-                                            <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Pens-Journal-and-Refill-Bundle-3.jpg"
-                                            class="card-img-top" alt="...">
+                                        </a>
+                                        <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                                <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                                    </svg></button>
+                                            </span>
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="Compare">
+                                                <button class="btn" type="button"><i class="bi bi-arrow-repeat"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-arrow-repeat"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                                        <path fill-rule="evenodd"
+                                                            d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                                    </svg></button>
+                                            </span>
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                                <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                                    </svg></button>
+                                            </span>
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="read more">
+                                                <button class="btn" type="button"><i class="bi bi-three-dots"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-three-dots"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                                    </svg></button>
+                                            </span>
+                                        </div>
+                                    </div><!-- END CARD -->
+
+                                </div><!-- END CARD DECK -->
+                            </div><!-- END CONTAINER -->
+                            <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                    <div class="card " style="overflow: hidden; border-radius: 1rem;">
+                                        <a href="#"><img
+                                                src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Van-Gogh-Collection-Cahier-Notebook-Set-Large.jpg"
+                                                class="card-img-top zoom" alt="...">
+                                        </a>
                                         <div class="card-body">
-                                            <h5 class="card-title">Item</h5>
-                                            <p class="card-text">Price:X</p>
-                                            <a href="#" class="btn btn-primary">buy now</a>
+                                            <h5 class="card-title">Van Gogh Notebook</h5>
+                                            <p class="card-text">$35.00</p>
                                         </div>
+                                        </a>
+                                        <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                                <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                                    </svg></button>
+                                            </span>
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="Compare">
+                                                <button class="btn" type="button"><i class="bi bi-arrow-repeat"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-arrow-repeat"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                                        <path fill-rule="evenodd"
+                                                            d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                                    </svg></button>
+                                            </span>
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                                <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                                    </svg></button>
+                                            </span>
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="read more">
+                                                <button class="btn" type="button"><i class="bi bi-three-dots"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-three-dots"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                                    </svg></button>
+                                            </span>
                                         </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="card" style="border-radius: 15px; overflow: hidden;">
-                                            <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Desktop-Sharpener.jpg"
-                                            class="card-img-top" alt="...">
+                                    </div><!-- END CARD -->
+                                </div>
+                            </div><!-- END CARD DECK -->
+                            <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                    <div class="card " style="overflow: hidden; border-radius: 1rem;">
+                                        <a href="#"><img
+                                                src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/2024-Wall-Calendar-Greetings-From-Around-The-World.jpg"
+                                                class="card-img-top zoom" alt="...">
+                                        </a>
                                         <div class="card-body">
-                                            <h5 class="card-title">Item</h5>
-                                            <p class="card-text">Price:X</p>
-                                            <a href="#" class="btn btn-primary">buy now</a>
-                                        </div>
+                                            <h5 class="card-title">2024 Wall Calendar</h5>
+                                            <p class="card-text">$35.00</p>
+                                            </a>
+                                            <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                                    <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-search"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Compare">
+                                                    <button class="btn" type="button"><i
+                                                            class="bi bi-arrow-repeat"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-arrow-repeat"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                                            <path fill-rule="evenodd"
+                                                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                                    <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="read more">
+                                                    <button class="btn" type="button"><i
+                                                            class="bi bi-three-dots"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-three-dots"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                                        </svg></button>
+                                                </span>
+                                            </div>
+                                        </div><!-- END CARD -->
                                     </div>
+                                </div><!-- END CARD DECK -->
+                            </div><!-- END CONTAINER -->
+                            <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                    <div class="card " style="overflow: hidden; border-radius: 1rem;">
+                                        <a href="#"><img
+                                                src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Weekly-Undated-Planner-Set-B6-2.jpg"
+                                                class="card-img-top zoom" alt="...">
+                                        </a>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Weekly Undated Planner Set B6</h5>
+                                            <p class="card-text">$35.00</p>
+                                            </a>
+                                            <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                                    <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-search"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Compare">
+                                                    <button class="btn" type="button"><i
+                                                            class="bi bi-arrow-repeat"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-arrow-repeat"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                                            <path fill-rule="evenodd"
+                                                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                                    <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="read more">
+                                                    <button class="btn" type="button"><i
+                                                            class="bi bi-three-dots"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-three-dots"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                                        </svg></button>
+                                                </span>
+                                            </div>
+                                        </div><!-- END CARD -->
                                     </div>
-                        </div>
-                                <a href="#" style="
-                        color: #000000;
-                                position: absolute;
-                                top: 10px;
-                                right: 1%;
-                                font-size: 40px;
-                                text-decoration: none;">
-                                    &times;
-                                </a>
-                            </div>
+                                </div><!-- END CARD DECK -->
+                            </div><!-- END CONTAINER -->
+                            <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                    <div class="card " style="overflow: hidden; border-radius: 1rem;">
+                                        <a href="#"><img
+                                                src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Handmade-Mini-Stone-Crayon-Set-Coloured.jpg"
+                                                class="card-img-top zoom" alt="...">
+                                        </a>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Handmade Mini Stone</h5>
+                                            <p class="card-text">$35.00</p>
+                                            </a>
+                                            <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                                    <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-search"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Compare">
+                                                    <button class="btn" type="button"><i
+                                                            class="bi bi-arrow-repeat"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-arrow-repeat"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                                            <path fill-rule="evenodd"
+                                                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                                    <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="read more">
+                                                    <button class="btn" type="button"><i
+                                                            class="bi bi-three-dots"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-three-dots"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                                        </svg></button>
+                                                </span>
+                                            </div>
+                                        </div><!-- END CARD -->
+                                    </div>
+                                </div><!-- END CARD DECK -->
+                            </div><!-- END CONTAINER -->
+                            <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                    <div class="card " style="overflow: hidden; border-radius: 1rem;">
+                                        <a href="#"><img
+                                                src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Pens-Journal-and-Refill-Bundle-3.jpg"
+                                                class="card-img-top zoom" alt="...">
+                                        </a>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Pens Journal And Refill Bundle</h5>
+                                            <p class="card-text">$35.00</p>
+                                            </a>
+                                            <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                                    <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-search"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Compare">
+                                                    <button class="btn" type="button"><i
+                                                            class="bi bi-arrow-repeat"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-arrow-repeat"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                                            <path fill-rule="evenodd"
+                                                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                                    <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="read more">
+                                                    <button class="btn" type="button"><i
+                                                            class="bi bi-three-dots"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-three-dots"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                                        </svg></button>
+                                                </span>
+                                            </div>
+                                        </div><!-- END CARD -->
+                                    </div>
+                                </div><!-- END CARD DECK -->
+                            </div><!-- END CONTAINER -->
+                            <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                    <div class="card " style="overflow: hidden; border-radius: 1rem;">
+                                        <a href="#"><img
+                                                src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Desktop-Sharpener.jpg"
+                                                class="card-img-top zoom" alt="...">
+                                        </a>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Desktop Sharpener</h5>
+                                            <p class="card-text">$35.00</p>
+                                            </a>
+                                            <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                                    <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-search"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Compare">
+                                                    <button class="btn" type="button"><i
+                                                            class="bi bi-arrow-repeat"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-arrow-repeat"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                                            <path fill-rule="evenodd"
+                                                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                                    <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="read more">
+                                                    <button class="btn" type="button"><i
+                                                            class="bi bi-three-dots"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-three-dots"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                                        </svg></button>
+                                                </span>
+                                            </div>
+                                        </div><!-- END CARD -->
+                                    </div>
+                                </div><!-- END CARD DECK -->
+                            </div><!-- END CONTAINER -->
                         </div>
                     </div>
                 </div>
-
-                <a href="">
-                    <div class="tang" style="margin-bottom: 20px;">
-                        <i class="bi bi-cart"></i>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="22" class="bi bi-cart-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                        </svg>
-                        <p class="card-text pt-1">buy now</p>
-                    </div>
-                </a>
             </div>
-            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-            <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-            <link rel="stylesheet"
-                href="https://unpkg.com/bs-brain@2.0.4/components/heroes/hero-1/assets/css/hero-1.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-            <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-            <script> AOS.init(); </script>
-            <link rel="stylesheet" href="css/bootstrap.css">
-            <link rel="stylesheet" href="css/bootstrap-responsive.css">
-            <!-- Bootstrap CSS -->
-            <link rel='stylesheet'
-                href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
-            <!-- Font Awesome CSS -->
-            <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'>
-            <link rel='stylesheet'
-                href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
-            <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
-            <link href='//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' />
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-                integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-                integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-            <script>
-                $(document).ready(function () {
-                    var owl = $('.owl-carousel');
-                    owl.owlCarousel({
-                        loop: true,
-                        margin: 10,
-                        nav: false,
-                        dots: false,
-                        autoplay: true,
-                        autoplayTimeout: 3000,
-                        autoplayHoverPause: true,
-                        responsive: {
-                            0: {
-                                items: 1,
-                            },
-                            400: {
-                                items: 2,
-                            },
-                            600: {
-                                items: 4,
-                            },
-                            1000: {
-                                items: 6,
-                                loop: true
-                            }
-                        }
-                    });
+        </div>
+        <a href="">
+            <div class="tang" style="margin-bottom: 20px;">
+                <i class="bi bi-cart"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" height="22" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                </svg>
+                <p class="card-text pt-1">buy now</p>
+            </div>
+        </a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/heroes/hero-1/assets/css/hero-1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script> AOS.init(); </script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.css">
+    <!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
+    <!-- Font Awesome CSS -->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
+    <link href='//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: false,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    400: {
+                        items: 2,
+                    },
+                    600: {
+                        items: 4,
+                    },
+                    1000: {
+                        items: 6,
+                        loop: true
+                    }
+                }
+            });
 
-                    $('.owl-next').click(function () {
-                        owl.trigger('next.owl.carousel');
-                    });
+            $('.owl-next').click(function () {
+                owl.trigger('next.owl.carousel');
+            });
 
-                    $('.owl-prev').click(function () {
-                        owl.trigger('prev.owl.carousel');
-                    });
-                });
-            </script>
+            $('.owl-prev').click(function () {
+                owl.trigger('prev.owl.carousel');
+            });
+        });
+    </script>
 </body>
 
 </html>
