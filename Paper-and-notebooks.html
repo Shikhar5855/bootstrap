@@ -1,0 +1,3032 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bootstrap-demo-website</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .roboto-slab {
+            font-family: "Roboto Slab", serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        a {
+            text-decoration: none !important;
+        }
+
+        /* Custom styles for the header */
+        .navbar {
+            height: 55px;
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: rgb(0 0 0) !important;
+        }
+
+        .navbar-light .navbar-nav {
+            margin-left: 30px;
+        }
+
+        .navbar-brand {
+            color: #000000;
+            /* Text color */
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: #000000;
+            /* Text color */
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            color: #a5ddf3;
+            /* Hover color */
+        }
+
+        .navbar-nav.navbar-center {
+            position: absolute;
+            left: 50%;
+            transform: translatex(-50%);
+        }
+
+        .header {
+            height: 100%;
+        }
+
+        .header .container-fluid {
+            margin-left: 142px;
+        }
+
+        .navbar-nav-item {
+            padding: 10px;
+        }
+
+        .dropdown-hover:hover>.dropdown-menu {
+            display: inline-block;
+            position: relative;
+        }
+
+        .dropdown-hover>.dropdown-toggle:active {
+            /*Without this, clicking will make it sticky*/
+            pointer-events: none;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+            display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.5s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(255, 254, 254, 0.8);
+        }
+
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 100%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #ffffff;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1s;
+        }
+
+        .zoom {
+            transition: transform 1s;
+            width: 100%;
+        }
+
+        .zoom:hover {
+            transform: scale(1.1);
+        }
+
+        :after,
+        :before {
+            box-sizing: border-box
+        }
+
+        .clearfix:after,
+        .clearfix:before {
+            content: '';
+            display: table
+        }
+
+        .clearfix:after {
+            clear: both;
+            display: block
+        }
+
+        .modal {
+            cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVBAMAAABbObilAAAAMFBMVEVMaXH////////////////////////////////////////////////////////////6w4mEAAAAD3RSTlMAlAX+BKLcA5+b6hJ7foD4ZP1OAAAAkUlEQVR4XkWPoQ3CUBQAL4SktoKAbCUjgAKLJZ2ABYosngTJCHSD6joUI6BZgqSoB/+Shqde7sS9x3OGk81fdO+texMtRVTia+TsQtHEUJLdohJfgNNPJHyEJPZTsWLoxShqsWITazEwqePAn69Sw2TUxk1+euPis3EwaXy8RMHSZBIlRcKKnC5hRctjMf57/wJbBlAIs9k1BAAAAABJRU5ErkJggg=='), progress
+        }
+
+        .login-wrap {
+            width: 100%;
+            max-width: 525px;
+            min-height: 570px;
+            position: relative;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+        }
+
+        .login-html {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            padding: 10px 70px 50px 70px;
+            background: rgba(40, 57, 101, .9);
+        }
+
+        .login-html .sign-in-htm,
+        .login-html .sign-up-htm {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            transform: rotateY(180deg);
+            backface-visibility: hidden;
+            transition: all .4s linear;
+        }
+
+        .login-html .sign-in,
+        .login-html .sign-up,
+        .login-form .group .check {
+            display: none;
+        }
+
+        .login-html .tab,
+        .login-form .group .label,
+        .login-form .group .button {
+            text-transform: uppercase;
+        }
+
+        .login-html .tab {
+            font-size: 22px;
+            margin-right: 15px;
+            padding-bottom: 5px;
+            margin: 20px 15px 10px 20px;
+            display: inline-block;
+            border-bottom: 2px solid transparent;
+        }
+
+        .login-html .sign-in:checked+.tab,
+        .login-html .sign-up:checked+.tab {
+            color: #fff;
+            border-color: #000000;
+        }
+
+
+
+        .login-form {
+            min-height: 345px;
+            position: relative;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        .login-form .group .label,
+        .login-form .group .input,
+        .login-form .group .button {
+            width: 100%;
+            color: #fff;
+            display: block;
+        }
+
+        .login-form .group .input,
+        .login-form .group .button {
+            border: none;
+            padding: 15px 20px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, .1);
+        }
+
+        .login-form .group .label {
+            color: #ffffff;
+            font-size: 12px;
+        }
+
+        .login-form .group .button {
+            background: #ffc898;
+            margin-top: 10px;
+        }
+
+        .login-form .group label .icon {
+            width: 15px;
+            height: 15px;
+            border-radius: 2px;
+            position: relative;
+            display: inline-block;
+            background: rgba(255, 255, 255, .1);
+        }
+
+        .login-form .group .check:checked+label {
+            color: #ffffff !important;
+        }
+
+        .login-form .group label .icon {
+            width: 16px;
+            height: 20px;
+            border-radius: 2px;
+            position: relative;
+            display: inline-block;
+            background: rgba(255, 255, 255, .1);
+        }
+
+        .login-form .group .check+label .icon {
+            display: none;
+        }
+
+        .login-form .group .check:checked+label .icon {
+            display: inline-block;
+
+        }
+
+        .login-form .group .check+label {
+            margin-left: 30px;
+        }
+
+        .login-form .group .check:checked+label {
+            margin-left: 0;
+        }
+
+        .login-html .sign-in:checked+.tab+.sign-up+.tab+.login-form .sign-in-htm {
+            transform: rotate(0);
+        }
+
+        .login-html .sign-up:checked+.tab+.login-form .sign-up-htm {
+            transform: rotate(0);
+        }
+
+        .foot-text {
+            text-align: center;
+            color: white;
+        }
+
+        .modal-body {
+            background: rgba(79, 80, 84, 0.9);
+        }
+
+        .modal-header {
+            background: rgba(40, 57, 101, .9);
+
+        }
+
+        /* Main Footer */
+        footer .main-footer {
+            padding: 20px 0;
+            background: #F3F7FF;
+            text-decoration-color: #000000;
+        }
+
+        footer ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        /* Copy Right Footer */
+        .footer-copyright {
+            padding: 5px 0;
+        }
+
+        .footer-copyright .logo {
+            display: inherit;
+        }
+
+        .footer-copyright nav {
+            float: right;
+            margin-top: 5px;
+        }
+
+        .footer-copyright nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-copyright nav ul li {
+            border-left: 1px solid #000000;
+            display: inline-block;
+            line-height: 12px;
+            margin: 0;
+            padding: 0 8px;
+        }
+
+        .footer-copyright nav ul li a {
+            color: #969696;
+        }
+
+        .footer-copyright nav ul li:first-child {
+            border: medium none;
+            padding-left: 0;
+        }
+
+        .footer-copyright p {
+            color: #969696;
+            margin: 2px 0 0;
+        }
+
+        /* Footer Top */
+        .footer-top {
+            background: #F3F7FF;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #222;
+        }
+
+        .footer-bottom {
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #222;
+
+        }
+
+        /* Footer transparent */
+        footer.transparent .footer-top,
+        footer.transparent .main-footer {
+            background: transparent;
+        }
+
+        footer.transparent .footer-copyright {
+            background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer light */
+        footer.light .footer-top {
+            background: #f9f9f9;
+        }
+
+        footer.light .main-footer {
+            background: #f9f9f9;
+        }
+
+        footer.light .footer-copyright {
+            background: none repeat scroll 0 0 rgba(255, 255, 255, 0.3);
+        }
+
+        /* Footer 4 */
+        .footer- .logo {
+            display: inline-block;
+        }
+
+        /*==================== 
+  Widgets 
+====================== */
+        .widget {
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        .widget.widget-last {
+            margin-bottom: 0px;
+        }
+
+        .widget.no-box {
+            padding: 0;
+            background-color: transparent;
+            margin-bottom: 40px;
+            box-shadow: none;
+        }
+
+        .widget.subscribe p {
+            margin-bottom: 18px;
+        }
+
+        .widget li a {
+            color: #fff;
+        }
+
+        .widget li a:hover {
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        .widget-title {
+            margin-bottom: 20px;
+        }
+
+        .widget-title span {
+            background: #839FAD none repeat scroll 0 0;
+            display: block;
+            height: 1px;
+            margin-top: 25px;
+            position: relative;
+            width: 20%;
+        }
+
+        .widget-title span::after {
+            background: inherit;
+            height: inherit;
+            position: absolute;
+            top: -4px;
+            width: 50%;
+        }
+
+        .widget-title.text-center span,
+        .widget-title.text-center span::after {
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+        }
+
+        .widget .badge {
+            float: right;
+            background: #7f7f7f;
+        }
+
+        .fa {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            background-color: #3e3e3e;
+            color: #fff;
+            padding: 9px;
+            border-radius: 5px;
+        }
+
+        #subscribe-box .emailfield {
+            margin: auto;
+        }
+
+        input[type="text"] {
+            background: rgba(255, 255, 255, 0.075);
+            padding: 10px 15px;
+            color: #aaa;
+            border: 3px solid rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            margin-bottom: 16px;
+            border-radius: 5px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transition-delay: 0.2s;
+            text-align: center;
+            width: 100%;
+        }
+
+        input.submitbutton.ripplelink {
+            background: #e67e22;
+            border: 3px solid rgba(0, 0, 0, 0.1);
+            color: #fff;
+            border-color: #e67e22;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+            transition-delay: 0s;
+            width: 100%;
+            font-size: 14px;
+            /* font-weight: 700; */
+            border: 0px solid;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 10px 15px;
+            margin-bottom: 16px;
+            border-radius: 5px;
+        }
+
+        .thumb-content ::before {
+            content: "\f190";
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: inherit;
+            margin-left: 5px;
+            color: #000000;
+        }
+
+        /*common styling*/
+        .main_title {
+            position: relative;
+            margin-bottom: 40px !important;
+            text-transform: uppercase;
+        }
+
+        .main_title:before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 120px;
+            height: 2px;
+            background: #ffecbb;
+            bottom: -8px;
+            left: calc(50% - 60px);
+        }
+
+        .main_title:after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 40px;
+            height: 4px;
+            background: #fcc101;
+            bottom: -9px;
+            left: calc(50% - 20px);
+        }
+
+        .main_title_left:before,
+        .main_title_left:after {
+            left: 0px;
+        }
+
+        /*common styling end*/
+        .member_card_style {
+            position: relative;
+            box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 5px;
+            background: #fff;
+            transition: 0.8s;
+            margin: 20px 0;
+        }
+
+        .member_card_style img {
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .member_card_style:hover {
+            transform: translateY(-10px);
+        }
+
+        .member-info {
+            padding-left: 30px;
+            display: inline-block;
+        }
+
+        .member-info h4 {
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 20px;
+            color: #fcc101;
+            text-transform: uppercase;
+        }
+
+        .member-info .social {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .member-info .social a {
+            transition: ease-in-out 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50px;
+            width: 32px;
+            height: 32px;
+            background: #fff3d5;
+            color: #ffb700;
+            text-decoration: none;
+        }
+
+        .member-info .social a i {
+            font-size: 16px;
+            margin: 0 2px;
+        }
+
+        .member-info .social a:hover {
+            background: #ffb700;
+            color: #fff;
+        }
+
+        .member-info .social a+a {
+            margin-left: 8px;
+        }
+
+        .member-info span {
+            display: block;
+            font-size: 15px;
+            padding-bottom: 10px;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .member-info span::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 50px;
+            height: 1px;
+            background: #bfe0fd;
+            bottom: 0;
+            left: 0;
+        }
+
+        /*custom tab style 2*/
+        .custom_tab_style2.nav-tabs {
+            display: flex;
+            justify-content: center;
+            border-bottom: 0;
+        }
+
+        .custom_tab_style2.nav-tabs .nav-link {
+            margin-bottom: -2px;
+            padding: 10px 25px;
+            border-width: 0 !important;
+        }
+
+        .custom_tab_style2 .nav-item.show .nav-link,
+        .custom_tab_style2 .nav-link.active::after {
+
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: blue;
+            left: 0;
+            bottom: 0;
+
+        }
+
+        .custom_tab_style2 .nav-item.show .nav-link,
+        .custom_tab_style2 .nav-link.active {
+            position: relative;
+        }
+
+        .sales {
+            position: relative;
+            width: fit-content;
+        }
+
+        .sales::after {
+
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: rgb(0, 0, 0);
+            left: 0;
+            bottom: -5px;
+        }
+
+        .custom_tab_style2 .nav-item.show .nav-link,
+        .custom_tab_style2 .nav-link {
+            color: #003AAA;
+        }
+
+        .cards {
+            padding: 10px;
+        }
+
+        .rating-wrapper {
+            align-self: center;
+            box-shadow: inset 0px 0px 4px rgba(255, 255, 255, .9),
+                inset 7px 7px 15px rgba(198, 206, 237, .8);
+            border-radius: 5rem;
+            display: inline-flex;
+            direction: rtl !important;
+            margin-left: auto;
+
+        }
+
+        .label {
+            color: #000000;
+            cursor: pointer;
+            display: inline-flex;
+            font-size: 3rem;
+            padding: 1rem .6rem;
+            transition: color 0.5s;
+        }
+
+
+        input {
+            height: 80%;
+            width: 80%;
+        }
+
+
+
+        label:hover,
+        label:hover~label,
+        input:checked~label {
+            color: #FEB605 !important;
+        }
+
+        .container-fluid-card {
+            padding: 1.5em .5em .5em;
+            border-radius: 2em;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+        }
+
+
+        .rating-wrappers {
+            align-self: center;
+            box-shadow: inset 0px 0px 4px rgba(255, 255, 255, .9),
+                inset 7px 7px 15px rgba(198, 206, 237, .8);
+            border-radius: 5rem;
+            display: inline-flex;
+            direction: rtl !important;
+            margin-left: auto;
+        }
+
+        .label {
+            color: #000000;
+            cursor: pointer;
+            display: inline-flex;
+            font-size: 3rem;
+            padding: 1rem .6rem;
+            transition: color 0.5s;
+        }
+
+
+        input {
+            height: 80%;
+            width: 80%;
+        }
+
+
+
+        label:hover,
+        label:hover~label,
+        input:checked~label {
+            color: #FEB605;
+        }
+
+        label:hover,
+        label:hover~label,
+        input:checked~label {
+            color: #FEB605;
+        }
+
+        .input::placeholder {
+            color: rgb(190, 237, 255);
+            /* or any color you prefer */
+        }
+
+        .carde {
+            padding: 50px;
+        }
+
+        .carde:hover {
+            background: #172059;
+            color: rgb(255, 255, 255);
+            transition: 1s;
+        }
+
+        .carde:hover a {
+            color: rgb(255, 255, 255);
+            transition: 1s;
+        }
+
+        .carde:hover .icon-crade {
+            fill: #FEB605 !important;
+            transition: 1s;
+        }
+
+        #cards_landscape_wrap-2 {
+            text-align: center;
+            background: #ffffff;
+        }
+
+        #cards_landscape_wrap-2 .container {
+            padding-top: 5px;
+            padding-bottom: 10px;
+        }
+
+        #cards_landscape_wrap-2 a {
+            text-decoration: none;
+            outline: none;
+        }
+
+        #cards_landscape_wrap-2 .card-flyer {
+            border-radius: 5px;
+        }
+
+        #cards_landscape_wrap-2 .card-flyer .image-box {
+            background: #ffffff;
+            overflow: hidden;
+            box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
+            border-radius: 5px;
+        }
+
+        #cards_landscape_wrap-2 .card-flyer .image-box img {
+            transition: all 1s;
+            width: 100%;
+
+        }
+
+        #cards_landscape_wrap-2 .card-flyer:hover .image-box img {
+            opacity: 0.7;
+            transform: scale(1.15);
+        }
+
+        #cards_landscape_wrap-2 .card-flyer .text-box {
+            text-align: center;
+        }
+
+        #cards_landscape_wrap-2 .card-flyer .text-box .text-container {
+            padding: 30px 18px;
+        }
+
+        #cards_landscape_wrap-2 .card-flyer {
+            background: #FFFFFF;
+            margin-top: 50px;
+            transition: all 1s ease-in;
+            box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40);
+        }
+
+        #cards_landscape_wrap-2 .card-flyer:hover {
+            background: #fff;
+            box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+            transition: all 1s ease-in;
+            margin-top: 50px;
+        }
+
+        #cards_landscape_wrap-2 .card-flyer .text-box p {
+            margin-top: 10px;
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            color: #000000;
+        }
+
+        #cards_landscape_wrap-2 .card-flyer .text-box h6 {
+            margin-top: 0px;
+            margin-bottom: 4px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-family: 'Roboto Black', sans-serif;
+            letter-spacing: 1px;
+            color: #172059;
+        }
+
+        .button2 {
+            background-color: white;
+            color: black;
+            border: 2px solid #172059;
+        }
+
+        .button2:hover {
+            background-color: #172059;
+            color: white;
+        }
+
+        .ratings {
+            margin-right: 10px;
+
+        }
+
+        .ratings i {
+
+            color: #cecece;
+            font: size 18px;
+        }
+
+        .rating-color {
+            color: #FEB605 !important;
+        }
+
+        .tang {
+            background-color: white;
+            color: #5a5a5a;
+            font-weight: 800;
+            box-shadow: -3px 2px 6px -1px rgba(0, 0, 0, .14);
+            font-size: 14px;
+            text-align: center;
+            padding: 3px 0;
+            fill: #5a5a5a;
+        }
+
+        .tang:hover {
+            background-color: #5a5a5a;
+            color: white;
+            fill: white;
+        }
+
+        .box a {
+            color: #5a5a5a;
+            fill: #5a5a5a;
+        }
+
+        .box:hover a {
+            color: white;
+            fill: white;
+        }
+
+        .company {
+            background-color: white;
+            color: #000000;
+            font-weight: 400;
+            box-shadow: -3px 2px 6px -1px rgba(0, 0, 0, .14);
+            font-size: 12px;
+            text-align: center;
+            padding: 3px 0;
+
+        }
+
+        .company:hover {
+            zoom: 5%;
+            transition: 1s;
+        }
+
+        .modal {
+            position: relative;
+            inset: 0;
+            background: rgba(80, 82, 89, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            cursor: auto;
+        }
+
+        .content {
+            position: relative;
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .modal:target {
+            display: flex;
+        }
+
+        .slider a {
+            text-decoration: none;
+            font-style: italic;
+            color: #000000;
+        }
+
+        .slider:hover a {
+            text-decoration: none;
+            font-style: italic;
+            color: #000000;
+        }
+
+        .slider {
+            background-color: #F3F7FF;
+        }
+
+        .widget li a {
+            color: #000;
+        }
+
+        .pop span {
+            background-color: white;
+        }
+
+        .pop {
+            padding: 5px;
+        }
+
+        .pop span :hover {
+            background-color: #003AAA;
+            color: white;
+        }
+
+        @media only screen and (max-width:480px) {
+            .carousel-control-prev {
+                display: none !important;
+            }
+
+        }
+
+        @media only screen and (max-width:480px) {
+            .carousel-control-next {
+                display: none !important;
+            }
+        }
+
+        .custom-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .custom-nav button {
+            color: #6d6d6d;
+            padding: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .custom-nav button:hover {
+            background-color: #333 !important;
+            color: white;
+        }
+
+        @media only screen and (max-width:992px) {
+            .navbar-nav.navbar-center {
+                display: none;
+            }
+
+        }
+
+        @media (max-width:552px) {
+            .card-center {
+                padding-bottom: 30px !important;
+            }
+        }
+
+
+
+
+        @media (min-width:991px) {
+            .heading {
+                margin-left: 200px !important;
+            }
+        }
+
+        @media (min-width:767px) {
+            .heading {
+                margin-left: 130px;
+            }
+
+        }
+
+        @media (min-width:552px) {
+            .heading {
+                margin-left: 100px;
+            }
+
+        }
+
+        @media (min-width:480px) {
+            .heading {
+                margin-left: 100px;
+            }
+
+        }
+
+        @media (min-width:380px) {
+            .heading {
+                margin-left: 80px;
+            }
+
+        }
+
+        @media (max-width:320px) {
+            .texts {
+                display: none;
+            }
+
+        }
+
+        .sticky-top {
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+        }
+
+        @media(min-width:320px) {
+            .heading {
+                margin: 20px;
+            }
+        }
+
+        @media(min-width:320px) {
+            .owl-carousel {
+                padding: 20px !important;
+                padding-left: 50px !important;
+            }
+        }
+
+        @media (max-width:320px) {
+            .list {
+                width: 212px !important;
+                height: 200px !important;
+            }
+        }
+
+        @media (max-width:767px) {
+            .list-group {
+                height: 200px !important;
+            }
+        }
+
+        @media (max-width:767px) {
+            .abc {
+                width: 190px !important;
+                height: 200px !important;
+            }
+        }
+
+        .card .pop {
+            display: none;
+        }
+
+        .card:hover .pop {
+            display: block;
+
+        }
+
+        @media (max-width:767px) {
+            .font-small {
+                font-size: medium !important;
+            }
+        }
+
+        .divider1::after {
+            flex: 1;
+            content: '';
+            height: 2px;
+            background-color: rgb(255, 255, 255);
+            margin: auto;
+        }
+
+        .divider2::before {
+            flex: 1;
+            content: '';
+            height: 2px;
+            background-color: rgb(255, 255, 255);
+            margin: auto;
+        }
+
+        .subscribe:hover {
+            color: rgb(0, 0, 0) !important;
+            background-color: #ffb606 !important;
+        }
+
+        .widget a {
+            text-decoration: none !important;
+        }
+
+        .new:hover {
+            background-color: #ffb606 !important;
+            color: #000;
+        }
+
+        .font-small {
+            font-family: "Roboto Slab" !important;
+            font-weight: 700;
+            line-height: 1.6em;
+            font-size: 32px;
+        }
+
+        .modal-backdrop.show {
+            opacity: 0;
+            display: none;
+        }
+
+        .range-form {
+            width: 400px;
+            padding-top: 20px;
+        }
+
+        .range-slider {
+            -webkit-appearance: none;
+            /* Override default CSS styles */
+            appearance: none;
+            width: 100%;
+            /* Full-width */
+            height: 10px;
+            border-radius: 5px;
+            /* Specified height */
+            background: #878787;
+            /* Grey background */
+            outline: none;
+            /* Remove outline */
+            opacity: 0.7;
+            /* Set transparency (for mouse-over effects on hover) */
+            -webkit-transition: .2s;
+            /* 0.2 seconds transition on hover */
+            transition: opacity .2s;
+
+            &:hover {
+                opacity: 1;
+                /* Fully shown on mouse-over */
+            }
+
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                /* Override default look */
+                appearance: none;
+                width: 18px;
+                /* Set a specific slider handle width */
+                height: 18px;
+                /* Slider handle height */
+                background: #000000;
+                /* Green background */
+                cursor: pointer;
+                /* Cursor on hover */
+                border-radius: 50%;
+            }
+        }
+
+        /* Mouse-over effects */
+
+        /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+    </style>
+</head>
+
+<body>
+    <nav class="navbar py-2 border-bottom" style="width:auto;background-color:#F3F7FF; height: auto;">
+        <div class="container d-flex ">
+            <ul class="nav me-auto ">
+                <li class="nav-item"><a class="nav-link link-dark px-2 "
+                        style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Hotline:</a>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link link-dark px-2"> +16468801999</a></li>
+            </ul>
+            <div class="navbar-nav navbar-center mt-1">
+                <span><strong style="color: #003AAA; font-weight: 800;">25% </strong>OFF Multi-Use Print & Copy Paper
+                    with code<strong style="color: #003AAA; font-weight: 800;"> EDUMA2024</strong></span>
+            </div>
+            <div class="neww">
+                <ul class="nav" style="gap: 5px;">
+                    <li class=" dropdown link-dark py-2 active " style="background: transparent;">
+                        <select style="background: transparent; border-radius: 5px; padding: 3px;">
+                            <option value="eng">Eng</option>
+                            <option value="cn">CN</option>
+                            <option value="cn">den</option>
+                        </select>
+                    </li>
+                    <li class="dropdown link-dark py-2 active" style="background-color: transparent;">
+                        <select style="background: transparent; border-radius: 5px; padding: 3px;">
+                            <option value="eng">USD</option>
+                            <option value="cn">CDN</option>
+                            <option value="cn">YEN</option>
+                        </select>
+                    </li>
+                    <li class="nav-item py-1">
+                        <button type="button" class="btn " data-toggle="modal" data-target="#loginModal">
+                            Login
+                        </button>
+                    </li>
+                </ul>
+                <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header border-bottom-0">
+                                <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true ">x</span>
+                                </button>
+                            </div>
+                            <div class="login-wrap">
+                                <div class="login-html">
+                                    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
+                                        class="tab" style="color: #ffc898;">Sign In</label>
+                                    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2"
+                                        class="tab" style="color: #ffc898;">Sign Up</label>
+                                    <div class="login-form">
+                                        <div class="sign-in-htm">
+                                            <div class="group" style="padding-bottom: 20px;">
+                                                <h4 class="text-light">Login with your site account
+                                                    </h>
+                                                    <input id="user" type="text" placeholder="Username" class="input"
+                                                        style="margin-top: 30px;">
+                                            </div>
+                                            <div class="group">
+                                                <input id="pass" type="text" placeholder="Password" class="input"
+                                                    data-type="password">
+                                            </div>
+                                            <div class="group">
+                                                <input id="check" type="checkbox" class="check">
+                                                <label class="text-light" for="check"><span class="icon"
+                                                        style="background: transparent; padding-right: 30px;"><i
+                                                            class="bi bi-check"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                            fill="white" class="bi bi-check" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                                        </svg></span>Keep me Signed in</label>
+                                            </div>
+                                            <div class="group">
+                                                <input type="submit" class="button text-dark" value="Sign In">
+                                            </div>
+                                            <div class="foot-text">
+                                                <a href="#forgot">Forgot your Password?</a>
+                                            </div>
+                                        </div>
+                                        <div class="sign-up-htm p-3">
+                                            <div class="group">
+                                                <h3 class="text-light">Register a new account</h3>
+                                                <input id="user" type="text" placeholder=" Username" class="input">
+                                            </div>
+                                            <div class="group">
+                                                <input id="pass" type="text" placeholder="Email Address" class="input">
+                                            </div>
+                                            <div class="group">
+                                                <input id="pass" type="text" placeholder="Password" class="input"
+                                                    data-type="password">
+                                            </div>
+                                            <div class="group">
+                                                <input id="pass" type="text" placeholder="Repeat Password" class="input"
+                                                    data-type="password">
+                                            </div>
+
+                                            <div class="group">
+                                                <input type="submit" class="button text-dark" value="Sign Up">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="sticky-top" style="background-color: white; z-index: 2; margin-top: -1px;">
+        <div class="header text-center container">
+            <nav class="header navbar navbar-expand-lg navbar-light bg-white text-center">
+                <div class="container">
+                    <a href="index.html" class="header-image navbar-brand ">
+                        <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/Logo.svg"
+                            class="attachment-full size-full wp-image-21099" alt="">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSdCt"
+                        aria-controls="navbarSdCt" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- Collapsible content -->
+                    <div class="collapse navbar-collapse " id="navbarSdCt" style=" background-color: white;">
+                        <ul class="navbar-nav container"
+                            style=" width: 100%; justify-content: center; padding: 0; margin: 0;">
+                            <!-- Navbar dropdown -->
+                            <li class="nav-item dropdown dropdown-hover  "
+                                style="position:relative; padding-right: 20px;">
+                                <a class="nav-link dropdown-toggle p-0 " href="#" id="navbarDropdown" role="button"
+                                    data-mdb-toggle="dropdown" aria-expanded="false">Products</a>
+                                <!-- Dropdown menu -->
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                                    style="width: max-content; margin-top:0; overflow-y: scroll; overflow-x: hidden; ">
+                                    <div class="container">
+                                        <div class="abc row">
+                                            <div class="col-md-4 col-lg-4 list-group list-group-flush font-weight-bold">
+                                                <a href=""
+                                                    class="list-group-item list-group-item-action text-primary">School
+                                                    solutions</a>
+                                                <a href="" class="list-group-item list-group-item-action">Dolor
+                                                    sit</a>
+                                                <a href="" class="list-group-item list-group-item-action">Amet
+                                                    consectetur</a>
+                                                <a href="" class="list-group-item list-group-item-action">Cras justo
+                                                    odio</a>
+                                            </div>
+                                            <div class="col-md-4 col-lg-4 list-group list-group-flush font-weight-bold">
+                                                <a href=""
+                                                    class="list-group-item list-group-item-action text-primary">University
+                                                    solutions</a>
+                                                <a href="" class="list-group-item list-group-item-action">Cras justo
+                                                    odio</a>
+                                                <a href="" class="list-group-item list-group-item-action">Est
+                                                    iure</a>
+                                                <a href=""
+                                                    class="list-group-item list-group-item-action">Praesentium</a>
+                                            </div>
+                                            <div class="col-md-4 col-lg-4 list-group list-group-flush font-weight-bold">
+                                                <a href=""
+                                                    class="list-group-item list-group-item-action text-primary">Scool
+                                                    solutions</a>
+                                                <a href="" class="list-group-item list-group-item-action">Saepe</a>
+                                                <a href="" class="list-group-item list-group-item-action">Vel
+                                                    alias</a>
+                                                <a href="" class="list-group-item list-group-item-action">Sunt
+                                                    doloribus</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Left links -->
+                            <li class="nav-item" style="padding-right: 20px;">
+                                <a class="nav-link p-0" href="best-deals.html">Best deals</a>
+                            </li>
+                            <li class="nav-item" style="padding-right: 20px;">
+                                <a class="nav-link p-0" href="Paper-and-notebooks.html">Paper and Notebook</a>
+                            </li>
+                            <li class="nav-item" style="padding-right: 20px;">
+                                <a class="nav-link p-0" href="Office-desk.html">Office desk</a>
+                            </li>
+                            <li class="nav-item dropdown dropdown-hover" style="position:relative;">
+                                <a data-mdb-dropdown-init class="nav-link dropdown-toggle " href="#" id="navbarDropdown"
+                                    role="button" data-mdb-toggle="dropdown" aria-expanded="false"
+                                    style="padding: 0;">Pages</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style=" margin-top: 0; ">
+                                    <div class="container">
+                                        <div class="row ">
+                                            <div class="list">
+                                                <div class="list-group list-group-flush font-weight-bold"
+                                                    style="height: 500px; width: 200px; overflow-y: scroll; overflow-x: hidden; z-index: 3;">
+                                                    <a href="" class="list-group-item list-group-item-action">Filter
+                                                        Left Sidebar</a>
+                                                    <a href="" class="list-group-item list-group-item-action">Simple
+                                                        Product Layout</a>
+                                                    <a href="" class="list-group-item list-group-item-action">Variable
+                                                        Product Layout</a>
+                                                    <a href="" class="list-group-item list-group-item-action">Blog
+                                                        Grid</a>
+                                                    <a href=""
+                                                        class="list-group-item list-group-item-action">Courses</a>
+                                                    <a href=""
+                                                        class="list-group-item list-group-item-action">Wishlist</a>
+                                                    <a href=""
+                                                        class="list-group-item list-group-item-action">Compare</a>
+                                                    <a href="" class="list-group-item list-group-item-action">About
+                                                        Us</a>
+                                                    <a href=""
+                                                        class="list-group-item list-group-item-action">Contact</a>
+                                                    <a href="" class="list-group-item list-group-item-action">Policy</a>
+                                                    <a href="" class="list-group-item list-group-item-action">Terms
+                                                        of
+                                                        Service</a>
+                                                    <a href=""
+                                                        class="list-group-item list-group-item-action">Shipping</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class=" nav-icon ms-auto" style="padding: 0;">
+                            <div class="row " style="list-style-type: none; ">
+                                <li class=" col-3">
+                                    <button type="button" class="btn btn-md">
+                                        <i class="bi bi-search"></i>
+                                        <svg href="#" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                            fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path
+                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                        </svg>
+                                    </button>
+                                </li>
+                                <li class="col-3 ">
+                                    <button type="button" class="btn btn-md ">
+                                        <i class="bi bi-search"></i><svg href="#" xmlns=" http://www.w3.org/2000/svg"
+                                            width="25" height="25" fill="currentColor" class="bi bi-suit-heart"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.6 7.6 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z" />
+                                        </svg><span class="badge text-light"
+                                            style="position: absolute; right: -15px; top: 0; background-color: #003AAA; border-radius: 50%;">0</span>
+                                    </button>
+                                </li>
+                                <li class="col-3 ">
+                                    <button type="button" class="btn btn-md ">
+                                        <i class="bi bi-cart"></i><svg xmlns="http://www.w3.org/2000/svg" width="25"
+                                            height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                        </svg><span class="badge text-light"
+                                            style="position: absolute; right: -15px; top: 0; background-color: #003AAA; border-radius: 50%;">5</span>
+                                    </button>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 50px; width: 100%;">
+        <div style="margin-bottom: 50px; font-weight: 500;">
+            <span class="roboto-slab">
+                <h2>Paper and notebooks</h2>
+            </span>
+            <br>
+            <a class="text-dark" href="index.html"> HOME </a>/
+            <span>Paper and notebooks</span>
+        </div>
+        <div class="filters container">
+            <ul
+                style="list-style: none; display:flex; padding: 0; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+                <!-- Navbar dropdown -->
+                <li class="nav-item dropdown dropdown-hover  " style="position:relative; padding-right: 20px; ">
+                    <h5><a class="nav-link dropdown-toggle p-0 " id="navbarDropdown" role="button"
+                            data-mdb-toggle="dropdown" aria-expanded="false">Categories</a></h5>
+                    <!-- Dropdown menu -->
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="margin-top:0;z-index: 1; position: absolute; width: max-content;">
+                        <div class="container">
+                            <div class="abc">
+                                <div class=" list-group list-group-flush font-weight-bold">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="radio1">
+                                            <h5>Cookware</h5>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="radio2">
+                                            <h5>Culinary</h5>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label">
+                                            <h5>Desk Accessories</h5>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label">
+                                            <h5>Files & folders</h5>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- Left links -->
+                <li class="nav-item dropdown dropdown-hover  " style="position:relative; padding-right: 20px; ">
+                    <h5><a class="nav-link dropdown-toggle p-0 " id="navbarDropdown" role="button"
+                            data-mdb-toggle="dropdown" aria-expanded="false">price</a></h5>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="margin-top:0;z-index: 1; position: absolute; width: max-content;">
+                        <div class="container">
+                            <div class="abc">
+                                <form class="range-form">
+                                    <div class="form-group row">
+                                        <div class="col-md-9">
+                                            <input type="range" min="1" max="200" value="200"
+                                                class="form-control-range range-slider" id="myRange">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <span id="demo">0</span>$
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+                <!-- Dropdown menu -->
+                <li class="nav-item dropdown dropdown-hover  " style="position:relative; padding-right: 20px; ">
+                    <h5><a class="nav-link dropdown-toggle p-0 " id="navbarDropdown" role="button"
+                            data-mdb-toggle="dropdown" aria-expanded="false">Color</a></h5>
+                    <!-- Dropdown menu -->
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="margin-top:0;z-index: 1; position: absolute; width: max-content;">
+                        <div class="container">
+                            <div class="abc">
+                                <div class=" list-group list-group-flush font-weight-bold">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault"
+                                            id="flexRadioDefault1" style=" background-color: #000;">
+                                        <label class="form-check-label" for="radio1">
+                                            <h5> Black</h5>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox"" name=" flexRadioDefault"
+                                            id="flexRadioDefault1" style=" background-color:#003AAA;">
+                                        <label class="form-check-label" for="radio2">
+                                            <h5> Blue</h5>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault"
+                                            id="flexRadioDefault1" style=" background-color: gray;">
+                                        <label class="form-check-label">
+                                            <h5>Gray</h5>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault"
+                                            id="flexRadioDefault1" style=" background-color:green;">
+                                        <label class="form-check-label">
+                                            <h5>Green</h5>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault"
+                                            id="flexRadioDefault1" id="flexRadioDefault1"
+                                            style=" background-color:pink;">
+                                        <label class="form-check-label">
+                                            <h5>Pink</h5>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault"
+                                            id="flexRadioDefault1" id="flexRadioDefault1"
+                                            style=" background-color:red;">
+                                        <label class="form-check-label" for="radio2">
+                                            <h5> Red</h5>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault"
+                                            id="flexRadioDefault1" id="flexRadioDefault1"
+                                            style=" background-color:yellow;">
+                                        <label class="form-check-label" for="radio2">
+                                            <h5> Yellow</h5>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                </li>
+                <li class="nav-item dropdown dropdown-hover  " style="position:relative; padding-right: 20px; ">
+                    <h5><a class="nav-link dropdown-toggle p-0 " id="navbarDropdown" role="button"
+                            data-mdb-toggle="dropdown" aria-expanded="false">Rating</a></h5>
+                    <!-- Dropdown menu -->
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="margin-top:0;z-index: 1; position: absolute; width: max-content;">
+                        <div class="container">
+                            <div class="abc">
+                                <div class=" list-group list-group-flush font-weight-bold">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="radio1">
+                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                            </svg>
+                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                            </svg> <i class="bi bi-star-fill"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FEB605"
+                                                class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                            </svg> <i class="bi bi-star-fill"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FEB605"
+                                                class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                            </svg> <i class="bi bi-star-fill"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FEB605"
+                                                class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                            </svg> </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label">
+                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                            </svg>
+                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                            </svg> <i class="bi bi-star-fill"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FEB605"
+                                                class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                            </svg> <i class="bi bi-star-fill"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FEB605"
+                                                class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                            </svg> </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label">
+                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                            </svg>
+                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                            </svg> <i class="bi bi-star-fill"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FEB605"
+                                                class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                            </svg> </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label">
+                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                            </svg>
+                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                            </svg> </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label">
+                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                            </svg>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown dropdown-hover  " style="position:relative; padding-right: 20px; ">
+                    <h5><a class="nav-link dropdown-toggle p-0 " id="navbarDropdown" role="button"
+                            data-mdb-toggle="dropdown" aria-expanded="false">Availabilty</a></h5>
+                    <!-- Dropdown menu -->
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"
+                        style="margin-top:0;z-index: 1; position: absolute; width: max-content;">
+                        <div class="container">
+                            <div class="abc">
+                                <div class=" list-group list-group-flush font-weight-bold">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="radio1">
+                                            <h5>In stock</h5>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <h5>out of stock</h5>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container" style="width: 100%; text-align: end; ">
+        <a class=" dropdown link-dark py-2 active " style="background: transparent; padding: 25px;">
+            <select style="background: transparent; border-radius: 5px; padding: 3px; border: white;">
+                <option value="eng">Default sorting</option>
+                <option value="cn">Sort by popularity</option>
+                <option value="cn">Sort by average rating</option>
+                <option value="cn">Sort by latest</option>
+                <option value="cn">Sort by price : low to high</option>
+                <option value="cn">Sort by price : high to low</option>
+            </select>
+        </a>
+    </div>
+
+    <div class="container text-center">
+        <div class="member">
+            <div class="row p-3 ">
+                <div class="cards col-lg-3 col-md-4 col-sm-6">
+                    <div class="card-deck flex-row flex-nowrap">
+                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
+
+                            <a href="#"><img
+                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Colours-Pencils.jpg"
+                                    class="card-img-top zoom" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Colours Pencils</h5>
+                                <p class="card-text">$68.00</p>
+                            </div>
+                            </a>
+                            <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                    data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                    <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path
+                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                        </svg></button>
+                                </span>
+                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                    data-bs-trigger="hover focus" data-bs-content="Compare">
+                                    <button class="btn" type="button"><i class="bi bi-arrow-repeat"></i><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                            <path
+                                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                            <path fill-rule="evenodd"
+                                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                        </svg></button>
+                                </span>
+                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                    data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                    <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                            <path
+                                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                        </svg></button>
+                                </span>
+                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                    data-bs-trigger="hover focus" data-bs-content="read more">
+                                    <button class="btn" type="button"><i class="bi bi-three-dots"></i><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                        </svg></button>
+                                </span>
+                            </div>
+                        </div><!-- END CARD -->
+                    </div><!-- END CARD DECK -->
+                </div><!-- END CONTAINER -->
+                <div class="cards col-lg-3 col-md-4 col-sm-6">
+                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
+                            <a href="#"><img
+                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Cahier-Large-Notebook-Set.jpg"
+                                    class="card-img-top zoom" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Notebook Set</h5>
+                                <p class="card-text">$54.00</p>
+                            </div>
+                            </a>
+                            <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                    data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                    <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path
+                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                        </svg></button>
+                                </span>
+                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                    data-bs-trigger="hover focus" data-bs-content="Compare">
+                                    <button class="btn" type="button"><i class="bi bi-arrow-repeat"></i><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                            <path
+                                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                            <path fill-rule="evenodd"
+                                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                        </svg></button>
+                                </span>
+                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                    data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                    <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                            <path
+                                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                        </svg></button>
+                                </span>
+                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                    data-bs-trigger="hover focus" data-bs-content="read more">
+                                    <button class="btn" type="button"><i class="bi bi-three-dots"></i><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                        </svg></button>
+                                </span>
+                            </div>
+                        </div><!-- END CARD -->
+
+                    </div><!-- END CARD DECK -->
+                </div><!-- END CONTAINER -->
+                <div class="cards col-lg-3 col-md-4 col-sm-6">
+                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
+                            <a href="#"><img
+                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Fountain-Pen-And-Journals-Gift-Set.jpg"
+                                    class="card-img-top zoom" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Safari Fountain Pen Gift Set</h5>
+                                <p class="card-text">$35.00</p>
+                            </div>
+                            </a>
+                            <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                    data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                    <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path
+                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                        </svg></button>
+                                </span>
+                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                    data-bs-trigger="hover focus" data-bs-content="Compare">
+                                    <button class="btn" type="button"><i class="bi bi-arrow-repeat"></i><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                            <path
+                                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                            <path fill-rule="evenodd"
+                                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                        </svg></button>
+                                </span>
+                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                    data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                    <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                            <path
+                                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                        </svg></button>
+                                </span>
+                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                    data-bs-trigger="hover focus" data-bs-content="read more">
+                                    <button class="btn" type="button"><i class="bi bi-three-dots"></i><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                        </svg></button>
+                                </span>
+                            </div>
+                        </div><!-- END CARD -->
+                    </div>
+                </div><!-- END CARD DECK -->
+                <div class="cards col-lg-3 col-md-4 col-sm-6">
+                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
+                            <a href="#"><img
+                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Tape-Dispenser-Large-4.jpg"
+                                    class="card-img-top zoom" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Tape Dispenser Large</h5>
+                                <p class="card-text">$36.00 – $46.00</p>
+                                </a>
+                                <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                    <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                        data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                        <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                            </svg></button>
+                                    </span>
+                                    <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                        data-bs-trigger="hover focus" data-bs-content="Compare">
+                                        <button class="btn" type="button"><i class="bi bi-arrow-repeat"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                                <path fill-rule="evenodd"
+                                                    d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                            </svg></button>
+                                    </span>
+                                    <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                        data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                        <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                <path
+                                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                            </svg></button>
+                                    </span>
+                                    <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                        data-bs-trigger="hover focus" data-bs-content="read more">
+                                        <button class="btn" type="button"><i class="bi bi-three-dots"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                            </svg></button>
+                                    </span>
+                                </div>
+                            </div><!-- END CARD -->
+                        </div>
+                    </div><!-- END CARD DECK -->
+                </div><!-- END CONTAINER -->
+                <div class="cards col-lg-3 col-md-4 col-sm-6">
+                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
+                            <a href="#"><img
+                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/U-Brands-6ct-File-Folders-Precious-Petals.jpg"
+                                    class="card-img-top zoom" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">U Brands 6ct File Folders</h5>
+                                <p class="card-text">$24.00</p>
+                                </a>
+                                <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                    <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                        data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                        <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                            </svg></button>
+                                    </span>
+                                    <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                        data-bs-trigger="hover focus" data-bs-content="Compare">
+                                        <button class="btn" type="button"><i class="bi bi-arrow-repeat"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                                <path fill-rule="evenodd"
+                                                    d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                            </svg></button>
+                                    </span>
+                                    <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                        data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                        <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                <path
+                                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                            </svg></button>
+                                    </span>
+                                    <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                        data-bs-trigger="hover focus" data-bs-content="read more">
+                                        <button class="btn" type="button"><i class="bi bi-three-dots"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                            </svg></button>
+                                    </span>
+                                </div>
+                            </div><!-- END CARD -->
+                        </div>
+                    </div><!-- END CARD DECK -->
+                </div><!-- END CONTAINER -->
+                <div class="cards col-lg-3 col-md-4 col-sm-6">
+                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
+                            <a href="#"><img
+                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Van-Gogh-Collection-Cahier-Notebook-Set-Large.jpg"
+                                    class="card-img-top zoom" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Van Gogh Notebook</h5>
+                                <p class="card-text">$24.00</p>
+                                </a>
+                                <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                    <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                        data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                        <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                            </svg></button>
+                                    </span>
+                                    <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                        data-bs-trigger="hover focus" data-bs-content="Compare">
+                                        <button class="btn" type="button"><i class="bi bi-arrow-repeat"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                                <path fill-rule="evenodd"
+                                                    d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                            </svg></button>
+                                    </span>
+                                    <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                        data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                        <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                <path
+                                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                            </svg></button>
+                                    </span>
+                                    <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                        data-bs-trigger="hover focus" data-bs-content="read more">
+                                        <button class="btn" type="button"><i class="bi bi-three-dots"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                            </svg></button>
+                                    </span>
+                                </div>
+                            </div><!-- END CARD -->
+                        </div>
+                    </div><!-- END CARD DECK -->
+                </div><!-- END CONTAINER -->
+                <div class="cards col-lg-3 col-md-4 col-sm-6">
+                    <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                        <div class="card " style="overflow: hidden; border-radius: 1rem;">
+                            <a href="#"><img
+                                    src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Paulo-Wood-Writing-Desk-with-Drawer-Threshold%E2%84%A2.jpg"
+                                    class="card-img-top zoom" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">Wood Writing Desk</h5>
+                                <p class="card-text">$135.00</p>
+                                </a>
+                                <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                    <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                        data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                        <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                            </svg></button>
+                                    </span>
+                                    <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                        data-bs-trigger="hover focus" data-bs-content="Compare">
+                                        <button class="btn" type="button"><i class="bi bi-arrow-repeat"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                                <path fill-rule="evenodd"
+                                                    d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                            </svg></button>
+                                    </span>
+                                    <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                        data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                        <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                <path
+                                                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                            </svg></button>
+                                    </span>
+                                    <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                        data-bs-trigger="hover focus" data-bs-content="read more">
+                                        <button class="btn" type="button"><i class="bi bi-three-dots"></i><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                            </svg></button>
+                                    </span>
+                                </div>
+                            </div><!-- END CARD -->
+                        </div>
+                    </div><!-- END CARD DECK -->
+                </div><!-- END CONTAINER -->
+            </div>
+        </div>
+    </div>
+    <div class="about text-center" style="font-size:larger; font-weight:800;">
+        <div class="container-fluid pb-5 pt-5">
+            <div class="row p-5">
+                <div class="col-lg-3 col-md-6">
+                    <h1><i class="bi bi-truck"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue" class="bi bi-truck"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5zm1.294 7.456A2 2 0 0 1 4.732 11h5.536a2 2 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456M12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2" />
+                        </svg>
+                    </h1>
+                    Free Shipping
+                    <p class="pt-2"><small>Free shipping on all orders from $59</small></p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h1><i class="bi bi-credit-card"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue"
+                            class="bi bi-credit-card" viewBox="0 0 16 16">
+                            <path
+                                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
+                            <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+                        </svg>
+                    </h1>
+                    Safe Payments
+                    <p class="pt-2"><small>100% secure payment</small></p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h1><i class="bi bi-gift"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue" class="bi bi-gift"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 14.5V7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A3 3 0 0 1 3 2.506zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43zM9 3h2.932l.023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0zM1 4v2h6V4zm8 0v2h6V4zm5 3H9v8h4.5a.5.5 0 0 0 .5-.5zm-7 8V7H2v7.5a.5.5 0 0 0 .5.5z" />
+                        </svg>
+                    </h1>
+                    Discount Coupons
+                    <p class="pt-2"><small>Enjoy Huge Promotions</small></p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h1><i class="bi bi-chat-left"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="blue"
+                            class="bi bi-chat-left" viewBox="0 0 16 16">
+                            <path
+                                d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                        </svg>
+                    </h1>
+                    Quality Support
+                    <p class="pt-2"><small>24/7 Support</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer" class="footer-1">
+        <div class="main-footer widgets-dark typo-light">
+            <div class="container">
+                <div class="row footer-top" style="background-color: #F3F7FF;">
+                    <img class="image col-lg-3 col-md-4 col-sm-4 col-6 me-auto"
+                        src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/09/Logo.svg">
+                    <div class="text col-lg-8 mt-5" style="display: flex;">
+                        <h5 style="margin-right: 1px;">Subscribe And Get 20% Off Your First Purchase.</h5>
+                        <div class="form-group" style="margin: 5px;">
+                            <input type="email"
+                                style=" height: 100%; width: 100%; outline: #003AAA; outline-width: 2px; outline-style: solid;"
+                                class="form-control" placeholder="Enter your email">
+                        </div>
+                        <button class="btn subscribe"
+                            style="font-weight: 600; margin: 5px; height: auto; background-color: #003AAA; color: white;">Subscribe
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-3 ">
+                        <h5>Need Help! </h5>
+                        <div class="widget no-box">
+                            <h5 class="widget-title">
+                                <span></span>
+                            </h5>
+                            <p></p>
+                            <p></p>
+                            <p>We Promise We’ll Get Back To You Promptly Your Gifting
+                                Needs Are Always On Our Minds!</p>
+                            <p> Hotline: +1 515 323 6290</p>
+                            <p> Monday – Friday: 9:00-20:00</p>
+                            <p>Saturday: 11:00 – 15:00</p>
+                            <p> Email: support@gmail.com</p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget no-box ">
+                            <h5 class="widget-title">Quick Links<span></span></h5>
+                            <ul class="thumbnail-widget">
+                                <li>
+                                    <p>
+                                    <div class="thumb-content"><a href="#.">&nbsp;About Us</a></div>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                    <div class="thumb-content"><a href="#.">&nbsp;Store Reviews</a></div>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                    <div class="thumb-content"><a href="#.">&nbsp;Operation Status</a></div>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                    <div class="thumb-content"><a href="#.">&nbsp;FAQs</a></div>
+                                    </p>
+                                </li>
+                                <li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget no-box">
+                            <h5 class="widget-title">Follow up<span></span></h5>
+                            <div class="iconss">
+                                <a href="#"> <i class="new fa fa-facebook"> </i> </a>
+                                <a href="#"> <i class="new fa fa-twitter"> </i> </a>
+                                <a href="#"> <i class="new fa fa-youtube"> </i> </a>
+                            </div>
+                            <ul class="thumbnail-widget">
+                                <li>
+                                    <p>
+                                    <div class="thumb-content"><a href="#.">&nbsp;Facebook</a></div>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                    <div class="thumb-content"><a href="#.">&nbsp;Pinterest</a></div>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                    <div class="thumb-content"><a href="#.">&nbsp;Instagram</a></div>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                    <div class="thumb-content"><a href="#.">&nbsp;TikTok</a></div>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                    <div class="thumb-content"><a href="#.">&nbsp;YouTube</a></div>
+                                    </p>
+                                </li>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget no-box ">
+                            <h5 class="widget-title">Custom Services<span></span></h5>
+                            <p>Delivery</p>
+                            <p>Returns and complaints</p>
+                            <p> Cookie Policy</p>
+                            <p> Pixel disclaimer</p>
+                            <p> Competition Terms</p>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row footer-bottom">
+                </div>
+                <div class="footer-copyright ">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <p>Copyright Design Sherif Hamdy © 2019. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="side" style="width: 80px; position: fixed; top: 35%; right: 0; z-index: 2;">
+        <div class="box">
+            <a data-toggle="modal" data-target="#exampleModal" style="cursor:pointer;">
+                <div class="tang" style="margin-bottom: 20px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-stack" height="22" viewBox="0 0 16 16">
+                        <path
+                            d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.6.6 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.6.6 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.6.6 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535z" />
+                        <path
+                            d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.6.6 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0z" />
+                    </svg>
+                    <p>demos</p>
+                </div>
+            </a>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true" style="padding: 0;">
+                <div class="modal-dialog text-center" role="document" style="max-width: fit-content;">
+                    <div class="modal-content container" style="border-radius: 50px;">
+                        <div class="container-fluid" style="padding:50px;">
+                            <img src="https://eduma.thimpress.com/demo-main/wp-content/uploads/sites/95/2022/06/logo-edu_black.png"
+                                style="width: 40%;">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <i class="bi bi-x-lg"></i><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                    fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <button class="button btn container"
+                            style="background-color: #5b7189; font-family: Georgia, 'Times New Roman', Times, serif; color: #f2f60a; border-radius: 15px; width: 50%; justify-content: center;">BUY
+                            EDUMA NOW!
+                        </button>
+                        <div class="row p-3 ">
+                            <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                <div class="card-deck flex-row flex-nowrap">
+                                    <div class="card " style="overflow: hidden; border-radius: 1rem;">
+
+                                        <a href="#"><img
+                                                src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Fountain-Pen-And-Journals-Gift-Set.jpg"
+                                                class="card-img-top zoom" alt="...">
+                                        </a>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Safari Fountain Pen Gift Set</h5>
+                                            <p class="card-text">$35.00</p>
+                                        </div>
+                                        </a>
+                                        <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                                <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                                    </svg></button>
+                                            </span>
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="Compare">
+                                                <button class="btn" type="button"><i class="bi bi-arrow-repeat"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-arrow-repeat"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                                        <path fill-rule="evenodd"
+                                                            d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                                    </svg></button>
+                                            </span>
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                                <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                                    </svg></button>
+                                            </span>
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="read more">
+                                                <button class="btn" type="button"><i class="bi bi-three-dots"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-three-dots"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                                    </svg></button>
+                                            </span>
+                                        </div>
+                                    </div><!-- END CARD -->
+                                </div><!-- END CARD DECK -->
+                            </div><!-- END CONTAINER -->
+                            <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                    <div class="card " style="overflow: hidden; border-radius: 1rem;">
+                                        <a href="#"><img
+                                                src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Colours-Pencils.jpg"
+                                                class="card-img-top zoom" alt="...">
+                                        </a>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Colours Pencils</h5>
+                                            <p class="card-text">$35.00</p>
+                                        </div>
+                                        </a>
+                                        <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                                <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                                    </svg></button>
+                                            </span>
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="Compare">
+                                                <button class="btn" type="button"><i class="bi bi-arrow-repeat"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-arrow-repeat"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                                        <path fill-rule="evenodd"
+                                                            d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                                    </svg></button>
+                                            </span>
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                                <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                                    </svg></button>
+                                            </span>
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="read more">
+                                                <button class="btn" type="button"><i class="bi bi-three-dots"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-three-dots"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                                    </svg></button>
+                                            </span>
+                                        </div>
+                                    </div><!-- END CARD -->
+
+                                </div><!-- END CARD DECK -->
+                            </div><!-- END CONTAINER -->
+                            <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                    <div class="card " style="overflow: hidden; border-radius: 1rem;">
+                                        <a href="#"><img
+                                                src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Van-Gogh-Collection-Cahier-Notebook-Set-Large.jpg"
+                                                class="card-img-top zoom" alt="...">
+                                        </a>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Van Gogh Notebook</h5>
+                                            <p class="card-text">$35.00</p>
+                                        </div>
+                                        </a>
+                                        <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                                <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                                    </svg></button>
+                                            </span>
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="Compare">
+                                                <button class="btn" type="button"><i class="bi bi-arrow-repeat"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-arrow-repeat"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                                        <path fill-rule="evenodd"
+                                                            d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                                    </svg></button>
+                                            </span>
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                                <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                                    </svg></button>
+                                            </span>
+                                            <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                data-bs-trigger="hover focus" data-bs-content="read more">
+                                                <button class="btn" type="button"><i class="bi bi-three-dots"></i><svg
+                                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-three-dots"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                                    </svg></button>
+                                            </span>
+                                        </div>
+                                    </div><!-- END CARD -->
+                                </div>
+                            </div><!-- END CARD DECK -->
+                            <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                    <div class="card " style="overflow: hidden; border-radius: 1rem;">
+                                        <a href="#"><img
+                                                src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/2024-Wall-Calendar-Greetings-From-Around-The-World.jpg"
+                                                class="card-img-top zoom" alt="...">
+                                        </a>
+                                        <div class="card-body">
+                                            <h5 class="card-title">2024 Wall Calendar</h5>
+                                            <p class="card-text">$35.00</p>
+                                            </a>
+                                            <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                                    <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-search"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Compare">
+                                                    <button class="btn" type="button"><i
+                                                            class="bi bi-arrow-repeat"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-arrow-repeat"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                                            <path fill-rule="evenodd"
+                                                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                                    <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="read more">
+                                                    <button class="btn" type="button"><i
+                                                            class="bi bi-three-dots"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-three-dots"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                                        </svg></button>
+                                                </span>
+                                            </div>
+                                        </div><!-- END CARD -->
+                                    </div>
+                                </div><!-- END CARD DECK -->
+                            </div><!-- END CONTAINER -->
+                            <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                    <div class="card " style="overflow: hidden; border-radius: 1rem;">
+                                        <a href="#"><img
+                                                src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Weekly-Undated-Planner-Set-B6-2.jpg"
+                                                class="card-img-top zoom" alt="...">
+                                        </a>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Weekly Undated Planner Set B6</h5>
+                                            <p class="card-text">$35.00</p>
+                                            </a>
+                                            <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                                    <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-search"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Compare">
+                                                    <button class="btn" type="button"><i
+                                                            class="bi bi-arrow-repeat"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-arrow-repeat"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                                            <path fill-rule="evenodd"
+                                                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                                    <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="read more">
+                                                    <button class="btn" type="button"><i
+                                                            class="bi bi-three-dots"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-three-dots"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                                        </svg></button>
+                                                </span>
+                                            </div>
+                                        </div><!-- END CARD -->
+                                    </div>
+                                </div><!-- END CARD DECK -->
+                            </div><!-- END CONTAINER -->
+                            <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                    <div class="card " style="overflow: hidden; border-radius: 1rem;">
+                                        <a href="#"><img
+                                                src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Handmade-Mini-Stone-Crayon-Set-Coloured.jpg"
+                                                class="card-img-top zoom" alt="...">
+                                        </a>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Handmade Mini Stone</h5>
+                                            <p class="card-text">$35.00</p>
+                                            </a>
+                                            <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                                    <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-search"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Compare">
+                                                    <button class="btn" type="button"><i
+                                                            class="bi bi-arrow-repeat"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-arrow-repeat"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                                            <path fill-rule="evenodd"
+                                                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                                    <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="read more">
+                                                    <button class="btn" type="button"><i
+                                                            class="bi bi-three-dots"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-three-dots"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                                        </svg></button>
+                                                </span>
+                                            </div>
+                                        </div><!-- END CARD -->
+                                    </div>
+                                </div><!-- END CARD DECK -->
+                            </div><!-- END CONTAINER -->
+                            <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                    <div class="card " style="overflow: hidden; border-radius: 1rem;">
+                                        <a href="#"><img
+                                                src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Pens-Journal-and-Refill-Bundle-3.jpg"
+                                                class="card-img-top zoom" alt="...">
+                                        </a>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Pens Journal And Refill Bundle</h5>
+                                            <p class="card-text">$35.00</p>
+                                            </a>
+                                            <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                                    <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-search"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Compare">
+                                                    <button class="btn" type="button"><i
+                                                            class="bi bi-arrow-repeat"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-arrow-repeat"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                                            <path fill-rule="evenodd"
+                                                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                                    <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="read more">
+                                                    <button class="btn" type="button"><i
+                                                            class="bi bi-three-dots"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-three-dots"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                                        </svg></button>
+                                                </span>
+                                            </div>
+                                        </div><!-- END CARD -->
+                                    </div>
+                                </div><!-- END CARD DECK -->
+                            </div><!-- END CONTAINER -->
+                            <div class="cards col-lg-3 col-md-3 col-sm-6">
+                                <div class="card-deck flex-row flex-nowrap" style="height: 100%;">
+
+                                    <div class="card " style="overflow: hidden; border-radius: 1rem;">
+                                        <a href="#"><img
+                                                src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Desktop-Sharpener.jpg"
+                                                class="card-img-top zoom" alt="...">
+                                        </a>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Desktop Sharpener</h5>
+                                            <p class="card-text">$35.00</p>
+                                            </a>
+                                            <div class="pop" style="position: absolute; right: 0; top: 0;">
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Quick view">
+                                                    <button class="btn" type="button"><i class="bi bi-search"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-search"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Compare">
+                                                    <button class="btn" type="button"><i
+                                                            class="bi bi-arrow-repeat"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-arrow-repeat"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                                                            <path fill-rule="evenodd"
+                                                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="Wishlist">
+                                                    <button class="btn" type="button"><i class="bi bi-heart"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                                        </svg></button>
+                                                </span>
+                                                <span class="d-block" tabindex="0" data-bs-toggle="popover"
+                                                    data-bs-trigger="hover focus" data-bs-content="read more">
+                                                    <button class="btn" type="button"><i
+                                                            class="bi bi-three-dots"></i><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-three-dots"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                                                        </svg></button>
+                                                </span>
+                                            </div>
+                                        </div><!-- END CARD -->
+                                    </div>
+                                </div><!-- END CARD DECK -->
+                            </div><!-- END CONTAINER -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="">
+            <div class="tang" style="margin-bottom: 20px;">
+                <i class="bi bi-cart"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" height="22" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                </svg>
+                <p class="card-text pt-1">buy now</p>
+            </div>
+        </a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/heroes/hero-1/assets/css/hero-1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script> AOS.init(); </script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.css">
+    <!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
+    <!-- Font Awesome CSS -->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
+    <link href='//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: false,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    400: {
+                        items: 2,
+                    },
+                    600: {
+                        items: 4,
+                    },
+                    1000: {
+                        items: 6,
+                        loop: true
+                    }
+                }
+            });
+
+            $('.owl-next').click(function () {
+                owl.trigger('next.owl.carousel');
+            });
+
+            $('.owl-prev').click(function () {
+                owl.trigger('prev.owl.carousel');
+            });
+        });
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value; // Display the default slider value
+
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function () {
+            output.innerHTML = this.value; $
+        }
+
+    </script>
+</body>
+
+</html>
+            
