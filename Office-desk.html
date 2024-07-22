@@ -1160,18 +1160,7 @@
                 height: 200px !important;
             }
         }
-        
-        @media (max-width:993px) {
-            .no {
-                display: none;
-            }
-        }
 
-        @media (min-width:993px) {
-            .yes {
-                display: none;
-            }
-        }
 
         .card .pop {
             display: none;
@@ -1278,6 +1267,23 @@
         /* Mouse-over effects */
 
         /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+        @media (min-width:993px) {
+            .yes {
+                display: none;
+            }
+        }
+
+        @media (max-width:993px) {
+            .non {
+                display: block;
+            }
+        }
+
+        @media (max-width:993px) {
+            .noni {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -1554,677 +1560,730 @@
             <span>Office desk</span>
         </div>
     </div>
-    <div class="container-fluid" style="margin-top: 50px; width: 90%;">
+    <div class="container" style="margin-top: 50px; width: 90%;">
         <div class="common row">
             <div class="yes">
                 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" style="position: inherit; width: inherit; right: 0;">
-      <div class="modal-content">
-       <div class="no">
-                <div class="accordion" id="accordionPanelsStayOpenExample" style="border: white;">
-                    <div class="accordion-item" style="border: white;">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                                aria-controls="panelsStayOpen-collapseOne" style="z-index: 0;">
-                                Availabilty </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
-                            aria-labelledby="panelsStayOpen-headingOne">
-                            <div class="accordion-body">
-                                <div class=" list-group list-group-flush font-weight-bold">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label" for="radio1">
-                                            <h5>In stock</h5>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <h5>out of stock</h5>
-                                        </label>
-                                    </div>
-                                </div>
+                <button type="button" class="btn" style="outline-style: solid; outline-width: 2px;" data-toggle="modal"
+                    data-target="#exampleModal">
+                    FILTERS
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable"
+                        style="position: inherit; width: inherit; right: 0; top: 0; margin: 0;">
+                        <div class="modal-content" style="overflow: scroll;">
+                            <div class="close ms-auto" style="margin-right: 15px;">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                    style="right: 0;">
+                                    <i class="bi bi-x-lg"></i><svg xmlns="http://www.w3.org/2000/svg" width="30"
+                                        height="30" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                        <path
+                                            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                                    </svg>
+                                </button>
                             </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item" style="border: white;">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingtwo">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapsetwo" aria-expanded="true"
-                                aria-controls="panelsStayOpen-collapsetwo" style="z-index: 0;">
-                                Categories </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapsetwo" class="accordion-collapse collapse show"
-                            aria-labelledby="panelsStayOpen-headingtwo">
-                            <div class="accordion-body">
-                                <div class=" list-group list-group-flush font-weight-bold" style="gap: 10px;">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="radio1">
-                                            Cookware
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="radio2">
-                                            Culinary
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label">
-                                            Desk Accessories
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label">
-                                            Files & folders
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="radio2">
-                                            Flash sale
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="radio2">
-                                            Office Desk
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="radio2">
-                                            Paper and notebooks
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="radio2">
-                                            Pens and writing
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="radio2">
-                                            Postcard
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item" style="border: white;">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true"
-                                aria-controls="panelsStayOpen-collapseThree" style="z-index: 0;">
-                                price </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show"
-                            aria-labelledby="panelsStayOpen-headingThree">
-                            <div class="accordion-body">
-                                <form class="range-form" style="width: auto;">
-                                    <div class="form-group row">
-                                        <div class="col-md-10">
-                                            <input type="range" min="1" max="200" value="200"
-                                                class="form-control-range range-slider" id="myRange">
-                                        </div>
-                                        <div class="col-md-2">
-                                            <span id="demo">0</span>$
+                            <div class="non">
+                                <div class="accordion" id="accordionPanelsStayOpenExample" style="border: white;">
+                                    <div class="accordion-item" style="border: white;">
+                                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                                aria-controls="panelsStayOpen-collapseOne" style="z-index: 0;">
+                                                Availabilty </button>
+                                        </h2>
+                                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                            aria-labelledby="panelsStayOpen-headingOne">
+                                            <div class="accordion-body">
+                                                <div class=" list-group list-group-flush font-weight-bold">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="flexRadioDefault" id="flexRadioDefault1">
+                                                        <label class="form-check-label" for="radio1">
+                                                            <h5>In stock</h5>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="flexRadioDefault" id="flexRadioDefault1">
+                                                        <label class="form-check-label" for="radio1">
+                                                            <h5>out of stock</h5>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item" style="border: white;">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingfour">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapsefour" aria-expanded="true"
-                                aria-controls="panelsStayOpen-collapsefour" style="z-index: 0;">
-                                Color </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapsefour" class="accordion-collapse collapse show"
-                            aria-labelledby="panelsStayOpen-headingfour">
-                            <div class="accordion-body">
-                                <div class=" list-group list-group-flush font-weight-bold">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault"
-                                            id="flexRadioDefault1" style=" background-color: #000;">
-                                        <label class="form-check-label" for="radio1">
-                                            <h5> Black</h5>
-                                        </label>
+                                    <div class="accordion-item" style="border: white;">
+                                        <h2 class="accordion-header" id="panelsStayOpen-headingtwo">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#panelsStayOpen-collapsetwo" aria-expanded="true"
+                                                aria-controls="panelsStayOpen-collapsetwo" style="z-index: 0;">
+                                                Categories </button>
+                                        </h2>
+                                        <div id="panelsStayOpen-collapsetwo" class="accordion-collapse collapse show"
+                                            aria-labelledby="panelsStayOpen-headingtwo">
+                                            <div class="accordion-body">
+                                                <div class=" list-group list-group-flush font-weight-bold"
+                                                    style="gap: 10px;">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                        <label class="form-check-label" for="radio1">
+                                                            Cookware
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                        <label class="form-check-label" for="radio2">
+                                                            Culinary
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                        <label class="form-check-label">
+                                                            Desk Accessories
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                        <label class="form-check-label">
+                                                            Files & folders
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                        <label class="form-check-label" for="radio2">
+                                                            Flash sale
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                        <label class="form-check-label" for="radio2">
+                                                            Office Desk
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                        <label class="form-check-label" for="radio2">
+                                                            Paper and notebooks
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                        <label class="form-check-label" for="radio2">
+                                                            Pens and writing
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                        <label class="form-check-label" for="radio2">
+                                                            Postcard
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox"" name=" flexRadioDefault"
-                                            id="flexRadioDefault1" style=" background-color:#003AAA;">
-                                        <label class="form-check-label" for="radio2">
-                                            <h5> Blue</h5>
-                                        </label>
+                                    <div class="accordion-item" style="border: white;">
+                                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true"
+                                                aria-controls="panelsStayOpen-collapseThree" style="z-index: 0;">
+                                                price </button>
+                                        </h2>
+                                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show"
+                                            aria-labelledby="panelsStayOpen-headingThree">
+                                            <div class="accordion-body">
+                                                <form class="range-form" style="width: auto;">
+                                                    <div class="form-group row">
+                                                        <div class="col-md-10">
+                                                            <input type="range" min="1" max="200" value="200"
+                                                                class="form-control-range range-slider" id="myRange">
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <span id="demo">0</span>$
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault"
-                                            id="flexRadioDefault1" style=" background-color: gray;">
-                                        <label class="form-check-label">
-                                            <h5>Gray</h5>
-                                        </label>
+                                    <div class="accordion-item" style="border: white;">
+                                        <h2 class="accordion-header" id="panelsStayOpen-headingfour">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#panelsStayOpen-collapsefour" aria-expanded="true"
+                                                aria-controls="panelsStayOpen-collapsefour" style="z-index: 0;">
+                                                Color </button>
+                                        </h2>
+                                        <div id="panelsStayOpen-collapsefour" class="accordion-collapse collapse show"
+                                            aria-labelledby="panelsStayOpen-headingfour">
+                                            <div class="accordion-body">
+                                                <div class=" list-group list-group-flush font-weight-bold">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            name="flexRadioDefault" id="flexRadioDefault1"
+                                                            style=" background-color: #000;">
+                                                        <label class="form-check-label" for="radio1">
+                                                            <h5> Black</h5>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"" name="
+                                                            flexRadioDefault" id="flexRadioDefault1"
+                                                            style=" background-color:#003AAA;">
+                                                        <label class="form-check-label" for="radio2">
+                                                            <h5> Blue</h5>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            name="flexRadioDefault" id="flexRadioDefault1"
+                                                            style=" background-color: gray;">
+                                                        <label class="form-check-label">
+                                                            <h5>Gray</h5>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            name="flexRadioDefault" id="flexRadioDefault1"
+                                                            style=" background-color:green;">
+                                                        <label class="form-check-label">
+                                                            <h5>Green</h5>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            name="flexRadioDefault" id="flexRadioDefault1"
+                                                            id="flexRadioDefault1" style=" background-color:pink;">
+                                                        <label class="form-check-label">
+                                                            <h5>Pink</h5>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            name="flexRadioDefault" id="flexRadioDefault1"
+                                                            id="flexRadioDefault1" style=" background-color:red;">
+                                                        <label class="form-check-label" for="radio2">
+                                                            <h5> Red</h5>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            name="flexRadioDefault" id="flexRadioDefault1"
+                                                            id="flexRadioDefault1" style=" background-color:yellow;">
+                                                        <label class="form-check-label" for="radio2">
+                                                            <h5> Yellow</h5>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault"
-                                            id="flexRadioDefault1" style=" background-color:green;">
-                                        <label class="form-check-label">
-                                            <h5>Green</h5>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault"
-                                            id="flexRadioDefault1" id="flexRadioDefault1"
-                                            style=" background-color:pink;">
-                                        <label class="form-check-label">
-                                            <h5>Pink</h5>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault"
-                                            id="flexRadioDefault1" id="flexRadioDefault1"
-                                            style=" background-color:red;">
-                                        <label class="form-check-label" for="radio2">
-                                            <h5> Red</h5>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault"
-                                            id="flexRadioDefault1" id="flexRadioDefault1"
-                                            style=" background-color:yellow;">
-                                        <label class="form-check-label" for="radio2">
-                                            <h5> Yellow</h5>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item" style="border: white;">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingfive">
-                            <button class="accordion-button " type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapsefive" aria-expanded="false"
-                                aria-controls="panelsStayOpen-collapsefive" style="z-index: 0;">
-                                Rating </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapsefive" class="accordion-collapse collapse show"
-                            aria-labelledby="panelsStayOpen-headingfive">
-                            <div class="accordion-body">
-                                <div class=" list-group list-group-flush font-weight-bold">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label" for="radio1">
-                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg>
-                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg> <i class="bi bi-star-fill"></i><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FEB605"
-                                                class="bi bi-star-fill" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg> <i class="bi bi-star-fill"></i><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FEB605"
-                                                class="bi bi-star-fill" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg> <i class="bi bi-star-fill"></i><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FEB605"
-                                                class="bi bi-star-fill" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg> </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label">
-                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg>
-                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg> <i class="bi bi-star-fill"></i><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FEB605"
-                                                class="bi bi-star-fill" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg> <i class="bi bi-star-fill"></i><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FEB605"
-                                                class="bi bi-star-fill" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg> </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label">
-                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg>
-                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg> <i class="bi bi-star-fill"></i><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FEB605"
-                                                class="bi bi-star-fill" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg> </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label">
-                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg>
-                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg> </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label">
-                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg>
-                                        </label>
+                                    <div class="accordion-item" style="border: white;">
+                                        <h2 class="accordion-header" id="panelsStayOpen-headingfive">
+                                            <button class="accordion-button " type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#panelsStayOpen-collapsefive" aria-expanded="false"
+                                                aria-controls="panelsStayOpen-collapsefive" style="z-index: 0;">
+                                                Rating </button>
+                                        </h2>
+                                        <div id="panelsStayOpen-collapsefive" class="accordion-collapse collapse show"
+                                            aria-labelledby="panelsStayOpen-headingfive">
+                                            <div class="accordion-body">
+                                                <div class=" list-group list-group-flush font-weight-bold">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="flexRadioDefault" id="flexRadioDefault1">
+                                                        <label class="form-check-label" for="radio1">
+                                                            <i class="bi bi-star-fill"></i><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="25"
+                                                                height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                            </svg>
+                                                            <i class="bi bi-star-fill"></i><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="25"
+                                                                height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                            </svg> <i class="bi bi-star-fill"></i><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="25"
+                                                                height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                            </svg> <i class="bi bi-star-fill"></i><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="25"
+                                                                height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                            </svg> <i class="bi bi-star-fill"></i><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="25"
+                                                                height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                            </svg> </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="flexRadioDefault" id="flexRadioDefault1">
+                                                        <label class="form-check-label">
+                                                            <i class="bi bi-star-fill"></i><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="25"
+                                                                height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                            </svg>
+                                                            <i class="bi bi-star-fill"></i><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="25"
+                                                                height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                            </svg> <i class="bi bi-star-fill"></i><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="25"
+                                                                height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                            </svg> <i class="bi bi-star-fill"></i><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="25"
+                                                                height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                            </svg> </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="flexRadioDefault" id="flexRadioDefault1">
+                                                        <label class="form-check-label">
+                                                            <i class="bi bi-star-fill"></i><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="25"
+                                                                height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                            </svg>
+                                                            <i class="bi bi-star-fill"></i><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="25"
+                                                                height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                            </svg> <i class="bi bi-star-fill"></i><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="25"
+                                                                height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                            </svg> </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="flexRadioDefault" id="flexRadioDefault1">
+                                                        <label class="form-check-label">
+                                                            <i class="bi bi-star-fill"></i><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="25"
+                                                                height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                            </svg>
+                                                            <i class="bi bi-star-fill"></i><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="25"
+                                                                height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                            </svg> </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="flexRadioDefault" id="flexRadioDefault1">
+                                                        <label class="form-check-label">
+                                                            <i class="bi bi-star-fill"></i><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="25"
+                                                                height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                                viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                            </svg>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-        </div>
-      </div>
-    </div>
-  </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 noni ">
                 <div class="no">
-                <div class="accordion" id="accordionPanelsStayOpenExample" style="border: white;">
-                    <div class="accordion-item" style="border: white;">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                                aria-controls="panelsStayOpen-collapseOne" style="z-index: 0;">
-                                Availabilty </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
-                            aria-labelledby="panelsStayOpen-headingOne">
-                            <div class="accordion-body">
-                                <div class=" list-group list-group-flush font-weight-bold">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label" for="radio1">
-                                            <h5>In stock</h5>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <h5>out of stock</h5>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item" style="border: white;">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingtwo">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapsetwo" aria-expanded="true"
-                                aria-controls="panelsStayOpen-collapsetwo" style="z-index: 0;">
-                                Categories </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapsetwo" class="accordion-collapse collapse show"
-                            aria-labelledby="panelsStayOpen-headingtwo">
-                            <div class="accordion-body">
-                                <div class=" list-group list-group-flush font-weight-bold" style="gap: 10px;">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="radio1">
-                                            Cookware
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="radio2">
-                                            Culinary
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label">
-                                            Desk Accessories
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label">
-                                            Files & folders
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="radio2">
-                                            Flash sale
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="radio2">
-                                            Office Desk
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="radio2">
-                                            Paper and notebooks
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="radio2">
-                                            Pens and writing
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="radio2">
-                                            Postcard
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item" style="border: white;">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true"
-                                aria-controls="panelsStayOpen-collapseThree" style="z-index: 0;">
-                                price </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show"
-                            aria-labelledby="panelsStayOpen-headingThree">
-                            <div class="accordion-body">
-                                <form class="range-form" style="width: auto;">
-                                    <div class="form-group row">
-                                        <div class="col-md-10">
-                                            <input type="range" min="1" max="200" value="200"
-                                                class="form-control-range range-slider" id="myRange">
+                    <div class="accordion" id="accordionPanelsStayOpenExample" style="border: white;">
+                        <div class="accordion-item" style="border: white;">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseOne" style="z-index: 0;">
+                                    Availabilty </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                aria-labelledby="panelsStayOpen-headingOne">
+                                <div class="accordion-body">
+                                    <div class=" list-group list-group-flush font-weight-bold">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label" for="radio1">
+                                                <h5>In stock</h5>
+                                            </label>
                                         </div>
-                                        <div class="col-md-2">
-                                            <span id="demo">0</span>$
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label" for="radio1">
+                                                <h5>out of stock</h5>
+                                            </label>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-item" style="border: white;">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingfour">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapsefour" aria-expanded="true"
-                                aria-controls="panelsStayOpen-collapsefour" style="z-index: 0;">
-                                Color </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapsefour" class="accordion-collapse collapse show"
-                            aria-labelledby="panelsStayOpen-headingfour">
-                            <div class="accordion-body">
-                                <div class=" list-group list-group-flush font-weight-bold">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault"
-                                            id="flexRadioDefault1" style=" background-color: #000;">
-                                        <label class="form-check-label" for="radio1">
-                                            <h5> Black</h5>
-                                        </label>
+                        <div class="accordion-item" style="border: white;">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingtwo">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapsetwo" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapsetwo" style="z-index: 0;">
+                                    Categories </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapsetwo" class="accordion-collapse collapse show"
+                                aria-labelledby="panelsStayOpen-headingtwo">
+                                <div class="accordion-body">
+                                    <div class=" list-group list-group-flush font-weight-bold" style="gap: 10px;">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <label class="form-check-label" for="radio1">
+                                                Cookware
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <label class="form-check-label" for="radio2">
+                                                Culinary
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <label class="form-check-label">
+                                                Desk Accessories
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <label class="form-check-label">
+                                                Files & folders
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <label class="form-check-label" for="radio2">
+                                                Flash sale
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <label class="form-check-label" for="radio2">
+                                                Office Desk
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <label class="form-check-label" for="radio2">
+                                                Paper and notebooks
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <label class="form-check-label" for="radio2">
+                                                Pens and writing
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault">
+                                            <label class="form-check-label" for="radio2">
+                                                Postcard
+                                            </label>
+                                        </div>
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox"" name=" flexRadioDefault"
-                                            id="flexRadioDefault1" style=" background-color:#003AAA;">
-                                        <label class="form-check-label" for="radio2">
-                                            <h5> Blue</h5>
-                                        </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" style="border: white;">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseThree" style="z-index: 0;">
+                                    price </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show"
+                                aria-labelledby="panelsStayOpen-headingThree">
+                                <div class="accordion-body">
+                                    <form class="range-form" style="width: auto;">
+                                        <div class="form-group row">
+                                            <div class="col-md-10">
+                                                <input type="range" min="1" max="200" value="200"
+                                                    class="form-control-range range-slider" id="myRange">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span id="demo">0</span>$
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" style="border: white;">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingfour">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapsefour" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapsefour" style="z-index: 0;">
+                                    Color </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapsefour" class="accordion-collapse collapse show"
+                                aria-labelledby="panelsStayOpen-headingfour">
+                                <div class="accordion-body">
+                                    <div class=" list-group list-group-flush font-weight-bold">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="flexRadioDefault"
+                                                id="flexRadioDefault1" style=" background-color: #000;">
+                                            <label class="form-check-label" for="radio1">
+                                                <h5> Black</h5>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox"" name=" flexRadioDefault"
+                                                id="flexRadioDefault1" style=" background-color:#003AAA;">
+                                            <label class="form-check-label" for="radio2">
+                                                <h5> Blue</h5>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="flexRadioDefault"
+                                                id="flexRadioDefault1" style=" background-color: gray;">
+                                            <label class="form-check-label">
+                                                <h5>Gray</h5>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="flexRadioDefault"
+                                                id="flexRadioDefault1" style=" background-color:green;">
+                                            <label class="form-check-label">
+                                                <h5>Green</h5>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="flexRadioDefault"
+                                                id="flexRadioDefault1" id="flexRadioDefault1"
+                                                style=" background-color:pink;">
+                                            <label class="form-check-label">
+                                                <h5>Pink</h5>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="flexRadioDefault"
+                                                id="flexRadioDefault1" id="flexRadioDefault1"
+                                                style=" background-color:red;">
+                                            <label class="form-check-label" for="radio2">
+                                                <h5> Red</h5>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="flexRadioDefault"
+                                                id="flexRadioDefault1" id="flexRadioDefault1"
+                                                style=" background-color:yellow;">
+                                            <label class="form-check-label" for="radio2">
+                                                <h5> Yellow</h5>
+                                            </label>
+                                        </div>
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault"
-                                            id="flexRadioDefault1" style=" background-color: gray;">
-                                        <label class="form-check-label">
-                                            <h5>Gray</h5>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault"
-                                            id="flexRadioDefault1" style=" background-color:green;">
-                                        <label class="form-check-label">
-                                            <h5>Green</h5>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault"
-                                            id="flexRadioDefault1" id="flexRadioDefault1"
-                                            style=" background-color:pink;">
-                                        <label class="form-check-label">
-                                            <h5>Pink</h5>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault"
-                                            id="flexRadioDefault1" id="flexRadioDefault1"
-                                            style=" background-color:red;">
-                                        <label class="form-check-label" for="radio2">
-                                            <h5> Red</h5>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="flexRadioDefault"
-                                            id="flexRadioDefault1" id="flexRadioDefault1"
-                                            style=" background-color:yellow;">
-                                        <label class="form-check-label" for="radio2">
-                                            <h5> Yellow</h5>
-                                        </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" style="border: white;">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingfive">
+                                <button class="accordion-button " type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapsefive" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapsefive" style="z-index: 0;">
+                                    Rating </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapsefive" class="accordion-collapse collapse show"
+                                aria-labelledby="panelsStayOpen-headingfive">
+                                <div class="accordion-body">
+                                    <div class=" list-group list-group-flush font-weight-bold">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label" for="radio1">
+                                                <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
+                                                    width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                </svg>
+                                                <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
+                                                    width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                </svg> <i class="bi bi-star-fill"></i><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                    fill="#FEB605" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                </svg> <i class="bi bi-star-fill"></i><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                    fill="#FEB605" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                </svg> <i class="bi bi-star-fill"></i><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                    fill="#FEB605" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                </svg> </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label">
+                                                <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
+                                                    width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                </svg>
+                                                <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
+                                                    width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                </svg> <i class="bi bi-star-fill"></i><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                    fill="#FEB605" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                </svg> <i class="bi bi-star-fill"></i><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                    fill="#FEB605" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                </svg> </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label">
+                                                <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
+                                                    width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                </svg>
+                                                <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
+                                                    width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                </svg> <i class="bi bi-star-fill"></i><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                                    fill="#FEB605" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                </svg> </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label">
+                                                <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
+                                                    width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                </svg>
+                                                <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
+                                                    width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                </svg> </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label">
+                                                <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
+                                                    width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                </svg>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item" style="border: white;">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingfive">
-                            <button class="accordion-button " type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapsefive" aria-expanded="false"
-                                aria-controls="panelsStayOpen-collapsefive" style="z-index: 0;">
-                                Rating </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapsefive" class="accordion-collapse collapse show"
-                            aria-labelledby="panelsStayOpen-headingfive">
-                            <div class="accordion-body">
-                                <div class=" list-group list-group-flush font-weight-bold">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label" for="radio1">
-                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg>
-                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg> <i class="bi bi-star-fill"></i><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FEB605"
-                                                class="bi bi-star-fill" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg> <i class="bi bi-star-fill"></i><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FEB605"
-                                                class="bi bi-star-fill" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg> <i class="bi bi-star-fill"></i><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FEB605"
-                                                class="bi bi-star-fill" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg> </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label">
-                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg>
-                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg> <i class="bi bi-star-fill"></i><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FEB605"
-                                                class="bi bi-star-fill" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg> <i class="bi bi-star-fill"></i><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FEB605"
-                                                class="bi bi-star-fill" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg> </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label">
-                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg>
-                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg> <i class="bi bi-star-fill"></i><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FEB605"
-                                                class="bi bi-star-fill" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg> </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label">
-                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg>
-                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg> </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label">
-                                            <i class="bi bi-star-fill"></i><svg xmlns="http://www.w3.org/2000/svg"
-                                                width="25" height="25" fill="#FEB605" class="bi bi-star-fill"
-                                                viewBox="0 0 16 16">
-                                                <path
-                                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                            </svg>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
+
+                    <div class="card text-center"
+                        style=" border-radius: 22px; margin-top: 65px; background-image: url(https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Background.jpg);">
+                        <div class="card-body">
+                            <h5 class="card-title">Back to school</h5>
+                            <p class="card-text">Sale up to 30% off</p>
+                            <a href="#" class="btn btn-primary">Shop now</a>
                         </div>
+                        <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/11/Eduma1-2.png"
+                            class="card-img-top" alt="...">
+
                     </div>
-                </div>
-                
-                <div class="card text-center"
-                    style=" border-radius: 22px; margin-top: 65px; background-image: url(https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Background.jpg);">
-                    <div class="card-body">
-                        <h5 class="card-title">Back to school</h5>
-                        <p class="card-text">Sale up to 30% off</p>
-                        <a href="#" class="btn btn-primary">Shop now</a>
-                    </div>
-                    <img src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/11/Eduma1-2.png"
-                        class="card-img-top" alt="...">
 
                 </div>
-                
-            </div>
             </div>
             <div class="col-lg-9">
-                <div class="container pb-3">
-                    <span>showing all 8 results</span>
-                    <span style="position: absolute; right: 0;"> <a class=" dropdown link-dark py-2 active "
-                            style="background: transparent; padding: 25px;">
-                            <select style="background: transparent; border-radius: 5px; padding: 3px; border: white;">
+                <div class="container row pb-3">
+                    <span class="col-lg-6 col-md-6 col-sm-6">showing all 8 results</span>
+                    <div class="col-lg-6 col-md-6 col-sm-6"> <a class=" dropdown link-dark py-2 active "
+                            style="background: transparent;">
+                            <select style="background: transparent; border-radius: 5px; border: white;">
                                 <option value="eng">Default sorting</option>
                                 <option value="cn">Sort by popularity</option>
                                 <option value="cn">Sort by average rating</option>
@@ -2232,12 +2291,13 @@
                                 <option value="cn">Sort by price : low to high</option>
                                 <option value="cn">Sort by price : high to low</option>
                             </select>
-                        </a></span>
+                        </a>
+                    </div>
                 </div>
                 <div class="card row"
                     style="display: flex; flex-direction: row; border-radius: 20px; overflow: hidden; margin-bottom: 50px; margin-left: 20px;">
                     <div class="col-lg-4" style="overflow: hidden; padding: 0;">
-                        <img class="zoom" style="width: inherit;"
+                        <img class="zoom" style="height: 100%;"
                             src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/2024-Appointment-Notebook.jpg"
                             alt="">
                     </div>
@@ -2313,7 +2373,7 @@
                 <div class="card row"
                     style="display: flex; flex-direction: row; border-radius: 20px; overflow: hidden; margin-bottom: 50px; margin-left: 20px;">
                     <div class="col-lg-4" style="overflow: hidden; padding: 0;">
-                        <img class="zoom" style="width: inherit;"
+                        <img class="zoom" style="width: inherit; height: 100%;"
                             src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/2024-Wall-Calendar-Greetings-From-Around-The-World.jpg"
                             alt="">
                     </div>
@@ -2389,7 +2449,7 @@
                 <div class="card row"
                     style="display: flex; flex-direction: row; border-radius: 20px; overflow: hidden; margin-bottom: 50px; margin-left: 20px;">
                     <div class="col-lg-4" style="overflow: hidden; padding: 0;">
-                        <img class="zoom" style="width: inherit;"
+                        <img class="zoom" style="width: inherit; height: 100%;"
                             src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/6-Pocket-File-A4.jpg"
                             alt="">
                     </div>
@@ -2466,7 +2526,7 @@
                 <div class="card row"
                     style="display: flex; flex-direction: row; border-radius: 20px; overflow: hidden; margin-bottom: 50px; margin-left: 20px;">
                     <div class="col-lg-4" style="overflow: hidden; padding: 0;">
-                        <img class="zoom" style="width: inherit;"
+                        <img class="zoom" style="width: inherit; height: 100%;"
                             src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Book-Band-Pen-Case.png"
                             alt="">
                     </div>
@@ -2544,7 +2604,7 @@
                 <div class="card row"
                     style="display: flex; flex-direction: row; border-radius: 20px; overflow: hidden; margin-bottom: 50px; margin-left: 20px;">
                     <div class="col-lg-4" style="overflow: hidden; padding: 0;">
-                        <img class="zoom" style="width: inherit;"
+                        <img class="zoom" style="width: inherit; height: 100%;"
                             src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Costway-48-Computer-Desk-Study-Workstation-Laptop-Table-Home-Office-5.jpg"
                             alt="">
                     </div>
@@ -2621,7 +2681,7 @@
                 <div class="card row"
                     style="display: flex; flex-direction: row; border-radius: 20px; overflow: hidden; margin-bottom: 50px; margin-left: 20px;">
                     <div class="col-lg-4" style="overflow: hidden; padding: 0;">
-                        <img class="zoom" style="width: inherit;"
+                        <img class="zoom" style="width: inherit; height: 100%;"
                             src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Handmade-Mini-Stone-Crayon-Set-Coloured.jpg"
                             alt="">
                     </div>
@@ -2698,7 +2758,7 @@
                 <div class="card row"
                     style="display: flex; flex-direction: row; border-radius: 20px; overflow: hidden; margin-bottom: 50px; margin-left: 20px;">
                     <div class="col-lg-4" style="overflow: hidden; padding: 0;">
-                        <img class="zoom" style="width: inherit;"
+                        <img class="zoom" style="width: inherit; height: 100%;"
                             src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Weekly-Undated-Planner-Set-B6-2.jpg"
                             alt="">
                     </div>
@@ -2774,7 +2834,7 @@
                 <div class="card row"
                     style="display: flex; flex-direction: row; border-radius: 20px; overflow: hidden; margin-bottom: 50px; margin-left: 20px;">
                     <div class="col-lg-4" style="overflow: hidden; padding: 0;">
-                        <img class="zoom" style="width: inherit;"
+                        <img class="zoom" style="width: inherit; height: 100%;"
                             src="https://eduma.thimpress.com/demo-ecommerce/wp-content/uploads/sites/100/2023/10/Paulo-Wood-Writing-Desk-with-Drawer-Threshold%E2%84%A2.jpg"
                             alt="">
                     </div>
