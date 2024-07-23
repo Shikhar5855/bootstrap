@@ -1279,7 +1279,16 @@
             }
         }
 
-       
+        @media (max-width:993px) {
+            .noni {
+                display: none;
+            }
+        }
+        @media (min-width:993px) {
+            .noni {
+                display: block;
+            }
+        }
     </style>
 </head>
 
@@ -1393,7 +1402,6 @@
             </div>
         </div>
     </nav>
-    hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
     <div class="sticky-top" style="background-color: white; z-index: 2; margin-top: -1px;">
         <div class="header text-center container">
             <nav class="header navbar navbar-expand-lg navbar-light bg-white text-center">
@@ -1562,16 +1570,16 @@
             <div class="yes">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn" style="outline-style: solid; outline-width: 2px;" data-toggle="modal"
-                    data-target="#exampleModal">
+                    data-target="#exampleModal1">
                     FILTERS
                 </button>
 
                 <!-- Modal -->
                  
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModal1Label" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-scrollable"
-                        style="position: inherit; width: inherit; right: 0; top: 0; margin: 0; height: 100%;">
+                        style="position: inherit; width: inherit; right: 0; top: 0; margin: 0;">
                         <div class="modal-content" style="overflow: scroll;">
                             <div class="close ms-auto" style="margin-right: 15px;">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"
@@ -1595,7 +1603,7 @@
                                         <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
                                             aria-labelledby="panelsStayOpen-headingOne">
                                             <div class="accordion-body">
-                                                <div class=" list-group list-group-flush font-weight-bold" style="height: 100% !important;">
+                                                <div class=" list-group list-group-flush font-weight-bold">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio"
                                                             name="flexRadioDefault" id="flexRadioDefault1">
@@ -1934,7 +1942,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 ">
+            <div class="col-lg-3 noni ">
                 <div class="no">
                     <div class="accordion" id="accordionPanelsStayOpenExample" style="border: white;">
                         <div class="accordion-item" style="border: white;">
